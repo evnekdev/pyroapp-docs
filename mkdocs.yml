@@ -1,4 +1,5 @@
 site_name : PYROAPP documentation
+site_url: https://evnekdev.github.io/pyroapp-docs/
 
 theme:
   name: material
