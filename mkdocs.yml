@@ -1,0 +1,40 @@
+site_name : PYROAPP documentation
+
+theme:
+  name: material
+  
+nav:
+  - Home:
+    - Overview : index.md
+    - Installation : installation.md
+    - Quickstart : quickstart.md
+  
+  - Functions :
+  
+    - Information :
+      - CA_CHEMAPPDLLS: functions/ca_chemappdlls.md
+      - CA_VERSION : functions/ca_version.md
+      - CA_USER_ID : functions/ca_user_id.md
+      - CA_ISLITE : functions/ca_islite.md
+      
+    - List :
+      - CA_LIST_COMPONENTS: functions/ca_list_components.md
+      - CA_LIST_PHASES: functions/ca_list_phases.md
+      - CA_LIST_SOLUTIONS: functions/ca_list_solutions.md
+      - CA_LIST_COMPOUNDS: functions/ca_list_compounds.md
+    
+    - Get :
+      - CA_GET_COMPOUND_H298: functions/ca_get_compound_h298.md
+      - CA_GET_COMPOUND_S298: functions/ca_get_compound_s298.md
+      - CA_GET_CONSTITUENT_H298: functions/ca_get_constituent_h298.md
+      - CA_GET_CONSTITUENT_S298: functions/ca_get_constituent_s298.md
+      
+    - Get : 
+      - CA_SET_COMPOUND_H298: functions/ca_set_compound_h298.md
+      - CA_SET_COMPOUND_S298: functions/ca_set_compound_s298.md
+      - CA_SET_CONSTITUENT_H298: functions/ca_set_constituent_h298.md
+      - CA_SET_CONSTITUENT_S298: functions/ca_set_constituent_s298.md
+  
+  - Tutorials :
+    - Retrieving ChemApp dongle/user information : tutorials/chemapp-info.md
+    - Working with Datafiles : tutorials/datafiles.md
