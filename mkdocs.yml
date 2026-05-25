@@ -5,7 +5,8 @@ theme:
   name: material
   
 nav:
-  - Home: index.md
+  - Home :
+    - Overview : index.md
     - Installation : installation.md
     - Quickstart : quickstart.md
   
