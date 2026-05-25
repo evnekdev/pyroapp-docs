@@ -12,29 +12,66 @@ nav:
   
   - Functions :
   
-    - Information :
+    - Information (ChemApp, user and dongle info) :
       - CA_CHEMAPPDLLS: functions/ca_chemappdlls.md
       - CA_VERSION : functions/ca_version.md
-      - CA_USER_ID : functions/ca_user_id.md
       - CA_ISLITE : functions/ca_islite.md
+      - CA_USER_ID : functions/ca_user_id.md
+      - CA_LICENSE_HOLDER_NAME : functions/ca_license_holder_name.md
+      - CA_PROGRAM_ID : functions/ca_program_id.md
+      - CA_DONGLE_INFO : functions/ca_dongle_info.md
+      - CA_EXPIRATION_DATE : functions/ca_expiration_date.md
+      - CA_COPYRIGHT : functions/ca_copyright.md
+      - CA_DIMENSIONS_MAX : functions/ca_dimensions_max.md
+      - CA_DIMENSIONS : functions/ca_dimensions.md
       
-    - List :
+    - List Entities in a Datafile:
       - CA_LIST_COMPONENTS: functions/ca_list_components.md
       - CA_LIST_PHASES: functions/ca_list_phases.md
       - CA_LIST_SOLUTIONS: functions/ca_list_solutions.md
       - CA_LIST_COMPOUNDS: functions/ca_list_compounds.md
+      - CA_LIST_SPECIES : functions/ca_list_species.md
+      - CA_LIST_CONSTITUENTS : functions/ca_list_constituents.md
     
-    - Get :
+    - Get Thermodynamic Properties from a Datafile :
       - CA_GET_COMPOUND_H298: functions/ca_get_compound_h298.md
       - CA_GET_COMPOUND_S298: functions/ca_get_compound_s298.md
       - CA_GET_CONSTITUENT_H298: functions/ca_get_constituent_h298.md
       - CA_GET_CONSTITUENT_S298: functions/ca_get_constituent_s298.md
+      - CA_GET_COMPOUND_TUPPER : functions/ca_get_compound_tupper.md
+      - CA_GET_CONSTITUENT_TUPPER : functions/ca_get_constituent_tupper.md
+      - CA_GET_COMPOUND_CP : functions/ca_get_compound_cp.md
+      - CA_GET_CONSTITUENT_CP : functions/ca_get_constituent_cp.md
+      - CA_GET_COMPOUND_RANGE_COUNT : functions/ca_get_compound_range_count.md
+      - CA_GET_CONSTITUENT_RANGE_COUNT : functions/ca_get_constituent_range_count.md
+      - CA_GET_COMPOUND_STOICHIOMETRY : functions/ca_get_compound_stoichiometry.md
+      - CA_GET_CONSTITUENT_STOICHIOMETRY : functions/ca_get_constituent_stoichiometry.md
+      - CA_GET_COMPOUND_WEIGHTS : functions/ca_get_compound_weights.md
+      - CA_GET_CONSTITUENT_WEIGHTS : functions/ca_get_constituent_weights.md
+      - CA_GET_INTERACTION_INDICES : functions/ca_get_interaction_indices.md
+      - CA_GET_INTERACTION_PARAMETERS_G: functions/ca_get_interaction_parameters_g.md
       
-    - Get : 
+    - Set Thermodynamic Properties to a Datafile : 
       - CA_SET_COMPOUND_H298: functions/ca_set_compound_h298.md
       - CA_SET_COMPOUND_S298: functions/ca_set_compound_s298.md
       - CA_SET_CONSTITUENT_H298: functions/ca_set_constituent_h298.md
       - CA_SET_CONSTITUENT_S298: functions/ca_set_constituent_s298.md
+      - CA_SET_COMPOUND_CP : functions/ca_set_compound_cp.md
+      - CA_SET_CONSTITUENT_CP : functions/ca_set_constituent_cp.md
+      - CA_SET_INTERACTION_PARAMETERS_G : functions/ca_set_interaction_parameters_g.md
+      
+    - Calculate :
+      - CA_CALCULATE : functions/ca_calculate.md
+      
+    - Optimization :
+      - LINEAR_REGRESSION : functions/linear_regression.md
+      - BEST_COMBINATION : functions/best_combination.md
+      - PD_ERROR_TABLE : functions/pd_error_table.md
+    
+    - Data Manipulation :
+      - DATA_CHANGE_BASIS : functions/data_change_basis.md
+      - DATA_REPEAT : functions/data_repeat.md
+      - DATA_GENERATE_MESH : functions/data_generate_mesh.md
   
   - Tutorials :
     - Retrieving ChemApp dongle/user information : tutorials/chemapp-info.md
