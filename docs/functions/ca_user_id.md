@@ -27,10 +27,8 @@ XXXX
 ## Underlying ChemApp routine
 
 This function wraps the ChemApp routine:
-  - TQGTID
   
-See:
-https://gtt-technologies.de/ca-doc/index.html#tqgtid
+See: [TQGTID](https://gtt-technologies.de/ca-doc/index.html#tqgtid)
 
 ## Related functions
 
