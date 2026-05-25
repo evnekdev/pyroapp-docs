@@ -12,7 +12,7 @@ Returns the ChemApp user ID associated with the active license.
 
 ## Arguments
 
-This function requires no arguments
+This function requires no arguments.
 
 ## Returns
 
