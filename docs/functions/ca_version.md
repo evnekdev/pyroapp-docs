@@ -2,7 +2,7 @@
 
 ## Description
 
-Returns the version number of the compiled ChemApp library; some functions might not be available if the library is too old. Too see minimum version requirements for each ChemApp routine, please refer to its dedicated page at [ChemApp version requirements](https://gtt-technologies.de/software/chemapp/online-manual/)
+Returns the version number of the compiled ChemApp library; some functions might not be available if the library is too old. Too see minimum version requirements for each ChemApp routine, please refer to its dedicated page at [ChemApp Online Manual](https://gtt-technologies.de/software/chemapp/online-manual/).
 
 
 ## Syntax
