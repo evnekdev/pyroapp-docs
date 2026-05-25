@@ -5,6 +5,7 @@
 Full ChemApp version requires to purchase a license; however, for demonstration purposes, GTT Technologies release a *light* version with limited capabilities (up to 3 system components only, no target calculations, etc). CA_ISLITE returns *true* if the current ChemApp is *light*.
 
 To see the full list of *light* version limitations, please visit [TQLITE Routine Manual](https://gtt-technologies.de/ca-doc/index.html#tqlite).
+For all purchase enquiries, please refer to the official distributor of ChemApp software at [GTT-Technologies](https://gtt-technologies.de/software/chemapp/)
 
 ## Syntax
 
