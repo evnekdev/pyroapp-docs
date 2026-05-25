@@ -1,6 +1,6 @@
 # PyroApp
 
-PyroApp is a custom software developed at Pyrosearch, University of Queensland by Dr Evgenii Nekhoroshev.
+PyroApp is a custom software developed by Dr Evgenii Nekhoroshev at Pyrosearch, University of Queensland.
 
 Its primary purpose is to make complex thermochemical calculations available in Excel spreadsheets with minimum setup requirements and no programmic knowledge.
 
@@ -19,7 +19,7 @@ The older version of PyroApp, used internally at Pyrosearch, connected to Excel 
 
 ## C API and Excel-DNA project
 
-Serious professional applications for Excel use so-called Excel C API, which is famous for its blazing speed and full integration with the Excel environment. However, use of raw Excel C API is a daunting task and previously was reserved only for proprietaty financial software for investment firms on Wall Street, which require fast response times and reliability.
+Serious professional applications for Excel use so-called Excel C API, which is famous for its blazing speed and full integration with the Excel environment. However, use of raw Excel C API is a daunting task due to inner complexity of Excel programming model and previously was reserved only for proprietaty financial software for investment firms on Wall Street, which require fast response times and reliability.
 
 Recently, an open source project, called [ExcelDna](https://excel-dna.net/) has been developed which greatly simplifies development of custom Excel XLL addins using C API/#NET technology.
 
