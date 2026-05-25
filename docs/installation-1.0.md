@@ -1,12 +1,4 @@
-# Installation
-
-Right now, a new version of PyroApp (PyroApp 2.0) based on Excel C API, is in development. It is not open to public access yet.
-
-## PyroApp 2.0 installation guide 
-
-[Under construction]
-
-## Legacy PyroApp (PyroApp 1.0)
+# Legacy PyroApp (PyroApp 1.0)
 
 The old version of PyroApp was written in Python and used xlwings module to connect to Excel. Internally, xlwings generates custom VBA code in each Excel spreadsheet with matching function signatures and marshals code execution to a Python server.
 

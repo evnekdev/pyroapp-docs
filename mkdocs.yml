@@ -7,12 +7,16 @@ theme:
 nav:
   - Home :
     - Overview : index.md
-    - Installation : installation.md
+    - Installation :
+      - PyroApp 2.0 (current): installation-2.0.md
+      - PyroApp 1.0 (legacy) : installation-1.0.md
     - Quickstart : quickstart.md
   
   - Underlying ChemApp libraries : chemapp.md
   - Excel AddIns and Excel APIs : excel-api.md
-  - PyroApp architecture : pyroapp-architecture.md
+  - PyroApp architecture :
+    - PyroApp 2.0 (current): pyroapp-architecture-2.0.md
+    - PyroApp 1.0 (legacy) : pyroapp-architecture-1.0.md
   - ChemApp parallel execution : chemapp-parallel.md
   - Excel requirements : excel-requirements.md
   - Download page : download.md
