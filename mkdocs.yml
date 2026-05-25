@@ -10,6 +10,13 @@ nav:
     - Installation : installation.md
     - Quickstart : quickstart.md
   
+  - Underlying ChemApp libraries : chemapp.md
+  - Excel AddIns and Excel APIs : excel-api.md
+  - PyroApp architecture : pyroapp-architecture.md
+  - ChemApp parallel execution : chemapp-parallel.md
+  - Excel requirements : excel-requirements.md
+  - Download page : download.md
+  
   - Functions :
   
     - Information (ChemApp, user and dongle info) :
