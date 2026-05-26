@@ -140,3 +140,5 @@ nav:
     - ChemApp port to Rust: chemapp_rs.md
     - ChemApp port to Python (free alternative): chemapproxy.md
     - SQL databases for handling EPMA data: sqldata.md
+
+  - About : about.md
