@@ -1,27 +1,28 @@
-.md-nav__link {
-    white-space: normal;
-}
-
-.md-sidebar {
-    width: 22rem;
-}
-
 @media screen and (min-width: 76.25em) {
-
   .md-sidebar--primary {
-    width: 22rem !important;
+    width: 24rem !important;
   }
 
-  .md-sidebar__scrollwrap {
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    width: 24rem !important;
     overflow-x: auto !important;
-    overflow-y: auto;
   }
 
-  .md-nav__list {
-    white-space: nowrap;
+  .md-sidebar--primary .md-nav {
+    width: max-content !important;
+    min-width: 100% !important;
   }
-}
 
-.md-sidebar__scrollwrap {
-    overflow-x: scroll !important;
+  .md-sidebar--primary .md-nav__list {
+    width: max-content !important;
+    min-width: 100% !important;
+  }
+
+  .md-sidebar--primary .md-nav__link {
+    white-space: nowrap !important;
+  }
+
+  .md-main__inner {
+    margin-left: 24rem !important;
+  }
 }
