@@ -23,12 +23,10 @@ A boolean number (*TRUE* for *light* limited version).
 
 ## Underlying ChemApp routine
 
-This function wraps the ChemApp routine:
-
-See: [TQLITE](https://gtt-technologies.de/ca-doc/index.html#tqlite)
+This function wraps the ChemApp routine: [TQLITE](https://gtt-technologies.de/ca-doc/index.html#tqlite).
 
 ## Related functions
 
-  - CA_VERSION
+  - [CA_VERSION](../ca_version)
   
   

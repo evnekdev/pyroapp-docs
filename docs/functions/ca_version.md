@@ -13,7 +13,7 @@ Returns the version number of the compiled ChemApp library; some functions might
 
 ## Arguments
 
-This functions requires no arguments.
+This function requires no arguments.
 
 ## Returns
 
@@ -28,11 +28,9 @@ Example:
 
 ## Underlying ChemApp routine
 
-This function wraps the ChemApp routine:
-
-See: [TQVERS](https://gtt-technologies.de/ca-doc/index.html#tqvers)
+This function wraps the ChemApp routine: [TQVERS](https://gtt-technologies.de/ca-doc/index.html#tqvers).
 
 ## Related functions
 
-  - CA_ISLITE
+  - [CA_ISLITE](../ca_islite)
   
