@@ -1,10 +1,10 @@
 @media screen and (min-width: 76.25em) {
   .md-sidebar--primary {
-    width: 24rem !important;
+    width: 20rem !important;
   }
 
   .md-sidebar--primary .md-sidebar__scrollwrap {
-    width: 24rem !important;
+    width: 20rem !important;
     overflow-x: auto !important;
   }
 
@@ -23,6 +23,6 @@
   }
 
   .md-main__inner {
-    margin-left: 24rem !important;
+    margin-left: 20rem !important;
   }
 }
