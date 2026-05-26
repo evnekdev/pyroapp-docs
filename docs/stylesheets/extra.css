@@ -37,3 +37,9 @@ body {
 .md-typeset table:not([class]) {
     border-collapse: collapse;
 }
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
