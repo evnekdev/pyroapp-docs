@@ -2,6 +2,8 @@
 
 # Description
 
+Returns the dimensions of the currently loaded thermochemical system.
+
 ## Syntax
 
 ```excel
@@ -32,7 +34,7 @@
 
 ## Underlying ChemApp routine
 
-This function wraps the following ChemApp routine: [TQSIZE](https://gtt-technologies.de/ca-doc/index.html#tqused).
+This function wraps the following ChemApp routine: [TQUSED](https://gtt-technologies.de/ca-doc/index.html#tqused).
 
 ## Related functions
 
