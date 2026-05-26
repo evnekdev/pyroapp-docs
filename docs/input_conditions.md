@@ -1,4 +1,4 @@
-# Input Conditions for ```CA_CALCULATE()``` function
+# Input Conditions for ```=CA_CALCULATE()``` function
 
 The complete list of available options for 'input_header' argument of ```=CA_CALCULATE()``` function is given in the table below.
 
