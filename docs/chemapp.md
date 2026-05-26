@@ -7,7 +7,9 @@ GTT-Technologies distributes ChemApp as a compiled code library which is availab
 Broadly speaking, on Windows, executable code can be either in form of EXE files or DLL files. An *executable* (exe files) has an *entry point* and can be executed directly in terminal or by double-clicking on it. To reduce EXE file bloating and enhance code reuse, some of the programs or code parts can be distributed in form of DLLs (Dynamically Loaded Libraries). These share similar internal structure with EXE, but lack an entry point. Therefore, they cannot be executed directly. To make the code inside of a DLL work, you need to load it inside an existing EXE or another DLL.
 
 On modern operating systems, there are two ways to load a dynamic library:
+
   - Static (the path to the library is "baked" into the EXE and cannot be changed, the DLL is loaded whenever the parent EXE is loaded).
+  
   - Dynamic (the hosting EXE does not know about the DLL at the compilation time and only loads it when the code execution leads to a call to LoadLibrary function of Windows SDK).
   
 ## Advantages of dynamic loading
