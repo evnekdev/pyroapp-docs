@@ -1,10 +1,10 @@
 @media screen and (min-width: 76.25em) {
+
   .md-sidebar--primary {
-    width: 20rem !important;
+    width: 24rem !important;
   }
 
   .md-sidebar--primary .md-sidebar__scrollwrap {
-    width: 20rem !important;
     overflow-x: auto !important;
   }
 
@@ -13,16 +13,16 @@
     min-width: 100% !important;
   }
 
-  .md-sidebar--primary .md-nav__list {
-    width: max-content !important;
-    min-width: 100% !important;
-  }
-
-  .md-sidebar--primary .md-nav__link {
+  .md-nav__link {
     white-space: nowrap !important;
+    padding-right: 2rem !important;
   }
 
-  .md-main__inner {
-    margin-left: 20rem !important;
+  /* Keep expand arrows fixed */
+  .md-nav__toggle + label {
+    position: sticky !important;
+    right: 0 !important;
+    background: var(--md-default-bg-color);
+    z-index: 2;
   }
 }
