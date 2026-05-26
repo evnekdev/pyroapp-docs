@@ -7,11 +7,21 @@
 }
 
 @media screen and (min-width: 76.25em) {
+
   .md-sidebar--primary {
     width: 22rem !important;
   }
 
-  .md-sidebar--primary .md-sidebar__scrollwrap {
-    width: 22rem !important;
+  .md-sidebar__scrollwrap {
+    overflow-x: auto !important;
+    overflow-y: auto;
   }
+
+  .md-nav__list {
+    white-space: nowrap;
+  }
+}
+
+.md-sidebar__scrollwrap {
+    overflow-x: scroll !important;
 }
