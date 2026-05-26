@@ -95,3 +95,14 @@ nav:
     
   - Additional Information : additional-information.md
   
+  
+  - Other Projects :
+    - FactSage Compound database format and parsing : factsage-compound-format.md
+    - FactSage Solution database format and parsing : factsage-solution-format.md
+    - ChemSage .DAT datafile format and parsing : chemsage-format.md
+    - FactSage batch calculations (automated macros with GUI): fsmanager.md
+    - Easy Heat capacity/Heat content fitting for FactSage compound module: cpfit-project.md
+    - Cubic spline liquidus interpolation in binary systems and phase diagram construction : liqenginebin.md
+    - ChemApp port to Rust: chemapp_rs.md
+    - ChemApp port to Python (free alternative to the official ChemApp for Python project): chemapproxy.md
+    - SQL databases for storing and retrieving EPMA data: sqldata.md
