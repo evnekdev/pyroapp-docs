@@ -33,3 +33,4 @@ This function wraps the following ChemApp routine: [TQGTNM](https://gtt-technolo
   - [CA_PROGRAM_ID](../ca_program_id)
   - [CA_EXPIRATION_DATE](../ca_expiration_date)
   - [CA_DONGLE_INFO](../ca_dongle_info)
+  - [CA_COPYRIGHT](../ca_copyright)

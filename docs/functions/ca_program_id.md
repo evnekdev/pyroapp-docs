@@ -34,3 +34,4 @@ This function wraps the following ChemApp routine: [TQGTPI](https://gtt-technolo
   - [CA_LICENSE_HOLDER_NAME](../ca_license_holder_name)
   - [CA_EXPIRATION_DATE](../ca_expiration_date)
   - [CA_DONGLE_INFO](../ca_dongle_info)
+  - [CA_COPYRIGHT](../ca_copyright)
