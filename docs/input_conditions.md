@@ -6,19 +6,19 @@ The complete list of available options for 'input_header' argument of ```=CA_CAL
 
 | Option (1st row) | Description | Phase (2nd row) | Constituent/Component (3rd row) | Acceptable Values | Requires Target Calculation | ChemApp Correspondence |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **T**  | **Temperature**        | TODO | TODO | TODO |   No     | Yes |
-| **P**  | **Pressure**           | TODO | TODO | TODO |   No     | Yes |
+| **T**  | **Temperature**        | TODO | TODO | TODO |   ---     | Yes |
+| **P**  | **Pressure**           | TODO | TODO | TODO |   ---     | Yes |
 | **VT** | **Total Volume**       | TODO | TODO | TODO |   TODO   | Yes |
 | **A**  | **Amount**             | TODO | TODO | TODO | **Yes**  | Yes |
-| **IA** | **Input Amount**       | TODO | TODO | TODO |   No     | Yes |
-| **MU** | **Chemical Potential** | TODO | TODO | TODO |   No     | Yes |
-| **AC** | **Relative Activity**  | TODO | TODO | TODO |   No     | Yes |
+| **IA** | **Input Amount**       | TODO | TODO | TODO |   ---     | Yes |
+| **MU** | **Chemical Potential** | TODO | TODO | TODO |   ---     | Yes |
+| **AC** | **Relative Activity**  | TODO | TODO | TODO |   ---     | Yes |
 | **CP** | **Heat Capacity**      | TODO | TODO | TODO | **Yes**  | Yes |
 | **H**  | **Enthalpy**           | TODO | TODO | TODO | **Yes**  | Yes |
 | **S**  | **Entropy**            | TODO | TODO | TODO | **Yes**  | Yes |
 | **G**  | **Gibbs energy**       | TODO | TODO | TODO | **Yes**  | Yes |
 | **V**  | **Volume**             | TODO | TODO | TODO | **Yes**  | Yes |
-| **AT** |  **Activity of a phase constituent as target ** | TODO | TODO | TODO | **Yes?**  | Yes |
-| **XT** |  **X fraction of a phase constituent as target ** | TODO | TODO | TODO | **Yes?**  | Yes |
+| **AT** |  **Activity of a phase constituent as target** | TODO | TODO | TODO | **Yes?**  | Yes |
+| **XT** |  **X fraction of a phase constituent as target** | TODO | TODO | TODO | **Yes?**  | Yes |
 | **XPT**| **X fraction of a system component in a phase as target** | TODO | TODO | TODO | **Yes?** | Yes |
 
