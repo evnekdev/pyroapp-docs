@@ -1,10 +1,26 @@
 site_name : PYROAPP documentation
 site_url: https://evnekdev.github.io/pyroapp-docs/
 
+plugins:
+  - glightbox
+
 theme:
   name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
   features:
     - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
   
 nav:
   - Home :
