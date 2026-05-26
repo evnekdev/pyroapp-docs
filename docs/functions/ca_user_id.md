@@ -30,8 +30,8 @@ This function wraps the ChemApp routine: [TQGTID](https://gtt-technologies.de/ca
 
 ## Related functions
 
-  - [CA_LICENSE_HOLDER_NAME](../functions/#ca_license_holder_name)
-  - [CA_PROGRAM_ID](../functions/#ca_program_id)
-  - [CA_EXPIRATION_DATE](../functions/#ca_expiration_date)
-  - [CA_DONGLE_INFO](../functions/#ca_dongle_info)
+  - [CA_LICENSE_HOLDER_NAME](../functions/ca_license_holder_name)
+  - [CA_PROGRAM_ID](../functions/ca_program_id)
+  - [CA_EXPIRATION_DATE](../functions/ca_expiration_date)
+  - [CA_DONGLE_INFO](../functions/ca_dongle_info)
   
