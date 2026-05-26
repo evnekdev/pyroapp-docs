@@ -1,3 +1,5 @@
+@media screen and (min-width: 76.25em) {
+
 .md-sidebar--primary {
   width: 21rem !important;
 }
@@ -27,6 +29,8 @@ body {
 
 [data-md-color-scheme="slate"] .md-typeset {
   font-weight: 450;
+}
+
 }
 
 .md-typeset table:not([class]) th,
