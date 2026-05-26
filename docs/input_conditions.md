@@ -4,5 +4,5 @@ The complete list of available options for 'input_header' argument of ```excel =
 
 ### List of available input options.
 
-| Option Name (first row) | Needs Phase argument (second row) | Needs Constituent/Component argument (third row) | Acceptable values | ChemApp correspondence |
+| Option (1st row) | Phase (2nd row) | Constituent/Component (3rd row) | Acceptable values | ChemApp correspondence |
 |---|---|---|---|---|
