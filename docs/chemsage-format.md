@@ -1,2 +1,0 @@
-# ChemSage files format 
-

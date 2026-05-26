@@ -133,7 +133,7 @@ nav:
   - Other Projects :
     - FactSage Compound database format and parsing : factsage-compound-format.md
     - FactSage Solution database format and parsing : factsage-solution-format.md
-    - ChemSage .DAT datafile format and parsing : chemsage-format.md
+    - ChemSage .DAT datafile format and parsing : chemsage-datafile.md
     - FactSage batch calculations (automated macros with GUI): fsmanager.md
     - Easy Heat capacity/Heat content fitting for FactSage: cpfit-project.md
     - Cubic spline liquidus interpolation in binary systems : liqenginebin.md
