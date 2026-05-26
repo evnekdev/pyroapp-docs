@@ -5,7 +5,7 @@ The complete list of available options for 'input_header' argument of ```=CA_CAL
 ### List of available input options.
 
 | Option (1st row) | Description | Phase (2nd row) | Constituent/Component (3rd row) | Acceptable Values | Requires Target Calculation | ChemApp Correspondence |
-|:---|:---:|:---:|:---:|:---:|:---:|
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **T**  | **Temperature**        | TODO | TODO | TODO |   No     | Yes |
 | **P**  | **Pressure**           | TODO | TODO | TODO |   No     | Yes |
 | **VT** | **Total Volume**       | TODO | TODO | TODO |   TODO   | Yes |
