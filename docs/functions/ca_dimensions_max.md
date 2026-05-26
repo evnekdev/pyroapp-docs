@@ -19,7 +19,7 @@ This function requires no arguments.
 11x2 array of values, meaning:
 
 | Row# | Meaning |
-|*---|*---*|
+|---|---|
 | 1  | Maximum number of constituents. |
 | 2  | Maximum number of system components. |
 | 3  | Maximum number of mixture phases. |
