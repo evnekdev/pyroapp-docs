@@ -2,7 +2,7 @@
 
 ## Description
 
-Returns the list of available system components in a datafile. [TODO] make a link to system component definition.
+Returns the list of available system components in a datafile. [TODO] make a link to the system component definition.
 
 ## Syntax
 
