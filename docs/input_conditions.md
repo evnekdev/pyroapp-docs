@@ -26,4 +26,10 @@ The complete list of available options for 'input_header' argument of ```=CA_CAL
 | **ENTERED**          | **A name of a phase in the entered list**           | TODO | TODO | TODO | **Yes** | --- |
 | **DORMANT**          | **A name of a phase in the dormant list**           | TODO | TODO | TODO | **Yes** | --- |
 | **ELIMINATED**       | **A name of a phase in the eliminated list**        | TODO | TODO | TODO | **Yes** | --- |
+| **THIGH**  | **Upper T interval search limit (in K)**   | TODO | TODO | TODO | **---** | --- |
+| **TLOW**   | **Lower T interval search limit (in K)**   | TODO | TODO | TODO | **---** | --- |
+| **PHIGH**  | **Upper P interval search limit (in bar)** | TODO | TODO | TODO | **---** | --- |
+| **PLOW**   | **Lower P interval search limit (in bar)** | TODO | TODO | TODO | **---** | --- |
+| **VHIGH**  | **Upper V interval search limit (in dm3)** | TODO | TODO | TODO | **---** | --- |
+| **VLOW**   | **Lower V interval search limit (in dm3)** | TODO | TODO | TODO | **---** | --- |
 
