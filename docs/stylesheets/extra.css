@@ -1,28 +1,23 @@
+/* Wider left sidebar */
 @media screen and (min-width: 76.25em) {
-
   .md-sidebar--primary {
     width: 24rem !important;
   }
 
   .md-sidebar--primary .md-sidebar__scrollwrap {
-    overflow-x: auto !important;
+    width: 24rem !important;
+    overflow-x: hidden !important;
   }
+}
 
-  .md-sidebar--primary .md-nav {
-    width: max-content !important;
-    min-width: 100% !important;
-  }
+/* Wrap long navigation titles */
+.md-sidebar--primary .md-nav__link {
+  white-space: normal !important;
+  line-height: 1.35;
+}
 
-  .md-nav__link {
-    white-space: nowrap !important;
-    padding-right: 2rem !important;
-  }
-
-  /* Keep expand arrows fixed */
-  .md-nav__toggle + label {
-    position: sticky !important;
-    right: 0 !important;
-    background: var(--md-default-bg-color);
-    z-index: 2;
-  }
+/* Keep expand arrows visible */
+.md-sidebar--primary .md-nav__item--nested > .md-nav__link,
+.md-sidebar--primary .md-nav__item--nested > label {
+  white-space: normal !important;
 }
