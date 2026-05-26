@@ -2,7 +2,13 @@
 
 ## Description
 
+Returns the list of available phases in a datafile, optionally subject to chemical system constraints. [TODO] make a link to the phase definition.
+
 ## Syntax
+
+```excel
+=CA_LIST_PHASES(datafile,[system])
+```
 
 ## Arguments
 
