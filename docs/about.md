@@ -1,8 +1,14 @@
 # About 
 
-PyroApp has been developed by Dr Evgenii Nekhoroshev (affiliated with Pyrosearch, University of Queensland).
+PyroApp has been developed by **Dr Evgenii Nekhoroshev**
+(affiliated with Pyrosearch, University of Queensland).
 
-The continuous optimization method (Optimization routines) have been developed by Dr Evgenii Nekhoroshev and Prof. Eugene Jak.
+The continuous optimization method (*optimization routines*) have been developed by:
+  
+  - **Dr Evgenii Nekhoroshev**
+  - **Prof. Eugene Jak**
 
-Email: evgnekhoroshev@gmail.com
+### Contact
+
+  - Email: <evgnekhoroshev@gmail.com>
 
