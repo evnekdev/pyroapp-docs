@@ -28,3 +28,12 @@ body {
 [data-md-color-scheme="slate"] .md-typeset {
   font-weight: 450;
 }
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+    border: 1px solid var(--md-default-fg-color--lighter);
+}
+
+.md-typeset table:not([class]) {
+    border-collapse: collapse;
+}
