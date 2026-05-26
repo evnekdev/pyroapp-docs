@@ -1,8 +1,8 @@
-# Input Conditions for CA_CALCULATE() function
+# Input Conditions for ```CA_CALCULATE()``` function
 
 The complete list of available options for 'input_header' argument of ```=CA_CALCULATE()``` function is given in the table below.
 
-### List of available input options.
+## List of available input options.
 
 | Option (1st row) | Description | Phase (2nd row) | Constituent/Component (3rd row) | Acceptable Values | Requires Target Calculation | ChemApp Correspondence |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
