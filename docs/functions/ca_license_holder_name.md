@@ -29,7 +29,7 @@ This function wraps the following ChemApp routine: [TQGTNM](https://gtt-technolo
 
 ## Related functions
 
-  - CA_USER_ID
-  - CA_PROGRAM_ID
-  - CA_EXPIRATION_DATE
-  - CA_DONGLE_INFO
+  - [CA_USER_ID](../functions/#ca_user_id)
+  - [CA_PROGRAM_ID](../functions/#ca_program_id)
+  - [CA_EXPIRATION_DATE](../functions/#ca_expiration_date)
+  - [CA_DONGLE_INFO](../functions/#ca_dongle_info)
