@@ -34,6 +34,6 @@ The complete list of available options for 'input_header' argument of ```=CA_CAL
 | **VLOW**   | **Lower V interval search limit (in dm3)** | TODO | TODO | TODO | **---** | --- |
 | **SHOWVAR**    | **Shows the ChemApp setup in the console window**       | TODO | TODO | TODO | **---** | --- |
 | **SHOWCALC**   | **Shows the calculation results in the console window** | TODO | TODO | TODO | **---** | --- |
-| **USEFORNEXT** | **Not useful in parallel environment?**                 | TODO | TODO | TODO | **---** | --- |
+| **USEFORNEXT** | *Not useful in parallel environment?*                 | TODO | TODO | TODO | **---** | --- |
 | **VARIABLE**   | **T, P, V in case if a target calculation is required** | TODO | TODO | TODO | **---** | --- |
 
