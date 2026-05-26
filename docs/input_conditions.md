@@ -20,5 +20,10 @@ The complete list of available options for 'input_header' argument of ```=CA_CAL
 | **V**  | **Volume**             | TODO | TODO | TODO | **Yes**  | Yes |
 | **AT** |  **Activity of a phase constituent as target** | TODO | TODO | TODO | **Yes?**  | Yes |
 | **XT** |  **X fraction of a phase constituent as target** | TODO | TODO | TODO | **Yes?**  | Yes |
-| **XPT**| **X fraction of a system component in a phase as target** | TODO | TODO | TODO | **Yes?** | Yes |
+| **XPT**| **X fraction of a system component in a phase as target**    | TODO | TODO | TODO | **Yes?** | Yes |
+| **PRECIPITATION**    | **A name of a phase a target is precipitated from** | TODO | TODO | TODO | **Yes** | --- |
+| **FORMATION**        | **A name of a target phase**                        | TODO | TODO | TODO | **Yes** | --- |
+| **ENTERED**          | **A name of a phase in the entered list**           | TODO | TODO | TODO | **Yes** | --- |
+| **DORMANT**          | **A name of a phase in the dormant list**           | TODO | TODO | TODO | **Yes** | --- |
+| **ELIMINATED**       | **A name of a phase in the eliminated list**        | TODO | TODO | TODO | **Yes** | --- |
 
