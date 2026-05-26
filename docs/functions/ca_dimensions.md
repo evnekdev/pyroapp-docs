@@ -10,7 +10,9 @@
 
 ## Arguments
 
-  - datafile : Absolute or relative filepath to a ChemSage datafile (.dat/.cst)
+  | **Argument** | **Description** |
+  |---|---|
+  | datafile | Absolute or relative filepath to a ChemSage datafile (.dat/.cst) |
   
 ## Returns
 
