@@ -1,6 +1,6 @@
 # EXCEL REQUIREMENTS
 
-PyroApp widely uses dynamic arrays in Excel which were added to MS Office 365 Suite; it has been thoroughly tested using this version and it is therefore most desirable. To learn more about dynamic arrays, visit [Excel Dynamic Arrays](https://support.microsoft.com/en-au/office/guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7)
+PyroApp widely uses dynamic arrays in Excel which were added to MS Office 365 Suite; it has been thoroughly tested using this version and it is therefore most desirable. To learn more about dynamic arrays, visit [Excel Dynamic Arrays](https://support.microsoft.com/en-au/office/guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
 
 ## Desktop vs online Excel
 
