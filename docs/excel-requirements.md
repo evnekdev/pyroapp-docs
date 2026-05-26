@@ -12,7 +12,7 @@ Custom Excel functions in xlwings (PyroApp 1.0) are supported only on Windows, a
 
 To read more about xlwings, please refer to the official use guide [xlwings in Excel](https://www.xlwings.org/).
 
-Excel C API description can be found at the official Microsoft source [Excel C API](https://learn.microsoft.com/en-us/office/client-developer/excel/programming-with-the-c-api-in-excel). The most detailed practical guide was written by S. Dalton [1](#references).
+Excel C API description can be found at the official Microsoft source [Excel C API](https://learn.microsoft.com/en-us/office/client-developer/excel/programming-with-the-c-api-in-excel). The most detailed practical guide was written by S. Dalton [[1]](#references).
 
 ## 64bit vs 32bit Excel
 

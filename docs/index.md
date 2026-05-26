@@ -2,7 +2,7 @@
 
 PyroApp is a custom software developed by Dr Evgenii Nekhoroshev at Pyrosearch, University of Queensland.
 
-Its primary purpose is to make complex thermochemical calculations available in Excel spreadsheets with minimum setup requirements and no programmic knowledge.
+Its primary purpose is to make complex thermochemical calculations available in Excel spreadsheets with minimum setup requirements and no programming knowledge.
 
 ## Pre-existing software
 

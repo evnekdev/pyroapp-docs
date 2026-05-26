@@ -4,11 +4,24 @@ site_url: https://evnekdev.github.io/pyroapp-docs/
 plugins:
   - glightbox
 
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
 extra_css:
   - stylesheets/extra.css
 
 theme:
   name: material
+  font:
+    text: Segoe UI
+    code: Consolas
   palette:
     - scheme: default
       toggle:
@@ -122,7 +135,7 @@ nav:
     - FactSage Solution database format and parsing : factsage-solution-format.md
     - ChemSage .DAT datafile format and parsing : chemsage-format.md
     - FactSage batch calculations (automated macros with GUI): fsmanager.md
-    - Easy Heat capacity/Heat content fitting for FactSage cpfit-project.md
+    - Easy Heat capacity/Heat content fitting for FactSage: cpfit-project.md
     - Cubic spline liquidus interpolation in binary systems : liqenginebin.md
     - ChemApp port to Rust: chemapp_rs.md
     - ChemApp port to Python (free alternative): chemapproxy.md
