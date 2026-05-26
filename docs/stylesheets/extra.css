@@ -1,3 +1,4 @@
+/*
 @media screen and (min-width: 76.25em) {
 
 .md-sidebar--primary {
@@ -14,15 +15,13 @@
     max-width: 95% !important;
 }
 
-
-/* Crisper text rendering */
 body {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
   text-rendering: optimizeLegibility;
 }
 
-/* Slightly heavier text in dark mode */
+
 [data-md-color-scheme="slate"] {
   --md-text-font-weight: 450;
 }
@@ -47,3 +46,5 @@ body {
     padding-top: 0.05rem !important;
     padding-bottom: 0.05rem !important;
 }
+
+*/
