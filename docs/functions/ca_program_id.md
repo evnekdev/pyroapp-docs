@@ -26,7 +26,7 @@ XXXX
 
 ## Underlying ChemApp routine
 
-This function wraps the following ChemApp routine: [TQFTPI](https://gtt-technologies.de/ca-doc/index.html#tqgtpi).
+This function wraps the following ChemApp routine: [TQGTPI](https://gtt-technologies.de/ca-doc/index.html#tqgtpi).
 
 ## Related functions
 
