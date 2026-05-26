@@ -3,9 +3,8 @@ site_url: https://evnekdev.github.io/pyroapp-docs/
 
 theme:
   name: material
- # features:
- #   - navigation.tabs
- #   - navigation.tabs.sticky
+  features:
+    - navigation.indexes
   
 nav:
   - Home :
