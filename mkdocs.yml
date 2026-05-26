@@ -1,4 +1,4 @@
-site_name : PYROAPP documentation
+site_name : PYROAPP documentation + Wiki
 site_url: https://evnekdev.github.io/pyroapp-docs/
 
 plugins:
