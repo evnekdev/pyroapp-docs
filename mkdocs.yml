@@ -84,6 +84,11 @@ nav:
       - DATA_REPEAT : functions/data_repeat.md
       - DATA_GENERATE_MESH : functions/data_generate_mesh.md
   
+  - Relevant tables :
+    - Allowed input conditions for CA_CALCULATE(): input_conditions.md
+    - Allowed outputs in CA_CALCULATE(): output_properties.md
+    - System units : system_units.md
+  
   - Tutorials :
     - Retrieving ChemApp dongle/user information : tutorials/chemapp-info.md
     - Working with Datafiles : tutorials/datafiles.md
