@@ -17,3 +17,8 @@ The complete list of available options for 'input_header' argument of ```=CA_CAL
 | **H**  | **Enthalpy**           | TODO | TODO | TODO | **Yes**  | Yes |
 | **S**  | **Entropy**            | TODO | TODO | TODO | **Yes**  | Yes |
 | **G**  | **Gibbs energy**       | TODO | TODO | TODO | **Yes**  | Yes |
+| **V**  | **Volume**             | TODO | TODO | TODO | **Yes**  | Yes |
+| **AT** |  **Activity of a phase constituent as target ** | TODO | TODO | TODO | **Yes?**  | Yes |
+| **XT** |  **X fraction of a phase constituent as target ** | TODO | TODO | TODO | **Yes?**  | Yes |
+| **XPT**| **X fraction of a system component in a phase as target** | TODO | TODO | TODO | **Yes?** | Yes |
+
