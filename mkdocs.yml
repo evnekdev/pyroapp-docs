@@ -87,3 +87,6 @@ nav:
   - Tutorials :
     - Retrieving ChemApp dongle/user information : tutorials/chemapp-info.md
     - Working with Datafiles : tutorials/datafiles.md
+    
+  - Additional Information : additional-information.md
+  
