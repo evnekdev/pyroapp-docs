@@ -2,7 +2,7 @@
 
 ## Description
 
-Returns the S298 (standard entropy values) for stoichiometric phases (compounds) in open-file .DAT datafiles (this function does not work with CST files) . [TODO] make a link to the compound definition.
+Returns the S298 (standard entropy values) for stoichiometric phases (compounds) in open-file .DAT datafiles (this function does not work with CST files) . See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
 
 ## Syntax
 
