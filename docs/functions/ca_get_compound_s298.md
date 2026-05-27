@@ -36,7 +36,7 @@ The following ChemApp routines are involved :
 
 ## Related functions
 
-  - [CA_GET_COMPOUND_S298](../ca_get_compound_s298)
+  - [CA_GET_COMPOUND_H298](../ca_get_compound_h298)
   - [CA_GET_COMPOUND_CP](../ca_get_compound_cp)
   - [CA_GET_CONSTITUENT_S298](../ca_get_constituent_s298)
   - [CA_GET_CONSTITUENT_CP](../ca_get_constituent_cp)
