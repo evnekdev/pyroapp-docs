@@ -32,7 +32,7 @@ The following ChemApp routines are involved :
 
 | **Routine** | **Description** |
 |---|---|
-| TODO | TODO |
+| TQGDAT | GET-INPUT-THERMODYNAMIC-DATA-OF-PHASE-CONSTITUENT |
 
 ## Related functions
 

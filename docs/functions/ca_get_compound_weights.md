@@ -28,7 +28,7 @@ The following routines are involved :
 
 | **Routine** | **Description** |
 |---|---|
-| TQSTSC | GET-STOICHIOMETRY-OF-SYSTEM-COMPONENT |
+| TQSTPC | GET-STOICHIOMETRY-OF-PHASE-CONSTITUENT |
 
 ## Related functions
 
