@@ -24,7 +24,7 @@ Returns the H298 (standard enthalpy values) for stoichiometric phases (compounds
 
 ## Returns
 
-An array of float values for compounds present, NAN if a phase is not present in the datafile.
+An array of float values for compounds present, NAN if a compound is not present in the datafile.
 
 ## Underlying ChemApp routines
 
@@ -39,6 +39,3 @@ The following ChemApp routines are involved :
   - [CA_GET_COMPOUND_S298](../ca_get_compound_s298)
   - [CA_GET_COMPOUND_CP](../ca_get_compound_cp)
   - [CA_GET_CONSTITUENT_H298](../ca_get_constituent_h298)
-  - [CA_GET_CONSTITUENT_S298](../ca_get_constituent_s298)
-  - [CA_GET_CONSTITUENT_CP](../ca_get_constituent_cp)
-  
