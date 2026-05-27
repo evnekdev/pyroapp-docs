@@ -1,6 +1,6 @@
 # DOWNLOADS 
 
-## PyroApp 1,0 (legacy version) project page (private repository)
+## PyroApp 1.0 (legacy version) project page (private repository)
 
 <https://github.com/evnekdev/pyroapp>
 
