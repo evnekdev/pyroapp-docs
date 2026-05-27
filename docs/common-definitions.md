@@ -4,9 +4,9 @@
 
 ## Phase
 
-### Mixture phase (solution)
+### Mixture phase
 
-### Stoichiometic phase (compound)
+### Stoichiometic phase
 
 ## Sublattice
 

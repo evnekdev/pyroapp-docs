@@ -2,7 +2,7 @@
 
 ## Description
 
-Returns a stoichiometry matrix of stoichiometric phases (compounds). [TODO] make a link to the compound definition.
+Returns a stoichiometry matrix of stoichiometric phases (compounds). See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
 
 ## Syntax
 
