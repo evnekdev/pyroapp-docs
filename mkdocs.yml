@@ -58,6 +58,7 @@ nav:
   - Common definitions : common-definitions.md
   - Phase models : phase-models.md
   - FactSage vs ChemApp definitions: factsage-chemapp-definitions.md
+  - Composition conversion and reaction balancing : composition-conversion.md
   
   - Functions :
   
