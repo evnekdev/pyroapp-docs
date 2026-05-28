@@ -15,7 +15,7 @@ Returns the H298 (standard enthalpy values) for stoichiometric phases (compounds
   | **Argument** | **Description** |
   |---|---|
   | datafile  | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | compounds | A array with compound names. |
+  | compounds | An array with compound names. |
   | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
 
 ### Note about Excel execution model
