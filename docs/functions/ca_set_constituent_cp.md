@@ -2,7 +2,7 @@
 
 ## Description
 
-Writes new heat capacity values of stoichiometric phases (compounds) in open-file .DAT datafiles (this function does not work with CST files). See [Phase Constituent Definition](../../common-definitions#phase-constituent) for more details.
+Writes new heat capacity values of stoichiometric phases (compounds) to open-file .DAT datafiles (this function does not work with CST files). See [Phase Constituent Definition](../../common-definitions#phase-constituent) for more details.
 
 ## Syntax
 

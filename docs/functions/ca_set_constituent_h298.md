@@ -2,7 +2,7 @@
 
 ## Description
 
-Writes new H298 values of phase constituents in open-file .DAT datafiles (this function does not work with CST files). See [Phase Constituent Definition](../../common-definitions#phase-constituent) for more details.
+Writes new H298 values of phase constituents to open-file .DAT datafiles (this function does not work with CST files). See [Phase Constituent Definition](../../common-definitions#phase-constituent) for more details.
 
 ## Syntax
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Writes new S298 values of stoichiometric phases (compounds) in open-file .DAT datafiles (this function does not work with CST files). See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Writes new S298 values of stoichiometric phases (compounds) to open-file .DAT datafiles (this function does not work with CST files). See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
 
 ## Syntax
 
