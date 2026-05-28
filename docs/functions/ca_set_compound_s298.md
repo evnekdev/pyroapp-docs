@@ -7,7 +7,7 @@ Writes new S298 values of stoichiometric phases (compounds) in open-file .DAT da
 ## Syntax
 
 ```excel
-=CA_SET_COMPOUND_H298(datafile, compounds, values, [update_token])
+=CA_SET_COMPOUND_S298(datafile, compounds, values, [update_token])
 ```
 
 ## Arguments
