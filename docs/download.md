@@ -10,8 +10,8 @@
 
 If you are a member of Pyrosearch, you can download the installers here :
 
-[PYROAPP x86](https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PYROAPP-Setup-0.1.0-x86.exe?csf=1&web=1&e=pOw30j)
+|---|---|
+| [PYROAPP x86](https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PYROAPP-Setup-0.1.0-x86.exe?csf=1&web=1&e=pOw30j) | [PYROAPP x64](https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PYROAPP-Setup-0.1.0-x64.exe?csf=1&web=1&e=tfjILQ) |
 
-[PYROAPP x64](https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PYROAPP-Setup-0.1.0-x64.exe?csf=1&web=1&e=tfjILQ)
 
 If you have any trouble downloading or installing, please contact me at : <e.nekhoroshev@uq.edu.au>.
