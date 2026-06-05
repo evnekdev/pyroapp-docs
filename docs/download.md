@@ -8,6 +8,8 @@
 
 <https://github.com/evnekdev/pyroapprs>
 
+## Pyrosearch internal downloads
+
 If you are a member of Pyrosearch, you can download the installers here :
 
 | Windows x86 version | Windows x64 version |
