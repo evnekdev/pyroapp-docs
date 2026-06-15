@@ -87,8 +87,12 @@ nav:
       - CA_LIST_COMPOUNDS: functions/ca_list_compounds.md
       - CA_LIST_SPECIES : functions/ca_list_species.md
       - CA_LIST_CONSTITUENTS : functions/ca_list_constituents.md
+      - CA_LIST_INTERACTIONS_G : functions/ca_list_interactions_g.md
+      - CA_LIST_INTERACTIONS_M : functions/ca_list_interactions_m.md
     
     - Get Thermodynamic Properties from a Datafile :
+      - CA_GET_COMPONENT_WEIGHTS : functions/ca_get_component_weights.md
+      - CA_GET_COMPONENT_STOICHIOMETRY : functions/ca_get_component_stoichiometry.md
       - CA_GET_COMPOUND_WEIGHTS : functions/ca_get_compound_weights.md
       - CA_GET_CONSTITUENT_WEIGHTS : functions/ca_get_constituent_weights.md
       - CA_GET_COMPOUND_STOICHIOMETRY : functions/ca_get_compound_stoichiometry.md
