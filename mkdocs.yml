@@ -109,6 +109,7 @@ nav:
       - CA_GET_CONSTITUENT_CP : functions/ca_get_constituent_cp.md
       - CA_GET_INTERACTION_INDICES : functions/ca_get_interaction_indices.md
       - CA_GET_INTERACTION_PARAMETERS_G: functions/ca_get_interaction_parameters_g.md
+      - CA_GET_INTERACTION_PARAMETERS_M: functions/ca_get_interaction_parameters_m.md
       
     - Set Thermodynamic Properties to a Datafile : 
       - CA_SET_COMPOUND_H298: functions/ca_set_compound_h298.md
@@ -118,6 +119,7 @@ nav:
       - CA_SET_COMPOUND_CP : functions/ca_set_compound_cp.md
       - CA_SET_CONSTITUENT_CP : functions/ca_set_constituent_cp.md
       - CA_SET_INTERACTION_PARAMETERS_G : functions/ca_set_interaction_parameters_g.md
+      - CA_SET_INTERACTION_PARAMETERS_M : functions/ca_set_interaction_parameters_m.md
       
     - Calculate :
       - CA_CALCULATE : functions/ca_calculate.md
