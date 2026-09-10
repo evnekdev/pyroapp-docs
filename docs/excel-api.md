@@ -1,6 +1,6 @@
 # Excel and the PyroApp API
 
-PyroApp 2 is an Excel-DNA XLL add-in. Its functions behave like native Excel functions but can return dynamic arrays and perform work asynchronously.
+PyroApp is an Excel-DNA XLL add-in. Its functions behave like native Excel functions but can return dynamic arrays and perform work asynchronously.
 
 ## Dynamic arrays
 

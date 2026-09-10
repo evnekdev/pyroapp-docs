@@ -1,6 +1,6 @@
-# PyroApp 2 architecture
+# PyroApp architecture
 
-PyroApp 2 separates **datafile editing** from **thermodynamic execution**.
+PyroApp separates **datafile editing** from **thermodynamic execution**.
 
 ```mermaid
 graph TD

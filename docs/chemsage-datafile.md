@@ -4,7 +4,7 @@ PyroApp works with thermodynamic systems stored in ChemSage/ChemApp datafiles. T
 
 ## Open DAT files
 
-`.DAT` files are human-readable thermodynamic declarations. PyroApp 2 can parse them locally and therefore supports:
+`.DAT` files are human-readable thermodynamic declarations. PyroApp can parse them locally and therefore supports:
 
 - listing components, phases, constituents, species and interactions;
 - reading standard-state and interaction parameters;
@@ -21,7 +21,7 @@ The local parser validates the DAT structure rather than treating it as arbitrar
 Consequently:
 
 - `XLL_CA_GET_*` and `XLL_CA_SET_*` are **DAT-only**;
-- structural DAT LIST functions are also local-DAT functions in the current PyroApp 2 client;
+- structural DAT LIST functions are also local-DAT functions in the current PyroApp client;
 - `XLL_CA_CALCULATE` may use CST when the configured ChemApp runtime and licence permit it.
 
 ## BIN files

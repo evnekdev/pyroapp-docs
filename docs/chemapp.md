@@ -19,7 +19,7 @@ graph LR
 
 ## ChemApp is not used for open-DAT inspection
 
-Current PyroApp 2 reads and edits open `.DAT` parameter data using `chemsage-parser` through a small local ABI DLL. This is why LIST/GET/SET operations do not need a ChemApp call and why they cannot expose encrypted CST parameter contents.
+Current PyroApp reads and edits open `.DAT` parameter data using `chemsage-parser` through a small local ABI DLL. This is why LIST/GET/SET operations do not need a ChemApp call and why they cannot expose encrypted CST parameter contents.
 
 ## Licence requirements
 
@@ -29,6 +29,6 @@ Protected `.CST` files can also have user/licence restrictions imposed by their 
 
 ## Bitness
 
-Native libraries must match the process that loads them. In the PyroApp 2 architecture, ChemApp is loaded by the worker rather than Excel, but the release package still has to pair a compatible worker and ChemApp library. Use the distribution prepared for your Excel/runtime architecture.
+Native libraries must match the process that loads them. In the PyroApp architecture, ChemApp is loaded by the worker rather than Excel, but the release package still has to pair a compatible worker and ChemApp library. Use the distribution prepared for your Excel/runtime architecture.
 
 For the ChemApp API itself, consult the official GTT-Technologies ChemApp documentation supplied for the version you use.

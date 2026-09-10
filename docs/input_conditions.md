@@ -43,7 +43,7 @@ The exact index domain matters. For example, `XP` resolves the third header row 
 | `SHOWCALC` | TRUE/FALSE | Use the verbose calculation-output variant. Primarily diagnostic. |
 | `SKIP` | TRUE/FALSE | If TRUE, do not calculate the row; PyroApp returns the initialized output row. |
 
-`USEFORNEXT` is intentionally not accepted by the current PyroApp 2 calculation planner because it creates an order-dependent continuation state.
+`USEFORNEXT` is intentionally not accepted by the current PyroApp calculation planner because it creates an order-dependent continuation state.
 
 ## Units
 

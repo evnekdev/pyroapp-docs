@@ -1,6 +1,6 @@
 # Function reference
 
-Current PyroApp 2 Excel names use the `XLL_` prefix. Follow the links below for syntax and return shapes.
+Current PyroApp Excel names use the `XLL_` prefix. Follow the links below for syntax and return shapes.
 
 ## Runtime controls
 

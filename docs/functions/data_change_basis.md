@@ -1,6 +1,6 @@
 # XLL_DATA_CHANGE_BASIS
 
-**Availability:** stable utility in the current PyroApp 2 interface.
+**Availability:** stable utility in the current PyroApp interface.
 
 Converts composition rows from one independent chemical-formula basis to another, optionally converting between mole and mass bases and optionally normalizing the result.
 

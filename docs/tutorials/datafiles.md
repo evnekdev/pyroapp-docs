@@ -1,6 +1,6 @@
 # Working with DAT files
 
-Open `.DAT` files are the inspectable/editable database format in PyroApp 2.
+Open `.DAT` files are the inspectable/editable database format in PyroApp.
 
 ## Discover the datafile
 

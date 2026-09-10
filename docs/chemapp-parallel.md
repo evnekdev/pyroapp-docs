@@ -6,4 +6,4 @@
 
 ## Parallelization in Python (PyroApp 1.0)
 
-## Parallelization in PyroApp 2.0 (Rust ```rayon``` crate)
+## Parallelization in PyroApp (Rust ```rayon``` crate)

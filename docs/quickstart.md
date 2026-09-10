@@ -2,7 +2,7 @@
 
 This quickstart verifies the add-in, inspects an open DAT file, and then shows the shape of a calculation table.
 
-## 1. Verify PyroAppRS
+## 1. Verify PyroApp
 
 Install the XLL that matches Excel bitness. In the interactive installer, choose the licensed ChemApp folder containing `chemapp_00.dll`; the installer records it for the isolated local worker. The package does not contain a ChemApp runtime.
 
@@ -12,7 +12,7 @@ Enter:
 =XLL_PYROAPP_TRANSPORT()
 ```
 
-A local installation normally reports `IPC` unless you have selected a remote server in the **PyroApp** Ribbon tab. If it does not, run the installed **PyroAppRS diagnostic** before calculating.
+A local installation normally reports `IPC` unless you have selected a remote server in the **PyroApp** Ribbon tab. If it does not, run the installed **PyroApp diagnostic** before calculating.
 
 If ChemApp is available locally, you can also query:
 

@@ -1,12 +1,12 @@
 # Excel requirements
 
-PyroApp 2 runs in **desktop Microsoft Excel for Windows** through an Excel-DNA XLL add-in.
+PyroApp runs in **desktop Microsoft Excel for Windows** through an Excel-DNA XLL add-in.
 
 ## Required Excel capabilities
 
 Use a current Microsoft 365 / desktop Excel version with dynamic arrays. PyroApp frequently returns vectors and matrices as spill ranges, so modern dynamic-array behavior is part of the normal interface.
 
-Excel for the web cannot load a native XLL and therefore cannot run PyroApp 2.
+Excel for the web cannot load a native XLL and therefore cannot run PyroApp.
 
 ## 32-bit and 64-bit Excel
 
@@ -18,10 +18,10 @@ Do not mix a 64-bit worker with a 32-bit-only ChemApp DLL or vice versa.
 
 ## Workbook format
 
-PyroApp 2 itself does not require an `.xlsm` workbook merely to call XLL functions. Use `.xlsx` unless your workbook separately contains VBA/macros that require `.xlsm`.
+PyroApp itself does not require an `.xlsm` workbook merely to call XLL functions. Use `.xlsx` unless your workbook separately contains VBA/macros that require `.xlsm`.
 
 ## Network access
 
 Remote gRPC calculation requires connectivity to the configured PyroApp server address/port. Open-DAT LIST/GET/SET functions remain local and do not require server access.
 
-See [Install PyroApp 2](installation-2.0.md) and [Architecture and transports](pyroapp-architecture-2.0.md).
+See [Install PyroApp](installation-2.0.md) and [Architecture and transports](pyroapp-architecture-2.0.md).

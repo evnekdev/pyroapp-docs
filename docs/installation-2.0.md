@@ -1,6 +1,6 @@
-# Install PyroAppRS
+# Install PyroApp
 
-PyroAppRS is distributed as an architecture-matched Excel XLL package. A normal user does **not** need Python, Cargo, Rust, Visual Studio, or the PyroApp source code.
+PyroApp is distributed as an architecture-matched Excel XLL package. A normal user does **not** need Python, Cargo, Rust, Visual Studio, or the PyroApp source code.
 
 ## Choose the correct package
 
@@ -8,8 +8,8 @@ Excel and the PyroApp XLL must have matching bitness:
 
 | Excel | Client package |
 |---|---|
-| 64-bit Microsoft Excel | PyroAppRS x64 |
-| 32-bit Microsoft Excel | PyroAppRS x86 |
+| 64-bit Microsoft Excel | PyroApp x64 |
+| 32-bit Microsoft Excel | PyroApp x86 |
 
 In Excel, open **File → Account → About Excel** to check the installed bitness.
 
@@ -18,7 +18,7 @@ In Excel, open **File → Account → About Excel** to check the installed bitne
 
 ## Interactive installer
 
-Use the `PyroAppRS-<version>-x64-Setup.exe` or `PyroAppRS-<version>-x86-Setup.exe` package that matches Excel. The wizard installs per user under `%LOCALAPPDATA%\PyroApp\x64` or `%LOCALAPPDATA%\PyroApp\x86`; administrator rights are not required.
+Use the `PyroApp-<version>-x64-Setup.exe` or `PyroApp-<version>-x86-Setup.exe` package that matches Excel. The wizard installs per user under `%LOCALAPPDATA%\PyroApp\x64` or `%LOCALAPPDATA%\PyroApp\x86`; administrator rights are not required.
 
 The wizard:
 
@@ -29,9 +29,9 @@ The wizard:
 5. offers to register the XLL for the detected Excel installation (selected by default); and
 6. adds documentation and diagnostic shortcuts.
 
-PyroAppRS does not redistribute ChemApp, ChemSage databases, licences, or dongles. Obtain and maintain those directly under the applicable vendor terms. The installer supports upgrade and repair by rerunning the matching package. Uninstall removes only its registration and installed product files; it does not remove ChemApp or unrelated user data, and it never terminates Excel.
+PyroApp does not redistribute ChemApp, ChemSage databases, licences, or dongles. Obtain and maintain those directly under the applicable vendor terms. The installer supports upgrade and repair by rerunning the matching package. Uninstall removes only its registration and installed product files; it does not remove ChemApp or unrelated user data, and it never terminates Excel.
 
-Run **PyroAppRS diagnostic** from the Start menu if the runtime location changes.
+Run **PyroApp diagnostic** from the Start menu if the runtime location changes. The same menu and the PyroApp Ribbon provide **Migrate legacy workbook**, which creates a separate macro-free `.xlsx` file and preserves the original `.xlsm`.
 
 !!! note "Microsoft .NET Desktop Runtime"
     The packed XLL requires the matching Microsoft .NET Desktop Runtime 8.x.
@@ -45,7 +45,7 @@ The portable ZIP contains the same architecture-specific XLL, worker, DAT ABI DL
 
 ## Manual XLL registration
 
-1. Obtain the approved PyroAppRS distribution for your Excel bitness.
+1. Obtain the approved PyroApp distribution for your Excel bitness.
 2. Extract the **entire** package to a stable folder. Do not copy only the `.xll` file; the package contains companion DLL/executable files.
 3. In Excel, open **File → Options → Add-ins**.
 4. At the bottom choose **Excel Add-ins** and click **Go**.
