@@ -1,8 +1,17 @@
 # Downloads
 
-PyroApp release packages are distributed on an **approval-controlled basis** rather than through an anonymous public download. Each published version has separate signed x64 and x86 installers, matching portable ZIPs, SHA-256 checksums, and a release manifest.
+PyroApp release packages are distributed on an **approval-controlled basis** rather than through an anonymous public download. Each published version has separate signed x64 and x86 installers, matching portable ZIPs, SHA-256 checksums, a release manifest, and publication metadata.
 
-Two IPC client builds are planned for distribution:
+The intended primary PyroSearch package is:
+
+```text
+PyroApp for 64-bit Excel
+Bundled ChemApp runtime
+```
+
+The controlled package includes the required ChemApp runtime files for its architecture. A valid ChemApp licence remains required for calculations; the package neither grants a licence nor implies unrestricted ChemApp redistribution rights.
+
+Two IPC client architectures are supported:
 
 - **x64** — for 64-bit Excel / matching local runtime;
 - **x86** — for 32-bit Excel / matching local runtime.
@@ -24,9 +33,13 @@ VBA/macros are intentionally removed because `.xlsx` does not contain a VBA proj
 
 ## PyroApp installers
 
-The release workflow is being finalized. Approved PyroApp packages will be published through a controlled download location once the x86/x64 compilation, signing, installer, and installed-Excel/ChemApp smoke checks are complete.
+The release workflow is being finalized. Approved PyroApp packages will be published through the private **PyroApp Distribution** Drive folder only after architecture checks, signing, installer validation, installed-Excel smoke, and ChemApp smoke all pass. The folder itself is not shared; access is granted as Viewer permission on each approved installer file.
 
-This page will contain the canonical installer links and version/checksum information when those bundles are available.
+The canonical installer links and version/checksum information will appear here after publication. No download URL is published until it points to the final verified artifact.
+
+### External ChemApp packages
+
+An `ExternalChemApp` installer is an advanced/developer package. It contains no ChemApp DLLs and asks for an existing licensed runtime with matching Excel bitness. It is not the normal controlled PyroSearch package.
 
 !!! warning
     Do not use an unofficial copy of a PyroApp bundle or ChemApp native library. ChemApp licensing and protected datafile permissions still apply.

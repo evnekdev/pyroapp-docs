@@ -26,15 +26,20 @@ That is expected: current SET functions modify the canonical DAT file at the pat
 
 ## Local CA_CALCULATE cannot load ChemApp
 
-Common causes include an unavailable licensed library, an invalid `pyroapp.runtime.json` path, or a 32/64-bit native mismatch. Run **PyroApp diagnostic** from the Start menu, or set `PYROAPP_CHEMAPP_HOME` to the existing licensed runtime folder containing `chemapp_00.dll`. PyroApp loads ChemApp in an isolated worker rather than Excel, so do not register ChemApp DLLs in Excel.
+Run **PyroApp diagnostic** from the Start menu first. It reports whether the installed package expects a **bundled** or **external** runtime and validates the architecture.
+
+- **Bundled runtime expected:** `pyroapp.runtime.json` must identify `bundled`, and `chemapp_00.dll` must exist under the installed PyroApp `ChemApp` directory. Do not set `PYROAPP_CHEMAPP_HOME` to try to redirect a bundled package.
+- **External runtime expected:** configure `PYROAPP_CHEMAPP_HOME` or `pyroapp.runtime.json` with the existing licensed runtime folder containing `chemapp_00.dll`.
+
+In both modes, the worker and ChemApp DLLs must match the Excel bitness. PyroApp loads ChemApp in an isolated worker rather than Excel, so do not register ChemApp DLLs in Excel.
 
 ## The installer says Excel bitness does not match
 
 Open **File → Account → About Excel** and use the installer with the same bitness. Windows bitness is not the deciding factor; Excel's bitness is.
 
-## The installer cannot find ChemApp
+## The external installer cannot find ChemApp
 
-Browse to the existing licensed runtime directory containing `chemapp_00.dll`. PyroApp does not include, download, or redistribute proprietary ChemApp files. Contact the ChemApp supplier if you do not have a compatible runtime and licence.
+This applies only to an `ExternalChemApp` installer. Browse to the existing licensed runtime directory containing `chemapp_00.dll`. Contact the ChemApp supplier if you do not have a compatible runtime and licence. A bundled installer does not show this page; it still requires a valid ChemApp licence to calculate.
 
 ## The installer says that .NET Desktop Runtime is required
 

@@ -20,18 +20,22 @@ In Excel, open **File → Account → About Excel** to check the installed bitne
 
 Use the `PyroApp-<version>-x64-Setup.exe` or `PyroApp-<version>-x86-Setup.exe` package that matches Excel. The wizard installs per user under `%LOCALAPPDATA%\PyroApp\x64` or `%LOCALAPPDATA%\PyroApp\x86`; administrator rights are not required.
 
-The wizard:
+For the normal bundled installer, the wizard:
 
 1. detects the installed Excel executable and verifies bitness;
 2. checks for the matching Microsoft .NET Desktop Runtime 8.x and explains the prerequisite before changing the machine;
-3. asks for an existing licensed ChemApp runtime folder containing `chemapp_00.dll` and verifies its bitness;
-4. records that runtime path in `pyroapp.runtime.json`;
+3. installs its matched ChemApp runtime under the PyroApp installation;
+4. records the fixed bundled runtime location in `pyroapp.runtime.json`;
 5. offers to register the XLL for the detected Excel installation (selected by default); and
 6. adds documentation and diagnostic shortcuts.
 
-PyroApp does not redistribute ChemApp, ChemSage databases, licences, or dongles. Obtain and maintain those directly under the applicable vendor terms. The installer supports upgrade and repair by rerunning the matching package. Uninstall removes only its registration and installed product files; it does not remove ChemApp or unrelated user data, and it never terminates Excel.
+The bundled package does not grant or replace a ChemApp licence, dongle, or protected datafile entitlement. It is distributed only under the applicable ChemApp/GTT licence and organizational authorization. The installer supports upgrade and repair by rerunning the matching package. Uninstall removes only its registration and installed product files; it does not remove another ChemApp installation or unrelated user data, and it never terminates Excel.
 
-Run **PyroApp diagnostic** from the Start menu if the runtime location changes. The same menu and the PyroApp Ribbon provide **Migrate legacy workbook**, which creates a separate macro-free `.xlsx` file and preserves the original `.xlsm`.
+Run **PyroApp diagnostic** from the Start menu if a runtime problem is reported. The same menu and the PyroApp Ribbon provide **Migrate legacy workbook**, which creates a separate macro-free `.xlsx` file and preserves the original `.xlsm`.
+
+### External ChemApp/developer installer
+
+`PyroApp-<version>-<architecture>-ExternalChemApp-Setup.exe` is an advanced package that contains no ChemApp DLLs. Its wizard asks for an existing licensed ChemApp runtime folder containing `chemapp_00.dll` and verifies its bitness before writing the external runtime path to `pyroapp.runtime.json`. Use it only when an externally managed ChemApp installation is intentional.
 
 !!! note "Microsoft .NET Desktop Runtime"
     The packed XLL requires the matching Microsoft .NET Desktop Runtime 8.x.
@@ -41,7 +45,7 @@ Run **PyroApp diagnostic** from the Start menu if the runtime location changes. 
 
 ## Portable ZIP
 
-The portable ZIP contains the same architecture-specific XLL, worker, DAT ABI DLL, `RELEASE-MANIFEST.json`, checksum information, and `README-FIRST.txt`. Extract the entire folder to a stable location, configure `PYROAPP_CHEMAPP_HOME` or `pyroapp.runtime.json`, then load the packed XLL manually.
+The portable ZIP contains the same architecture-specific XLL, worker, DAT ABI DLL, `RELEASE-MANIFEST.json`, checksum information, and `README-FIRST.txt`. Extract the entire folder to a stable location and load the packed XLL manually. A bundled portable package keeps its `ChemApp` directory intact and uses that directory; an external package requires `PYROAPP_CHEMAPP_HOME` or `pyroapp.runtime.json` to identify the existing runtime.
 
 ## Manual XLL registration
 
@@ -71,7 +75,7 @@ See [Runtime transport controls](runtime-transports.md) and [Remote gRPC calcula
 
 ## ChemApp licence and data
 
-PyroApp does not grant or replace a ChemApp licence. A local calculation package needs access to a compatible licensed ChemApp runtime. A remote user needs authorization to the configured PyroApp/ChemApp server.
+PyroApp does not grant or replace a ChemApp licence. A local bundled package uses the matching runtime shipped under controlled authorization; an external local package needs a separately installed compatible licensed runtime. A remote user needs authorization to the configured PyroApp/ChemApp server.
 
 ## Current download model
 

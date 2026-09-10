@@ -14,9 +14,19 @@ Returns `IPC` or `gRPC` according to the active process configuration.
 
 Use the **PyroApp** Ribbon tab's **Connection** group. Choose **Local (IPC)** or **Remote (gRPC)**; for remote mode enter the `http://` or `https://` server address, use **Test Connection**, then choose **Apply**.
 
-Local IPC uses the licensed ChemApp worker on the same computer as Excel. Remote gRPC sends `XLL_CA_CALCULATE` work to the selected server.
+Local IPC uses the ChemApp worker on the same computer as Excel. It can use either the fixed runtime from a controlled bundled PyroApp installation or an explicitly configured external runtime. Remote gRPC sends `XLL_CA_CALCULATE` work to the selected server.
 
 The setting applies to the whole Excel/PyroApp process, is saved per user in `%LOCALAPPDATA%\PyroApp\settings.json`, and never changes a workbook. Applying a new destination changes the asynchronous execution identity of subsequent runtime formulas.
+
+## Transport and runtime packaging are independent
+
+Transport answers where calculation work runs; packaging answers where a local worker finds ChemApp. They are separate choices:
+
+| Calculation path | Local ChemApp requirement |
+|---|---|
+| Local IPC + bundled package | The worker uses the installed PyroApp `ChemApp` directory. Environment/PATH discovery is not used. |
+| Local IPC + external package | The worker uses the configured licensed external runtime. |
+| Remote gRPC | The remote server provides ChemApp; a local ChemApp runtime is not required for that calculation path. |
 
 ## Compatibility formulas
 
