@@ -1,6 +1,6 @@
 # XLL_PD_ERROR_TABLE
 
-**Status:** optimization/reporting interface retained; **current PyroApp 2 backend in development**.
+**Status:** implemented optimization/reporting helper.
 
 Builds a compact residual-statistics table for categories of experimental/target points, comparing two residual vectors.
 
@@ -15,6 +15,3 @@ The legacy result summarizes quantities such as point count, mean/RMS error, min
 ## Returns
 
 A table whose first column contains category labels and remaining columns contain statistics.
-
-!!! warning
-    The current PyroApp 2 backend remains incomplete. Treat the documented shape as a compatibility target until the implementation is marked stable.

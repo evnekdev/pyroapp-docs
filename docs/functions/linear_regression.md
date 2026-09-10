@@ -1,6 +1,6 @@
 # XLL_LINEAR_REGRESSION
 
-**Status:** continuous-optimization interface retained; **current PyroApp 2 backend in development**.
+**Status:** implemented continuous-optimization helper.
 
 The legacy function calculates parameter corrections from a derivative matrix using a weighted linear approximation. It is intended for iterative thermodynamic assessment workflows.
 
@@ -19,6 +19,3 @@ The legacy function calculates parameter corrections from a derivative matrix us
 ## Returns
 
 A parameter-correction vector according to the legacy optimization convention.
-
-!!! warning
-    The current Rust backend is not yet production-complete. Keep legacy optimization workbooks on a validated implementation until parity testing is finished.

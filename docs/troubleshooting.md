@@ -26,7 +26,25 @@ That is expected: current SET functions modify the canonical DAT file at the pat
 
 ## Local CA_CALCULATE cannot load ChemApp
 
-Common causes include an unavailable licensed library, incorrect worker/DLL configuration, or a 32/64-bit native mismatch. PyroApp loads ChemApp in the worker process rather than Excel, so inspect the worker/runtime package rather than registering the DLL in Excel.
+Common causes include an unavailable licensed library, an invalid `pyroapp.runtime.json` path, or a 32/64-bit native mismatch. Run **PyroAppRS diagnostic** from the Start menu, or set `PYROAPP_CHEMAPP_HOME` to the existing licensed runtime folder containing `chemapp_00.dll`. PyroApp loads ChemApp in an isolated worker rather than Excel, so do not register ChemApp DLLs in Excel.
+
+## The installer says Excel bitness does not match
+
+Open **File → Account → About Excel** and use the installer with the same bitness. Windows bitness is not the deciding factor; Excel's bitness is.
+
+## The installer cannot find ChemApp
+
+Browse to the existing licensed runtime directory containing `chemapp_00.dll`. PyroAppRS does not include, download, or redistribute proprietary ChemApp files. Contact the ChemApp supplier if you do not have a compatible runtime and licence.
+
+## The installer says that .NET Desktop Runtime is required
+
+Install Microsoft .NET Desktop Runtime 8.x matching the PyroAppRS/Excel
+architecture, then rerun the installer. A developer SDK, Visual Studio, Cargo,
+or a source checkout is not required.
+
+## A worker remains after Excel closed
+
+Workers are owned by the XLL and also monitor the Excel process. If a process persists, record the PyroAppRS version, diagnostic output, and process ID before ending it, then report it as a defect. Do not delete the installed folder while Excel is running.
 
 ## A remote calculation cannot connect
 

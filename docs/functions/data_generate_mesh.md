@@ -1,10 +1,10 @@
 # XLL_DATA_GENERATE_MESH
 
-**Status:** interface retained; **PyroApp 2 backend currently in development**.
+**Status:** implemented data utility.
 
 The legacy function generates a uniform composition mesh for a chosen number of active and total components.
 
-## Intended syntax
+## Syntax
 
 ```excel
 =XLL_DATA_GENERATE_MESH(nintervals,nactive,ntotal)
@@ -19,6 +19,3 @@ The legacy function generates a uniform composition mesh for a chosen number of 
 ## Returns
 
 A matrix of composition-grid points.
-
-!!! warning
-    The Excel surface exists, but the current PyroApp 2 backend remains incomplete. Use an explicit worksheet/grid generator for production work until this function is marked stable.

@@ -80,11 +80,11 @@ SET functions atomically modify the DAT file at the supplied path.
 ## Data manipulation
 
 - [`XLL_DATA_CHANGE_BASIS`](functions/data_change_basis.md) — stable
-- [`XLL_DATA_REPEAT`](functions/data_repeat.md) — backend in development
-- [`XLL_DATA_GENERATE_MESH`](functions/data_generate_mesh.md) — backend in development
+- [`XLL_DATA_REPEAT`](functions/data_repeat.md) — implemented
+- [`XLL_DATA_GENERATE_MESH`](functions/data_generate_mesh.md) — implemented
 
 ## Continuous optimization
 
-- [`XLL_LINEAR_REGRESSION`](functions/linear_regression.md) — backend in development
-- [`XLL_BEST_COMBINATION`](functions/best_combination.md) — backend in development
-- [`XLL_PD_ERROR_TABLE`](functions/pd_error_table.md) — backend in development
+- [`XLL_LINEAR_REGRESSION`](functions/linear_regression.md) — implemented
+- [`XLL_BEST_COMBINATION`](functions/best_combination.md) — implemented
+- [`XLL_PD_ERROR_TABLE`](functions/pd_error_table.md) — implemented

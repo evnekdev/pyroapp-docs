@@ -1,6 +1,6 @@
 # XLL_BEST_COMBINATION
 
-**Status:** optimization interface retained; **current PyroApp 2 backend in development**.
+**Status:** implemented optimization helper.
 
 Searches combinations of adjustable parameters and identifies the subset that performs best under the legacy linear-regression objective.
 
@@ -17,6 +17,3 @@ Searches combinations of adjustable parameters and identifies the subset that pe
 An integer vector identifying the selected parameter combination.
 
 The search can be combinatorial; use it only on a deliberately limited candidate set.
-
-!!! warning
-    The PyroApp 2 backend is still incomplete. This page documents the migration interface, not a claim of production readiness.

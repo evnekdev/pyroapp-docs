@@ -128,6 +128,7 @@ nav:
           - CA_LIST_CONSTITUENTS: functions/ca_list_constituents.md
           - CA_LIST_INTERACTIONS_G: functions/ca_list_interactions_g.md
           - CA_LIST_INTERACTIONS_M: functions/ca_list_interactions_m.md
+          - XLL_INTERACTIONS_SYSTEM_COUNT: functions/interactions_system_count.md
       - Get DAT parameters:
           - CA_GET_COMPONENT_WEIGHTS: functions/ca_get_component_weights.md
           - CA_GET_COMPONENT_STOICHIOMETRY: functions/ca_get_component_stoichiometry.md

@@ -36,7 +36,11 @@ SET operations are transactional and replace the specified DAT file atomically a
 
 ## Local IPC calculation path
 
-With IPC selected, the XLL communicates with one separate local worker. The worker owns the ChemApp native state and receives the original local datafile path. Excel never loads ChemApp directly.
+With IPC selected, the XLL communicates with a bounded per-Excel pool of one to six separate workers. A lease gives one formula call one sequential ChemApp context; requests in the same worker never overlap, while independent Excel formulas can use different workers concurrently. The worker executable and selected ChemApp runtime match the Excel/XLL architecture. Excel never loads ChemApp directly.
+
+The installer records the existing licensed runtime in `pyroapp.runtime.json`; managed deployments may instead set `PYROAPP_CHEMAPP_HOME`. The product does not package or redistribute ChemApp libraries, datafiles, licences, or dongles.
+
+On Excel shutdown the XLL stops owned workers. Each worker also monitors the Excel process ID and exits if Excel disappears after a crash, so a local server process is not left running.
 
 ## Remote gRPC calculation path
 
@@ -50,4 +54,4 @@ Changing the calculation transport does **not** redirect DAT GET/SET operations.
 
 ## Uneven calculation times
 
-Individual equilibrium rows can take very different amounts of time. The architecture is designed for dynamic work assignment on a server rather than fixed equal row partitions, while preserving original output row order. Order-dependent controls such as the legacy `USEFORNEXT` option are therefore rejected by the current calculation planner.
+Individual equilibrium rows can take very different amounts of time. Dynamic row assignment is deferred future server work; this release sends one complete `CA_CALCULATE` table to one worker and never statically partitions it. Current local IPC schedules independent **formula requests**, not rows inside one table. Order-dependent controls such as the legacy `USEFORNEXT` option and experimental `FORMATION1` are rejected by the current calculation planner.
