@@ -37,6 +37,14 @@ A **condition** constrains an equilibrium calculation: temperature, pressure, in
 
 An **output property** is a value read after equilibrium: temperature, phase amount, composition, activity, enthalpy, Gibbs energy, number of stable phases, an error code, etc.
 
+## Three-row header convention
+
+`XLL_CA_CALCULATE` input and output headers always contain three rows: code, phase, and constituent/component. When the phase or constituent/component field does not apply, the documented default is the **empty string** `""`, never a genuinely empty cell. For manually authored cells, `=""` is a convenient way to produce this value.
+
+This convention is deliberate: a header with no physically empty cells behaves as one contiguous Excel table and is easier to select, copy, resize, filter, and manipulate reliably.
+
+This rule applies to the phase and constituent/component **header rows**. It does not change the separate meaning of missing values in calculation-data rows, where a blank data cell can mean that a condition is not applied for that calculation point.
+
 ## Entered, dormant and eliminated phases
 
 ChemApp phase selection controls whether a phase is available to the equilibrium solver:
