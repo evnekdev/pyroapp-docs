@@ -26,10 +26,12 @@ Both input and output headers use the same shape:
 | Header row | Meaning |
 |---|---|
 | 1 | condition/property code, optionally followed by units, e.g. `T, [C]` |
-| 2 | phase name when the property is phase-specific |
-| 3 | phase constituent or system component when needed |
+| 2 | phase name when phase-specific; otherwise the empty string `""` |
+| 3 | phase constituent or system component when needed; otherwise the empty string `""` |
 
-Blank phase/constituent cells are meaningful: they indicate a system-wide or component-level property depending on the code.
+The phase and constituent/component header rows should **never use genuinely empty cells as defaults**. When a field does not apply, its value is `""`. For a manually authored Excel cell, `=""` produces that empty-string value.
+
+This convention keeps the three-row header fully populated as a contiguous table, which makes it much easier to select, copy, resize, filter, and manipulate in Excel.
 
 ## Example layout
 
