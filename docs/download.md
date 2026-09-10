@@ -9,11 +9,24 @@ Two IPC client builds are planned for distribution:
 
 A release package must be kept intact because the XLL relies on companion native/runtime files. Do not download only the `.xll` from a package and discard the rest.
 
-## What will be provided
+## Legacy workbook migrator
 
-The release workflow is being finalized. Approved packages will be published through a controlled download location once the x86/x64 compilation and packaging scripts are complete.
+The **PyroApp Workbook Migrator 0.1.0** is available separately and is intended for users moving old PyroApp workbooks to PyroApp 2.
 
-This page will contain the canonical release links and version/checksum information when those bundles are available.
+[Download PyroApp Workbook Migrator 0.1.0](https://drive.google.com/file/d/1-14HHP9mFK8V7T9mCoNW9-E_40U9XJ43/view?usp=drivesdk){ .md-button .md-button--primary }
+
+The migrator runs locally on Windows and uses the installed desktop Microsoft Excel application. It converts legacy `.xlsm` workbooks to macro-free `.xlsx`, rewrites recognized legacy PyroApp formulas to their current `XLL_*` equivalents, preserves workbook content through Excel's own serializer, and never overwrites the original workbook.
+
+VBA/macros are intentionally removed because `.xlsx` does not contain a VBA project. If the migrator encounters a legacy PyroApp function for which there is no approved automatic mapping, it stops and reports the exact formula instead of silently producing a partially migrated workbook.
+
+!!! note
+    The migrator download is intended to be publicly accessible. If Google Drive reports that access is restricted, the file owner must set **General access → Anyone with the link → Viewer** in Google Drive. This permission cannot currently be created by the connected Drive automation used to publish the file.
+
+## PyroApp 2 installers
+
+The release workflow is being finalized. Approved PyroApp 2 packages will be published through a controlled download location once the x86/x64 compilation, installer and packaging scripts are complete.
+
+This page will contain the canonical installer links and version/checksum information when those bundles are available.
 
 !!! warning
     Do not use an unofficial copy of a PyroApp bundle or ChemApp native library. ChemApp licensing and protected datafile permissions still apply.
