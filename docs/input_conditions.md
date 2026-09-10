@@ -1,6 +1,8 @@
 # Input conditions for XLL_CA_CALCULATE
 
-Each input column is defined by three header cells: **code**, **phase**, and **constituent/component**. Use blank phase/constituent cells when a code is system-wide.
+Each input column is defined by three header cells: **code**, **phase**, and **constituent/component**. For phase and constituent/component header rows, use an **empty-string value** (`""`) whenever that field does not apply. Do not leave those header cells genuinely blank. For a manually authored Excel cell, `=""` is a convenient way to produce the required empty string.
+
+Keeping every cell in the three-row header populated makes the whole table easy to select, copy, filter, resize, and manipulate as one contiguous Excel range.
 
 ## Native thermodynamic conditions
 
@@ -54,9 +56,9 @@ P, [kPa]
 
 See [System units](system_units.md). Each column is independent and cannot inherit a previous column's non-default unit.
 
-## Blank values
+## Missing condition values in calculation rows
 
-Blank input cells generally mean “do not apply this condition for this row.” Boolean controls should be supplied as Excel TRUE/FALSE values or equivalent recognized text after normalization.
+A genuinely blank **calculation-data** cell generally means “do not apply this condition for this row.” This is distinct from the phase and constituent/component **header rows**, whose not-applicable default is always the empty string `""`, not a genuinely empty cell. Boolean controls should be supplied as Excel TRUE/FALSE values or equivalent recognized text after normalization.
 
 ## Choosing conditions
 
