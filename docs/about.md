@@ -1,14 +1,11 @@
-# About 
+# About PyroApp
 
-PyroApp has been developed by **Dr Evgenii Nekhoroshev**
-(affiliated with Pyrosearch, University of Queensland).
+PyroApp is developed by Evgenii (Eugene) Nekhoroshev in the Pyrosearch / University of Queensland research-software context.
 
-The continuous optimization method (*optimization* routines) have been developed by:
-  
-  - **Dr Evgenii Nekhoroshev**
-  - **Prof. Eugene Jak**
+Its goal is to make rigorous thermodynamic calculations accessible from ordinary engineering spreadsheets while retaining the flexibility of a programmable ChemApp workflow.
 
-### Contact
+PyroApp 2 is built around Microsoft Excel, Excel-DNA/C#, Rust, ChemSage/ChemApp datafiles, `chemsage-parser`, and isolated ChemApp worker processes.
 
-  - Email: <evgnekhoroshev@gmail.com>
+The documentation site is maintained in the public `evnekdev/pyroapp-docs` repository and is intended to serve both as a learning guide and as the reference linked from Excel function help.
 
+For ChemApp licensing, protected datafile permissions, and official ChemApp documentation, consult GTT-Technologies and the supplier of the thermodynamic database you use.

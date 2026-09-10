@@ -1,31 +1,31 @@
-# Legacy PyroApp (PyroApp 1.0)
+# PyroApp 1.x installation (legacy)
 
-The old version of PyroApp was written in Python and used xlwings module to connect to Excel. Internally, xlwings generates custom VBA code in each Excel spreadsheet with matching function signatures and marshals code execution to a Python server.
+PyroApp 1.x was the Python/xlwings implementation. It is retained for historical workbooks and as a behavioral reference for the PyroApp 2 port.
 
-## PyroApp 1.0 installation guide
+A legacy installation requires a compatible Python environment, the PyroApp Python package and its dependencies, xlwings Excel integration, and a compatible licensed ChemApp/ChemApp-proxy setup. Some historical deployments also used an `xlwings.conf` worksheet to identify the Python interpreter and runtime paths.
 
-If you have access to the code repository at [PyroApp 1.0 source code](https://github.com/evnekdev/pyroapp), you can clone into the repository using 
+## Should I install 1.x?
 
-```cmd
-git clone https://github.com/evnekdev/pyroapp.git
-``` 
+For a new workbook, use PyroApp 2. It has native Excel-DNA registration, dynamic-array integration, asynchronous execution and isolated Rust/ChemApp workers without requiring a user-managed Python runtime.
 
-and then build a wheel using poetry tool in Python toolchain.
+Install 1.x only when you need to reproduce or maintain an existing workbook whose formulas/macros depend on the Python version.
 
-## PyroApp 1.0 dependencies
+## Formula migration
 
-PyroApp 1.0 depends on other modules written by the author.
+Legacy formulas commonly used names such as:
 
-[TODO]
-
-## Poetry Tool Installation
-
-[Poetry](https://python-poetry.org/) is used for dependency management and virtual environment handling in Python projects.
-
-### Install Poetry
-
-#### Windows
-
-```cmd
-pip install poetry
+```text
+CA_LIST_PHASES
+CA_GET_COMPOUND_H298
+CA_CALCULATE
 ```
+
+PyroApp 2 registers the current Excel versions with an `XLL_` prefix:
+
+```text
+XLL_CA_LIST_PHASES
+XLL_CA_GET_COMPOUND_H298
+XLL_CA_CALCULATE
+```
+
+Do not run both implementations in the same workbook without a deliberate migration plan.

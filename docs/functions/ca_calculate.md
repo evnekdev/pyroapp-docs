@@ -1,38 +1,76 @@
-# CA_CALCULATE
+# XLL_CA_CALCULATE
 
-## Description
-
-The main function in PyroApp, it takes input conditions in table format and returns the a table of corresponding results.
+`XLL_CA_CALCULATE` is PyroApp's main equilibrium function. One formula describes a complete table of ChemApp calculations and returns one output row for every input row.
 
 ## Syntax
 
 ```excel
-=CA_CALCULATE(datafile, input_header, input, output_header, [entered], [update_token])
+=XLL_CA_CALCULATE(datafile,input_header,input,output_header,[entered],[update_token])
 ```
 
 ## Arguments
 
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile      | Absolute or relative filepath to a ChemSage datafile (.dat/.cst) |
-  | input_header  | A 3xi block of *input conditions*. For details on available input conditions, please refer to [Input Header Options](../../input_conditions). |
-  | input         | A nxi block of input condition values for each row out of n calculations. |
-  | output_header | A 3xo block of *output properties*. For details on available output properties, please refer to [Output Properties](../../output_properties). |
-  | entered       | TODO |
-  | update_token  | A special argument (optional), can be any value and does not affect the outcome of the calculation; if changed, forces Excel to recalculate the formula. This argument is useful in cases when the datafile is changed/updated outside of Excel and Excel is not aware of the changes to make recalculation by itself. |
+| Argument | Meaning |
+|---|---|
+| `datafile` | Absolute or workbook-relative ChemApp datafile path. DAT/CST/BIN calculation formats are supported according to the configured ChemApp runtime. |
+| `input_header` | `3 × N` block describing the N input condition columns. |
+| `input` | `R × N` block: R calculation points using the columns described by `input_header`. |
+| `output_header` | `3 × M` block describing the M requested output columns. |
+| `entered` | Optional phase-selection block. See **Phase selection** below. |
+| `update_token` | Optional arbitrary dependency value used to force recalculation when an external file changes. |
 
-### Entry of input conditions
+## The three-row header
 
-[TODO]
+Both input and output headers use the same shape:
 
-### Query of output properties
+| Header row | Meaning |
+|---|---|
+| 1 | condition/property code, optionally followed by units, e.g. `T, [C]` |
+| 2 | phase name when the property is phase-specific |
+| 3 | phase constituent or system component when needed |
 
-[TODO]
+Blank phase/constituent cells are meaningful: they indicate a system-wide or component-level property depending on the code.
 
-## Returns
+## Example layout
 
-[TODO]
+Suppose `B1` contains the datafile path. The input header is `B4:E6`, input points are `B7:E106`, and the output header is `G4:J6`:
 
-## Underlying ChemApp routines
+```excel
+=XLL_CA_CALCULATE($B$1,B4:E6,B7:E106,G4:J6)
+```
 
-[TODO]
+The result spills as a `100 × 4` matrix.
+
+See [First equilibrium](../tutorials/first-equilibrium.md) for a complete example and [Input conditions](../input_conditions.md) / [Output properties](../output_properties.md) for the code tables.
+
+## Phase selection
+
+The optional `entered` argument supplies a base phase selection.
+
+- A one-row range containing phase names marks those phases entered.
+- A two-or-more-row range can pair phase names with status prefixes `EN`, `D`, or `EL` for entered, dormant, or eliminated status.
+
+Row-local `ENTERED`, `DORMANT` and `ELIMINATED` input columns are applied after the base selection, so they can vary the selection from point to point.
+
+## Target calculations
+
+A target condition asks ChemApp to solve for a variable rather than simply evaluate a fixed T/P state. Target-triggering inputs include `A`, `CP`, `H`, `S`, `G`, `V`, `AT`, `XP`, `XPT`, `FORMATION`, and `PRECIPITATION`.
+
+The default target variable is temperature. `VARIABLE` can select `T`, `P`, `V`, `IA`, or `IA0` where appropriate. Search limits can be supplied using `TLOW`/`THIGH`, `PLOW`/`PHIGH`, or `VLOW`/`VHIGH`.
+
+## Row independence
+
+Current PyroApp rejects the legacy `USEFORNEXT` control. It would make a row depend on whichever row executed immediately before it, which is incompatible with reliable dynamic scheduling of independent points.
+
+## Errors
+
+Malformed headers or unknown names fail the formula. Some native ChemApp calculation errors are treated as point-level failures so other rows can continue. Add an `ERROR` output column to retrieve the current row's native error code; a successful row reports `0`.
+
+`NSTABLE` counts phases whose activity is strictly greater than `0.9999`.
+
+## Transport behavior
+
+- **IPC:** the local worker opens the original client path.
+- **gRPC:** PyroApp synchronizes the exact datafile version to the server cache, then the server schedules ChemApp work.
+
+This is the only normal PyroApp datafile operation that uploads a file to the remote server.

@@ -2,29 +2,36 @@ name: Deploy docs
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: pyroapp-docs-pages
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.12"
+          cache: pip
 
-      - name: Install MkDocs
+      - name: Install documentation dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs mkdocs-material mkdocs-glightbox pymdown-extensions
+          python -m pip install -r requirements-docs.txt
 
-      - name: Build and deploy
-        run: mkdocs gh-deploy --force
+      - name: Validate documentation
+        run: python -m mkdocs build --strict
+
+      - name: Deploy to GitHub Pages branch
+        run: python -m mkdocs gh-deploy --force

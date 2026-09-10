@@ -1,31 +1,41 @@
 # PyroApp
 
-PyroApp is a custom software developed by Dr Evgenii Nekhoroshev at Pyrosearch, University of Queensland.
+**PyroApp brings ChemApp thermodynamic calculations and ChemSage datafile tools into Microsoft Excel.** It is designed for engineers and researchers who want spreadsheet-native thermodynamic workflows without writing a ChemApp program for every calculation.
 
-Its primary purpose is to make complex thermochemical calculations available in Excel spreadsheets with minimum setup requirements and no programming knowledge.
+PyroApp 2 is an Excel-DNA add-in with a C# Excel front end and Rust backends. It has two deliberately separate jobs:
 
-## Pre-existing software
+- **Read and edit open `.DAT` datafiles locally.** LIST, GET and SET functions use a pure Rust datafile library beside the XLL. They do not load ChemApp and do not upload the datafile.
+- **Run equilibrium calculations through ChemApp.** `XLL_CA_CALCULATE` can use a local isolated ChemApp worker through IPC, or a remote PyroApp server through gRPC.
 
-The existing software, such as FactSage, makes it possible to export its calculations to Excel, but the calculations are rather lengthly and require a lot of manual setup to make every export work.
+```mermaid
+graph LR
+    E[Excel / PyroApp XLL]
+    D[Local DAT library]
+    W[Local ChemApp worker]
+    S[Remote PyroApp server]
+    P[ChemApp worker pool]
+    E -->|LIST / GET / SET| D
+    E -->|CA_CALCULATE, IPC| W
+    E -->|CA_CALCULATE, gRPC| S
+    S --> P
+```
 
-ChemApp is another professional solution for complex thermochemical equilibria; however, it does not have a graphical interface and an engineer is faced with a high learning curve requiring knowledge of programming languages (C/C++, Fortran, Python).
-## PyroApp benefits
+## Start here
 
-PyroApp offers the flexibility of ChemApp, but wraps it inside custom Excel functions so the user does not have to interact with ChemApp directly.
+1. Read [Install PyroApp 2](installation-2.0.md).
+2. Work through the [Quickstart](quickstart.md).
+3. Learn the three-row header used by [CA_CALCULATE](functions/ca_calculate.md).
+4. Use the [Function reference](function-reference.md) when building a workbook.
 
-## Legacy version of PyroApp
+!!! note "Function names in PyroApp 2"
+    Current Excel formulas use the `XLL_` prefix, for example `XLL_CA_LIST_PHASES` and `XLL_CA_CALCULATE`. Older PyroApp 1.x workbooks used unprefixed names such as `CA_LIST_PHASES`. This documentation shows the PyroApp 2 Excel names.
 
-The older version of PyroApp, used internally at Pyrosearch, connected to Excel using xlwings AddIn which required a Python installation. Although quite useful, it did not offer complete integration with the Excel environment (function tooltips were not available, for example) and the time spent launching a Python server internally (xlwings hardwired design) made PyroApp execution somewhat slow and prone to automation errors.
+## What you need
 
-## C API and Excel-DNA project
+For local equilibrium calculations you need a ChemApp runtime that is compatible with the PyroApp package and your licence. For remote calculations you need access to a configured PyroApp server. Open-DAT inspection and editing do not need ChemApp because they use the local parser.
 
-Serious professional applications for Excel use so-called Excel C API, which is famous for its blazing speed and full integration with the Excel environment. However, use of raw Excel C API is a daunting task due to inner complexity of Excel programming model and previously was reserved only for proprietaty financial software for investment firms on Wall Street, which require fast response times and reliability.
+PyroApp relies on modern Excel dynamic arrays. Most functions return spill ranges rather than a single scalar.
 
-Recently, an open source project, called [ExcelDna](https://excel-dna.net/) has been developed which greatly simplifies development of custom Excel XLL addins using C API/#NET technology.
+## Safety when editing datafiles
 
-## The current PyroApp edition
-
-The current edition of PyroApp was rewritten using C# as the Excel interfacing language and Rust for backend calculations.
-
-## References
-
+`XLL_CA_SET_*` functions modify the specified `.DAT` file at the same path. Writes are validated and replaced atomically, but thermodynamic parameter changes are still real file changes. Keep source databases under version control or maintain a backup before experimental edits.

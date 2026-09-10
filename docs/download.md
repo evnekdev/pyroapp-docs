@@ -1,22 +1,19 @@
-# DOWNLOADS PAGE
+# Downloads
 
-## Pyrosearch internal downloads
+PyroApp 2 release packages are currently distributed on an **approval-controlled basis** rather than through an anonymous public download.
 
-If you are a member of Pyrosearch, you can download the installers here :
+Two IPC client builds are planned for distribution:
 
-| Windows x86 version | Windows x64 version |
-|---|---|
-| [PYROAPP x86 Installer ](https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PYROAPP-Setup-0.1.0-x86.exe?csf=1&web=1&e=pOw30j) | [PYROAPP x64 Installer ](https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PYROAPP-Setup-0.1.0-x64.exe?csf=1&web=1&e=tfjILQ) |
+- **x64** — for 64-bit Excel / matching local runtime;
+- **x86** — for 32-bit Excel / matching local runtime.
 
+A release package must be kept intact because the XLL relies on companion native/runtime files. Do not download only the `.xll` from a package and discard the rest.
 
-If you have any trouble downloading or installing, please contact me at : <e.nekhoroshev@uq.edu.au>.
+## What will be provided
 
-# Code repositories
+The release workflow is being finalized. Approved packages will be published through a controlled download location once the x86/x64 compilation and packaging scripts are complete.
 
-## PyroApp 1.0 (legacy version) project page (private repository)
+This page will contain the canonical release links and version/checksum information when those bundles are available.
 
-<https://github.com/evnekdev/pyroapp>
-
-## PyroApp 2.0 (current version) project page (private repository)
-
-<https://github.com/evnekdev/pyroapprs>
+!!! warning
+    Do not use an unofficial copy of a PyroApp bundle or ChemApp native library. ChemApp licensing and protected datafile permissions still apply.

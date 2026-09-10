@@ -1,10 +1,21 @@
-site_name : PYROAPP documentation + Wiki
+site_name: PyroApp Documentation
+site_description: Learn and use PyroApp thermodynamic functions in Microsoft Excel.
 site_url: https://evnekdev.github.io/pyroapp-docs/
+repo_url: https://github.com/evnekdev/pyroapp-docs
+repo_name: evnekdev/pyroapp-docs
+edit_uri: edit/master/docs/
 
 plugins:
+  - search
   - glightbox
 
 markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -22,6 +33,21 @@ extra:
     provider: google
     property: G-FE9FXJ05SL
 
+exclude_docs: |
+  additional-information.md
+  chemapp-parallel.md
+  chemapp_rs.md
+  chemapproxy.md
+  composition-conversion.md
+  cpfit-project.md
+  factsage-chemapp-definitions.md
+  factsage-compound-format.md
+  factsage-solution-format.md
+  fsmanager.md
+  liqenginebin.md
+  sqldata.md
+  tutorials/installation.md
+
 theme:
   name: material
   font:
@@ -29,132 +55,58 @@ theme:
     code: Consolas
   palette:
     - scheme: default
+      primary: deep orange
+      accent: deep orange
       toggle:
         icon: material/weather-night
-        name: Dark mode
+        name: Switch to dark mode
     - scheme: slate
+      primary: deep orange
+      accent: orange
       toggle:
         icon: material/weather-sunny
-        name: Light mode
+        name: Switch to light mode
   features:
     - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
-  
-nav:
-  - Home :
-    - Overview : index.md
-    - Installation :
-      - PyroApp 2.0 (current): installation-2.0.md
-      - PyroApp 1.0 (legacy) : installation-1.0.md
-    - Quickstart : quickstart.md
-  
-  - Underlying ChemApp libraries : chemapp.md
-  - Excel AddIns and Excel APIs : excel-api.md
-  - PyroApp architecture :
-    - PyroApp 2.0 (current): pyroapp-architecture-2.0.md
-    - PyroApp 1.0 (legacy) : pyroapp-architecture-1.0.md
-  - ChemApp parallel execution : chemapp-parallel.md
-  - Excel requirements : excel-requirements.md
-  - Download page : download.md
-  
-  - Common definitions : common-definitions.md
-  - Phase models : phase-models.md
-  - FactSage vs ChemApp definitions: factsage-chemapp-definitions.md
-  - Composition conversion and reaction balancing : composition-conversion.md
-  
-  - Functions :
-  
-    - Information (ChemApp, user and dongle info) :
-      - CA_CHEMAPPDLLS: functions/ca_chemappdlls.md
-      - CA_VERSION : functions/ca_version.md
-      - CA_ISLITE : functions/ca_islite.md
-      - CA_USER_ID : functions/ca_user_id.md
-      - CA_LICENSE_HOLDER_NAME : functions/ca_license_holder_name.md
-      - CA_PROGRAM_ID : functions/ca_program_id.md
-      - CA_DONGLE_INFO : functions/ca_dongle_info.md
-      - CA_EXPIRATION_DATE : functions/ca_expiration_date.md
-      - CA_COPYRIGHT : functions/ca_copyright.md
-      - CA_DIMENSIONS_MAX : functions/ca_dimensions_max.md
-      - CA_DIMENSIONS : functions/ca_dimensions.md
-      
-    - List Entities in a Datafile:
-      - CA_LIST_COMPONENTS: functions/ca_list_components.md
-      - CA_LIST_PHASES: functions/ca_list_phases.md
-      - CA_LIST_SOLUTIONS: functions/ca_list_solutions.md
-      - CA_LIST_COMPOUNDS: functions/ca_list_compounds.md
-      - CA_LIST_SPECIES : functions/ca_list_species.md
-      - CA_LIST_CONSTITUENTS : functions/ca_list_constituents.md
-      - CA_LIST_INTERACTIONS_G : functions/ca_list_interactions_g.md
-      - CA_LIST_INTERACTIONS_M : functions/ca_list_interactions_m.md
-    
-    - Get Thermodynamic Properties from a Datafile :
-      - CA_GET_COMPONENT_WEIGHTS : functions/ca_get_component_weights.md
-      - CA_GET_COMPONENT_STOICHIOMETRY : functions/ca_get_component_stoichiometry.md
-      - CA_GET_COMPOUND_WEIGHTS : functions/ca_get_compound_weights.md
-      - CA_GET_CONSTITUENT_WEIGHTS : functions/ca_get_constituent_weights.md
-      - CA_GET_COMPOUND_STOICHIOMETRY : functions/ca_get_compound_stoichiometry.md
-      - CA_GET_CONSTITUENT_STOICHIOMETRY : functions/ca_get_constituent_stoichiometry.md
-      - CA_GET_COMPOUND_H298: functions/ca_get_compound_h298.md
-      - CA_GET_COMPOUND_S298: functions/ca_get_compound_s298.md
-      - CA_GET_CONSTITUENT_H298: functions/ca_get_constituent_h298.md
-      - CA_GET_CONSTITUENT_S298: functions/ca_get_constituent_s298.md
-      - CA_GET_COMPOUND_RANGE_COUNT : functions/ca_get_compound_range_count.md
-      - CA_GET_CONSTITUENT_RANGE_COUNT : functions/ca_get_constituent_range_count.md
-      - CA_GET_COMPOUND_TUPPER : functions/ca_get_compound_tupper.md
-      - CA_GET_CONSTITUENT_TUPPER : functions/ca_get_constituent_tupper.md
-      - CA_GET_COMPOUND_CP : functions/ca_get_compound_cp.md
-      - CA_GET_CONSTITUENT_CP : functions/ca_get_constituent_cp.md
-      - CA_GET_INTERACTION_INDICES : functions/ca_get_interaction_indices.md
-      - CA_GET_INTERACTION_PARAMETERS_G: functions/ca_get_interaction_parameters_g.md
-      - CA_GET_INTERACTION_PARAMETERS_M: functions/ca_get_interaction_parameters_m.md
-      
-    - Set Thermodynamic Properties to a Datafile : 
-      - CA_SET_COMPOUND_H298: functions/ca_set_compound_h298.md
-      - CA_SET_COMPOUND_S298: functions/ca_set_compound_s298.md
-      - CA_SET_CONSTITUENT_H298: functions/ca_set_constituent_h298.md
-      - CA_SET_CONSTITUENT_S298: functions/ca_set_constituent_s298.md
-      - CA_SET_COMPOUND_CP : functions/ca_set_compound_cp.md
-      - CA_SET_CONSTITUENT_CP : functions/ca_set_constituent_cp.md
-      - CA_SET_INTERACTION_PARAMETERS_G : functions/ca_set_interaction_parameters_g.md
-      - CA_SET_INTERACTION_PARAMETERS_M : functions/ca_set_interaction_parameters_m.md
-      
-    - Calculate :
-      - CA_CALCULATE : functions/ca_calculate.md
-      
-    - Optimization :
-      - LINEAR_REGRESSION : functions/linear_regression.md
-      - BEST_COMBINATION : functions/best_combination.md
-      - PD_ERROR_TABLE : functions/pd_error_table.md
-    
-    - Data Manipulation :
-      - DATA_CHANGE_BASIS : functions/data_change_basis.md
-      - DATA_REPEAT : functions/data_repeat.md
-      - DATA_GENERATE_MESH : functions/data_generate_mesh.md
-  
-  - Relevant tables :
-    - Allowed input conditions for CA_CALCULATE(): input_conditions.md
-    - Allowed outputs in CA_CALCULATE(): output_properties.md
-    - System units : system_units.md
-  
-  - Tutorials :
-    - Retrieving ChemApp dongle/user information : tutorials/chemapp-info.md
-    - Working with Datafiles : tutorials/datafiles.md
-    
-  - Additional Information : additional-information.md
-  
-  
-  - Other Projects :
-    - FactSage Compound database format and parsing : factsage-compound-format.md
-    - FactSage Solution database format and parsing : factsage-solution-format.md
-    - ChemSage .DAT datafile format and parsing : chemsage-datafile.md
-    - FactSage batch calculations (automated macros with GUI): fsmanager.md
-    - Easy Heat capacity/Heat content fitting for FactSage: cpfit-project.md
-    - Cubic spline liquidus interpolation in binary systems : liqenginebin.md
-    - ChemApp port to Rust: chemapp_rs.md
-    - ChemApp port to Python (free alternative): chemapproxy.md
-    - SQL databases for handling EPMA data: sqldata.md
 
-  - About : about.md
+nav:
+  - Home:
+      - Overview: index.md
+      - Install PyroApp 2: installation-2.0.md
+      - Quickstart: quickstart.md
+      - Downloads: download.md
+  - Learn PyroApp:
+      - Excel and the PyroApp API: excel-api.md
+      - ChemApp and licensing: chemapp.md
+      - Datafiles: chemsage-datafile.md
+      - Common definitions: common-definitions.md
+      - Phase models: phase-models-overview.md
+      - System units: system_units.md
+      - Architecture and transports: pyroapp-architecture-2.0.md
+      - Runtime transport controls: runtime-transports.md
+      - Troubleshooting: troubleshooting.md
+  - CA_CALCULATE:
+      - Guide: functions/ca_calculate.md
+      - Input conditions: input_conditions.md
+      - Output properties: output_properties.md
+      - First equilibrium: tutorials/first-equilibrium.md
+      - Phase selection: tutorials/phase-selection.md
+      - Target calculations: tutorials/target-calculation.md
+      - Remote gRPC calculations: tutorials/remote-grpc.md
+  - DAT workflows:
+      - Working with DAT files: tutorials/datafiles.md
+      - ChemApp runtime information: tutorials/chemapp-info.md
+  - Function reference: function-reference.md
+  - Legacy PyroApp 1.x:
+      - Installation: installation-1.0.md
+      - Architecture: pyroapp-architecture-1.0.md
+  - Related projects: related-projects.md
+  - About: about.md

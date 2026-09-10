@@ -1,19 +1,48 @@
 # Common definitions
 
-## System Component
+These terms appear throughout PyroApp, ChemApp and thermodynamic databases.
+
+## System and system components
+
+A **system** is the chemical domain described by a datafile and the conditions of a calculation. A **system component** is one coordinate of the system composition. Components are often elements, but a database may use compound-like formula units such as `CaO`, `SiO2`, or other independent composition coordinates.
 
 ## Phase
 
-### Mixture phase
+A **phase** is a thermodynamic state that can participate in equilibrium. PyroApp distinguishes two broad classes:
 
-### Stoichiometic phase
+- **solution (mixture) phase** — composition can vary;
+- **stoichiometric compound** — fixed overall composition.
 
-## Sublattice
+## Phase constituent / endmember
 
-## Sublattice species
+A **phase constituent** is a constituent state used to describe a solution phase. In many engineering models these are called **endmembers**. Constituents have standard-state thermodynamic data and a stoichiometry in the system-component basis.
 
-## Interaction parameters
+A stoichiometric compound behaves as its own fixed-composition phase rather than a variable-composition solution.
 
-### Excess Gibbs energy parameters
+## Sublattice and species
 
-### Magnetic Gibbs energy parameters
+Many solution models divide a phase into one or more **sublattices**. A **species** occupies a sublattice. A constituent can represent a valid combination of species across those sublattices. In a one-sublattice model, species and constituent names may coincide.
+
+## Interaction
+
+An **interaction** is a non-ideal model term involving selected species or constituents. Different phase models encode binary, ternary, reciprocal, magnetic and other interactions differently.
+
+PyroApp exposes stable interaction descriptions for selection in GET/SET functions. These descriptions are derived from the DAT model, including multi-digit powers.
+
+## Condition
+
+A **condition** constrains an equilibrium calculation: temperature, pressure, incoming composition, phase amount/activity, target property, and so on. In `XLL_CA_CALCULATE`, each condition occupies one input column defined by a three-row header.
+
+## Property / output
+
+An **output property** is a value read after equilibrium: temperature, phase amount, composition, activity, enthalpy, Gibbs energy, number of stable phases, an error code, etc.
+
+## Entered, dormant and eliminated phases
+
+ChemApp phase selection controls whether a phase is available to the equilibrium solver:
+
+- **entered** — available normally;
+- **dormant** — available for metastable/target behaviour according to ChemApp semantics;
+- **eliminated** — excluded from the active equilibrium calculation.
+
+PyroApp can set a base selection using the optional `entered` table and can change selection row-by-row with `ENTERED`, `DORMANT` and `ELIMINATED` input controls.
