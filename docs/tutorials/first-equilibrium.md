@@ -19,10 +19,10 @@ Create a 3-row header with columns for temperature, pressure and incoming compon
 | | B | C | D | E |
 |---|---|---|---|---|
 | row 1 | `T, [C]` | `P` | `IA` | `IA` |
-| row 2 |  |  |  |  |
-| row 3 |  |  | `A` | `B` |
+| row 2 | `=""` | `=""` | `=""` | `=""` |
+| row 3 | `=""` | `=""` | `A` | `B` |
 
-The third row identifies the system component for the amount columns.
+The third row identifies the system component for the amount columns. Where a phase or constituent/component does not apply, enter `=""` so the cell contains the empty-string value rather than being physically blank. This keeps the three-row header contiguous and easy to select and manipulate.
 
 ## 3. Enter calculation points
 
@@ -35,10 +35,10 @@ For example:
 | | G | H | I |
 |---|---|---|---|
 | row 1 | `T, [C]` | `A` | `A` |
-| row 2 |  | `LIQUID` | `SOLID` |
-| row 3 |  |  |  |
+| row 2 | `=""` | `LIQUID` | `SOLID` |
+| row 3 | `=""` | `=""` | `=""` |
 
-Replace `LIQUID` and `SOLID` with real phase names from `XLL_CA_LIST_PHASES`.
+Replace `LIQUID` and `SOLID` with real phase names from `XLL_CA_LIST_PHASES`. Do not leave unused phase or constituent/component header cells physically empty; use `=""`.
 
 ## 5. Calculate
 
