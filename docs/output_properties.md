@@ -1,6 +1,6 @@
 # Output properties for XLL_CA_CALCULATE
 
-Output columns use the same three-row header format as inputs: property code, phase, and constituent/component. When the phase or constituent/component field does not apply, use the **empty string** `""`; do not leave the corresponding header cell genuinely blank. For a manually authored Excel cell, `=""` produces the required empty-string value.
+Output columns use the same three-row header format as inputs: property code, phase, and constituent/component. When the phase or constituent/component field does not apply, write `=""`; do not leave the corresponding header cell genuinely blank. The formula evaluates to the required runtime empty string `""`.
 
 This keeps the complete output header contiguous and easy to select, copy, resize, filter, and manipulate as a table.
 

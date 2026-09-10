@@ -11,7 +11,7 @@ A release package must be kept intact because the XLL relies on companion native
 
 ## Legacy workbook migrator
 
-The **PyroApp Workbook Migrator 0.2.0** is available separately and is intended for users moving old PyroApp workbooks to PyroApp 2.
+The **PyroApp Workbook Migrator 0.2.0** is available separately and is intended for users moving old PyroApp workbooks to PyroApp 2. Its release package is built from the source-controlled `tools/workbook-migrator` tool in the PyroAppRS repository.
 
 [Download PyroApp Workbook Migrator 0.2.0](https://drive.google.com/file/d/1-14HHP9mFK8V7T9mCoNW9-E_40U9XJ43/view?usp=drivesdk){ .md-button .md-button--primary }
 

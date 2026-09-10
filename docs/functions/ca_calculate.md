@@ -13,9 +13,9 @@
 | Argument | Meaning |
 |---|---|
 | `datafile` | Absolute or workbook-relative ChemApp datafile path. DAT/CST/BIN calculation formats are supported according to the configured ChemApp runtime. |
-| `input_header` | `3 × N` block describing the N input condition columns. |
+| `input_header` | `3 × N` block: code/unit, phase, constituent/component. Use `=""` for unused phase/component cells. |
 | `input` | `R × N` block: R calculation points using the columns described by `input_header`. |
-| `output_header` | `3 × M` block describing the M requested output columns. |
+| `output_header` | `3 × M` block: code/unit, phase, constituent/component. Use `=""` for unused phase/component cells. |
 | `entered` | Optional phase-selection block. See **Phase selection** below. |
 | `update_token` | Optional arbitrary dependency value used to force recalculation when an external file changes. |
 
@@ -26,10 +26,10 @@ Both input and output headers use the same shape:
 | Header row | Meaning |
 |---|---|
 | 1 | condition/property code, optionally followed by units, e.g. `T, [C]` |
-| 2 | phase name when phase-specific; otherwise the empty string `""` |
-| 3 | phase constituent or system component when needed; otherwise the empty string `""` |
+| 2 | phase name when phase-specific; otherwise the default value `""` (enter `=""` in a worksheet cell) |
+| 3 | phase constituent or system component when needed; otherwise the default value `""` (enter `=""` in a worksheet cell) |
 
-The phase and constituent/component header rows should **never use genuinely empty cells as defaults**. When a field does not apply, its value is `""`. For a manually authored Excel cell, `=""` produces that empty-string value.
+The phase and constituent/component header rows should **never use genuinely empty cells as defaults**. When a field does not apply, the worksheet cell must contain `=""`, which evaluates to the runtime value `""`.
 
 This convention keeps the three-row header fully populated as a contiguous table, which makes it much easier to select, copy, resize, filter, and manipulate in Excel.
 
