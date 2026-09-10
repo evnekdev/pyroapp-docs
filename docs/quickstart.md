@@ -60,6 +60,8 @@ A calculation uses three blocks:
 - `input`: one row per calculation point;
 - `output_header`: three rows describing each requested output column.
 
+In every `input_header` and `output_header`, rows 2 and 3 are the phase and constituent/component rows. When a field does not apply, use the Excel formula `=""` so the cell evaluates to the empty string. **Do not leave these header cells physically blank.** This keeps the full three-row header contiguous and easy to select, copy, resize, filter, and manipulate.
+
 For example, with a two-component database, an input header might contain temperature, pressure, and two component input amounts. The matching input table can contain hundreds or thousands of rows. One `XLL_CA_CALCULATE` call evaluates the whole table and spills an output matrix.
 
 ```excel
