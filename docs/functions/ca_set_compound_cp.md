@@ -1,40 +1,23 @@
-# CA_SET_COMPOUND_CP
+# XLL_CA_SET_COMPOUND_CP
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Writes new heat capacity values of stoichiometric phases (compounds) to open-file .DAT datafiles (this function does not work with CST files). See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Changes thermochemical coefficients for selected compound ranges.
 
 ## Syntax
 
 ```excel
-=CA_SET_COMPOUND_CP(datafile, compounds, range_indices, value_indices, values, [update_token])
+=XLL_CA_SET_COMPOUND_CP(datafile,phases,range_indices,value_indices,values,[update_token])
 ```
 
-## Arguments
+For every target phase supply one one-based `range_index` and one `value_index`.
 
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile  | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | compounds | An array with compound names. |
-  | range_indices | TODO |
-  | value_indices | TODO |
-  | values    | An array of new H298 values. |
-  | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
+- `value_index = 1..10`: the corresponding row of `values` supplies that public coefficient.
+- `value_index = 0`: the corresponding values row must contain exactly ten coefficients and replaces the full public coefficient vector for that range.
 
 ## Returns
 
-A boolean array with `TRUE` values for each successful row write.
+One Boolean status per phase/edit row.
 
-## Underlying ChemApp routines
-
-The following ChemApp routines are involved :
-
-| **Routine** | **Description** |
-|---|---|
-| TQCDAT | CHANGES-DATA-OF-THERMODYNAMIC-DATA-FILE |
-
-## Related functions
-
-  - [CA_GET_COMPOUND_CP](../ca_get_compound_cp)
-  - [CA_SET_COMPOUND_H298](../ca_set_compound_h298)
-  - [CA_SET_COMPOUND_S298](../ca_set_compound_s298)
+!!! warning
+    The historical `CP` name covers the DAT thermochemical coefficient vector. The physical interpretation depends on the record representation. Inspect the original values and range structure before editing.

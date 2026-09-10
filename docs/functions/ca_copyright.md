@@ -1,32 +1,17 @@
-# CA_COPYRIGHT
+# XLL_CA_COPYRIGHT
 
-## Description 
+**Availability:** stable.
 
-Returns the copyright message for ChemApp.
+Returns the copyright message reported by the selected ChemApp runtime.
 
 ## Syntax
 
 ```excel
-=CA_COPYRIGHT()
+=XLL_CA_COPYRIGHT([update_token])
 ```
-
-## Arguments
-
-This function requires no arguments.
 
 ## Returns
 
-A string value containing the text of the copyright message.
+A text value.
 
-## Underlying ChemApp routine
-
-This function wraps the following ChemApp routine: [TQCPRT](https://gtt-technologies.de/ca-doc/index.html#tqcprt).
-
-## Related functions
-
-  - [CA_VERSION](../ca_version)
-  - [CA_LICENSE_HOLDER_NAME](../ca_license_holder_name)
-  - [CA_EXPIRATION_DATE](../ca_expiration_date)
-  - [CA_DONGLE_INFO](../ca_dongle_info)
-  - [CA_PROGRAM_ID](../ca_program_id)
-  
+This function is informational and does not load or inspect a thermodynamic datafile.

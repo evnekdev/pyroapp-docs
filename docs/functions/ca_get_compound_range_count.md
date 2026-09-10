@@ -1,35 +1,17 @@
-# CA_GET_COMPOUND_RANGE_COUNT
+# XLL_CA_GET_COMPOUND_RANGE_COUNT
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns the number of Gibbs energy/CP ranges for the stoichiometric phases (compounds) in open-file .DAT datafiles (this function does not work with CST files) . See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Returns the number of thermochemical temperature ranges/intervals stored for each selected stoichiometric compound.
 
 ## Syntax
 
 ```excel
-=CA_GET_COMPOUND_RANGE_COUNT(datafile, compounds, [update_token])
+=XLL_CA_GET_COMPOUND_RANGE_COUNT(datafile,phases,[update_token])
 ```
-
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile  | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | compounds | A array with compound names. |
-  | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
 
 ## Returns
 
-An array of integer values for compounds present, NAN? if a compound is not present in the datafile.
+A one-column integer array, one count per phase.
 
-## Underlying ChemApp routines
-
-| **Routine** | **Description** |
-|---|---|
-| TQGDAT | GET-INPUT-THERMODYNAMIC-DATA-OF-PHASE-CONSTITUENT |
-
-## Related functions
-
-  - [CA_GET_CONSTITUENT_RANGE_COUNT](../ca_get_constituent_range_count)
-  - [CA_GET_COMPOUND_CP](../ca_get_compound_cp)
-  
+Use the returned count to validate the one-based `range_indices` supplied to `XLL_CA_GET_COMPOUND_TUPPER`, `XLL_CA_GET_COMPOUND_CP`, or the corresponding SET function.

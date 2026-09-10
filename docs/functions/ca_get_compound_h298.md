@@ -1,41 +1,23 @@
-# CA_GET_COMPOUND_H298
+# XLL_CA_GET_COMPOUND_H298
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns the H298 (standard enthalpy values) for stoichiometric phases (compounds) in open-file .DAT datafiles (this function does not work with CST files) . See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Returns the stored standard enthalpy at 298 K for selected stoichiometric compound phases.
 
 ## Syntax
 
 ```excel
-=CA_GET_COMPOUND_H298(datafile, compounds, [update_token])
+=XLL_CA_GET_COMPOUND_H298(datafile,phases,[update_token])
 ```
-
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile  | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | compounds | An array with compound names. |
-  | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
-
-### Note about Excel execution model
-
-[TODO]
 
 ## Returns
 
-An array of float values for compounds present, NAN if a compound is not present in the datafile.
+One numeric value per requested phase. If the compound exists but its thermochemical representation does not directly contain an H298 value, PyroApp returns `NaN` rather than inventing one from a different representation.
 
-## Underlying ChemApp routines
+## Example
 
-The following ChemApp routines are involved :
+```excel
+=XLL_CA_GET_COMPOUND_H298($B$1,D2:D8)
+```
 
-| **Routine** | **Description** |
-|---|---|
-| TQGDAT | GET-INPUT-THERMODYNAMIC-DATA-OF-PHASE-CONSTITUENT |
-
-## Related functions
-
-  - [CA_GET_COMPOUND_S298](../ca_get_compound_s298)
-  - [CA_GET_COMPOUND_CP](../ca_get_compound_cp)
-  - [CA_GET_CONSTITUENT_H298](../ca_get_constituent_h298)
+This function reads the DAT locally through `chemsage-parser`; it does not call ChemApp `TQGDAT` and does not support CST.

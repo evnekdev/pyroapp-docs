@@ -1,37 +1,17 @@
-# CA_SET_CONSTITUENT_S298
+# XLL_CA_SET_CONSTITUENT_S298
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Writes new S298 values of phase constituents to open-file .DAT datafiles (this function does not work with CST files). See [Phase Constituent Definition](../../common-definitions#phase-constituent) for more details.
+Changes stored S298 values for selected solution-phase constituents/endmembers.
 
 ## Syntax
 
 ```excel
-=CA_SET_CONSTITUENT_S298(datafile, phases, constituents, values, [update_token])
+=XLL_CA_SET_CONSTITUENT_S298(datafile,phases,constituents,values,[update_token])
 ```
-
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile         | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | phases           | An array of phase names.      |
-  | constituents     | An array with compound names. |
-  | values           | An array of new S298 values.  |
-  | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
 
 ## Returns
 
-A boolean array with `TRUE` values for each successful row write.
+A Boolean status array.
 
-## Underlying ChemApp routines
-
-| **Routine** | **Description** |
-|---|---|
-| TQCDAT | CHANGES-DATA-OF-THERMODYNAMIC-DATA-FILE |
-
-## Related functions
-
-  - [CA_GET_CONSTITUENT_S298](../ca_get_constituent_s298)
-  - [CA_SET_CONSTITUENT_H298](../ca_set_constituent_h298)
-  - [CA_SET_CONSTITUENT_CP](../ca_set_constituent_cp)
+Use `XLL_CA_LIST_CONSTITUENTS` to obtain exact constituent names. This is a local parser/editor operation; it does not call ChemApp or upload the DAT.

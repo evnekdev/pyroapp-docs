@@ -1,36 +1,17 @@
-# CA_GET_COMPOUND_WEIGHTS
+# XLL_CA_GET_COMPOUND_WEIGHTS
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns molar masses of stoichiometric phases (compounds). See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Calculates molar masses of selected stoichiometric compound phases from their DAT stoichiometry and component molar masses.
 
 ## Syntax
 
 ```excel
-=CA_GET_COMPOUND_WEIGHTS(datafile, compounds)
+=XLL_CA_GET_COMPOUND_WEIGHTS(datafile,phases,[update_token])
 ```
-
-## Arguments
-
-  |  **Argument** | **Description** |
-  |---|---|
-  | datafile  | Absolute or relative filepath to a ChemSage datafile (both .dat and .cst). |
-  | compounds | An array of compound names. |
-  
 
 ## Returns
 
-An array of float values of WMASS \[g/mol\], NAN for compound names not present in the datafile.
+One numeric molar mass per requested compound. A missing compound returns `NaN`.
 
-## Underlying ChemApp routines
-
-The following routines are involved :
-
-| **Routine** | **Description** |
-|---|---|
-| TQSTPC | GET-STOICHIOMETRY-OF-PHASE-CONSTITUENT |
-
-## Related functions
-
-  - [CA_GET_CONSTITUENT_WEIGHTS](../ca_get_constituent_weights)
-  - [CA_GET_COMPOUND_STOICHIOMETRY](../ca_get_compound_stoichiometry)
+Use `XLL_CA_LIST_COMPOUNDS` to obtain valid names.

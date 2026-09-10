@@ -1,36 +1,17 @@
-# CA_LICENSE_HOLDER_NAME
+# XLL_CA_LICENSE_HOLDER_NAME
 
-## Description
+**Availability:** stable.
 
-Returns the name of the license holder of the ChemApp library.
+Returns the licence-holder name reported by the selected ChemApp runtime.
 
 ## Syntax
 
 ```excel
-=CA_LICENSE_HOLDER_NAME()
+=XLL_CA_LICENSE_HOLDER_NAME([update_token])
 ```
-
-## Arguments
-
-This function requires no arguments.
 
 ## Returns
 
-A string value containing the license holder name.
+A text value.
 
-Example:
-```text
-XXXX
-```
-
-## Underlying ChemApp routine
-
-This function wraps the following ChemApp routine: [TQGTNM](https://gtt-technologies.de/ca-doc/index.html#tqgtnm).
-
-## Related functions
-
-  - [CA_USER_ID](../ca_user_id)
-  - [CA_PROGRAM_ID](../ca_program_id)
-  - [CA_EXPIRATION_DATE](../ca_expiration_date)
-  - [CA_DONGLE_INFO](../ca_dongle_info)
-  - [CA_COPYRIGHT](../ca_copyright)
+Use together with `XLL_CA_USER_ID`, `XLL_CA_DONGLE_INFO`, and `XLL_CA_EXPIRATION_DATE` when diagnosing a protected database or workstation setup.

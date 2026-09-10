@@ -1,24 +1,25 @@
-# CA_CHEMAPPDLLS
+# XLL_CA_CHEMAPPDLLS
 
+**Availability:** stable runtime diagnostic.
 
-## Description
-
-Returns a list of full paths to the ChemApp libraries shipped together with PYROAPP which are used for calculations. Typically, these *DLL* binaries are located at [TODO] and, if needed, can be replaced with custom versions of ChemApp, if names are kept the same.
+Returns the ChemApp native-library paths/specifications visible to the selected runtime implementation.
 
 ## Syntax
 
 ```excel
-=CA_CHEMAPPDLLS()
+=XLL_CA_CHEMAPPDLLS([update_token])
 ```
 
 ## Returns
 
-A dynamic array (1D column) with full paths to the installed ChemApp libraries. (TODO multiple threads)
+A one-column dynamic array of library paths or loader specifications.
+
+## Example
 
 ```excel
-TODO
+=XLL_CA_CHEMAPPDLLS()
 ```
 
-## Underlying ChemApp routine
+This is mainly a configuration/troubleshooting function. Do not edit, rename, or replace licensed native libraries simply to change this output. Local IPC and remote gRPC can describe different runtime environments.
 
-This function is PYROAPP-only; it does not have an equivalent in ChemApp.
+See [ChemApp and licensing](../chemapp.md) and [Runtime transport controls](../runtime-transports.md).

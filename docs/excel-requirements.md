@@ -1,24 +1,27 @@
-# EXCEL REQUIREMENTS
+# Excel requirements
 
-PyroApp widely uses dynamic arrays in Excel which were added to MS Office 365 Suite; it has been thoroughly tested using this version and it is therefore most desirable. To learn more about dynamic arrays, visit [Excel Dynamic Arrays](https://support.microsoft.com/en-au/office/guidelines-and-examples-of-array-formulas-7d94a64e-3ff3-4686-9372-ecfd5caa57c7).
+PyroApp 2 runs in **desktop Microsoft Excel for Windows** through an Excel-DNA XLL add-in.
 
-## Desktop vs online Excel
+## Required Excel capabilities
 
-PyroApp heavily depends on two factors : locally installed ChemApp libraries which require a dongle key for activation and also either VBA or Excel C API. All these features are only available in Desktop Excel.
+Use a current Microsoft 365 / desktop Excel version with dynamic arrays. PyroApp frequently returns vectors and matrices as spill ranges, so modern dynamic-array behavior is part of the normal interface.
 
-## Platform requirements
+Excel for the web cannot load a native XLL and therefore cannot run PyroApp 2.
 
-Custom Excel functions in xlwings (PyroApp 1.0) are supported only on Windows, and, apparently, on MacOS (although the author did not test it). Excel C API (XLL SDK) in PyroApp 2.0 is available only on Desktop Windows Excel distributions.
+## 32-bit and 64-bit Excel
 
-To read more about xlwings, please refer to the official use guide [xlwings in Excel](https://www.xlwings.org/).
+PyroApp distributions are architecture-specific at the Excel/XLL boundary. Use the package matching the bitness reported by **File → Account → About Excel**.
 
-Excel C API description can be found at the official Microsoft source [Excel C API](https://learn.microsoft.com/en-us/office/client-developer/excel/programming-with-the-c-api-in-excel). The most detailed practical guide was written by S. Dalton [[1]](#references).
+The companion open-DAT library is built in both x86 and x64 forms, and PyroApp selects the one matching the Excel process. Local ChemApp execution occurs in a separate worker, but the released worker/native runtime combination must also be prepared with compatible architecture.
 
-## 64bit vs 32bit Excel
+Do not mix a 64-bit worker with a 32-bit-only ChemApp DLL or vice versa.
 
-Both PyroApp 1.0 and PyroApp 2.0 run ChemApp code using client/server model (the first one executes code using a local Python server, the latter employs IPC - Interprocess Communication). Therefore, both versions of PyroApp are not sensitive to the bitness of the hosting Excel application.
+## Workbook format
 
+PyroApp 2 itself does not require an `.xlsm` workbook merely to call XLL functions. Use `.xlsx` unless your workbook separately contains VBA/macros that require `.xlsm`.
 
-## Bibliography
+## Network access
 
-1. Dalton, S. (2007). *Financial Applications Using Excel Add-in Development in C/C++*. Wiley.
+Remote gRPC calculation requires connectivity to the configured PyroApp server address/port. Open-DAT LIST/GET/SET functions remain local and do not require server access.
+
+See [Install PyroApp 2](installation-2.0.md) and [Architecture and transports](pyroapp-architecture-2.0.md).

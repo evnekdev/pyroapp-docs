@@ -1,35 +1,19 @@
-# CA_LIST_CONSTITUENTS
+# XLL_CA_LIST_CONSTITUENTS
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns the list of available phase constituents for the given phases, optionally subject to chemical system constraints. [TODO] make a link to the phase constituent definition.
+Lists phase constituents/endmembers for one or more solution phases.
 
 ## Syntax
 
 ```excel
-=CA_LIST_CONSTITUENTS(datafile, phases, [system])
+=XLL_CA_LIST_CONSTITUENTS(datafile,phases,[system],[update_token])
 ```
 
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile | Absolute or relative filepath to a ChemSage datafile (.dat/.cst) |
-  | phases | An array of phase names, phase constituents are listed sequentially for all unique phase entries. |
-  | \[system\] | An optional argument indicating the chemical system of the returned instances. Example: 'Ca-Si-O', 'Na2O-Al2O3-SiO2' |
+`system` optionally filters constituents by chemical basis. Results for multiple phases are appended sequentially.
 
 ## Returns
 
-An array of string values corresponding to phase constituent names.
+A one-column dynamic array of constituent names.
 
-## Underlying ChemApp routines
-
-[TODO]
-
-## Related functions
-
-  - [CA_LIST_COMPONENTS](../ca_list_components)
-  - [CA_LIST_PHASES](../ca_list_phases)
-  - [CA_LIST_SOLUTIONS](../ca_list_solutions)
-  - [CA_LIST_COMPOUNDS](../ca_list_compounds)
-  - [CA_LIST_SPECIES](../ca_list_species)
+Use these exact names in constituent-addressed GET functions or in `XLL_CA_CALCULATE` header row 3.

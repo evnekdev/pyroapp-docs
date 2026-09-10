@@ -1,39 +1,22 @@
-# CA_SET_COMPOUND_H298
+# XLL_CA_SET_COMPOUND_H298
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Writes new H298 values of stoichiometric phases (compounds) to open-file .DAT datafiles (this function does not work with CST files). See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Changes the stored H298 value for selected stoichiometric compounds.
 
 ## Syntax
 
 ```excel
-=CA_SET_COMPOUND_H298(datafile, compounds, values, [update_token])
+=XLL_CA_SET_COMPOUND_H298(datafile,phases,values,[update_token])
 ```
 
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile  | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | compounds | An array with compound names. |
-  | values    | An array of new H298 values. |
-  | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
+`phases` and `values` must describe corresponding targets.
 
 ## Returns
 
-A boolean array with `TRUE` values for each successful row write.
+A Boolean status array, one value per requested edit.
 
-## Underlying ChemApp routines
+!!! warning "This edits the DAT file"
+    The canonical file at `datafile` is replaced atomically after parsing, semantic validation and serialization succeed. Keep a backup or use version control before changing thermodynamic parameters.
 
-The following ChemApp routines are involved :
-
-| **Routine** | **Description** |
-|---|---|
-| TQCDAT | CHANGES-DATA-OF-THERMODYNAMIC-DATA-FILE |
-
-## Related functions
-
-  - [CA_GET_COMPOUND_H298](../ca_get_compound_h298)
-  - [CA_SET_COMPOUND_S298](../ca_set_compound_s298)
-  - [CA_SET_COMPOUND_CP](../ca_set_compound_cp8)
-  
+The function is local even when gRPC calculation transport is selected.

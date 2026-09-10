@@ -1,44 +1,17 @@
-# CA_GET_COMPOUND_S298
+# XLL_CA_GET_COMPOUND_S298
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns the S298 (standard entropy values) for stoichiometric phases (compounds) in open-file .DAT datafiles (this function does not work with CST files) . See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Returns the stored standard entropy at 298 K for selected stoichiometric compounds.
 
 ## Syntax
 
 ```excel
-=CA_GET_COMPOUND_S298(datafile, compounds, [update_token])
+=XLL_CA_GET_COMPOUND_S298(datafile,phases,[update_token])
 ```
-
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile  | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | compounds | A array with compound names. |
-  | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
-
-### Note about Excel execution model
-
-[TODO]
 
 ## Returns
 
-An array of float values for compounds present, NAN if a phase is not present in the datafile.
+One numeric value per requested phase. `NaN` indicates that the requested value is not directly available from the compound's stored thermochemical representation.
 
-## Underlying ChemApp routines
-
-The following ChemApp routines are involved :
-
-| **Routine** | **Description** |
-|---|---|
-| TQGDAT | GET-INPUT-THERMODYNAMIC-DATA-OF-PHASE-CONSTITUENT |
-
-## Related functions
-
-  - [CA_GET_COMPOUND_H298](../ca_get_compound_h298)
-  - [CA_GET_COMPOUND_CP](../ca_get_compound_cp)
-  - [CA_GET_CONSTITUENT_H298](../ca_get_constituent_h298)
-  - [CA_GET_CONSTITUENT_S298](../ca_get_constituent_s298)
-  - [CA_GET_CONSTITUENT_CP](../ca_get_constituent_cp)
-  
+Use [`XLL_CA_GET_COMPOUND_H298`](ca_get_compound_h298.md), [`XLL_CA_GET_COMPOUND_RANGE_COUNT`](ca_get_compound_range_count.md), and [`XLL_CA_GET_COMPOUND_CP`](ca_get_compound_cp.md) for the related standard-state fields.

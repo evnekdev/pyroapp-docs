@@ -1,39 +1,25 @@
-# CA_LIST_PHASES
+# XLL_CA_LIST_PHASES
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns the list of available phases in a datafile, optionally subject to chemical system constraints. [TODO] make a link to the phase definition.
+Lists both solution phases and stoichiometric compounds in the DAT file.
 
 ## Syntax
 
 ```excel
-=CA_LIST_PHASES(datafile,[system])
+=XLL_CA_LIST_PHASES(datafile,[system],[update_token])
 ```
 
-## Arguments
+| Argument | Meaning |
+|---|---|
+| `datafile` | Open `.DAT` path. |
+| `system` | Optional chemical-system filter such as `Ca-Si-O` or `Na2O-Al2O3-SiO2`. |
+| `update_token` | Optional recalculation dependency. |
 
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile   | Absolute or relative filepath to a ChemSage datafile (.dat/.cst) |
-  | \[system\] | An optional argument indicating the chemical system of the returned instances. Example: 'Ca-Si-O', 'Na2O-Al2O3-SiO2' |
+The system filter keeps phases whose declared stoichiometry can be represented inside the supplied chemical basis. Leave it blank to list all phases.
 
 ## Returns
 
-An array of string values corresponding to phase names. [TODO] - add optional model names?
+A one-column spill range of phase names.
 
-## Underlying ChemApp routines
-
-The following ChemApp routines are involved :
-
-| **Routine** | **Description** |
-|---|---|
-| [TQNOP](https://gtt-technologies.de/ca-doc/index.html#tqnop) | Get the total number of phases. |
-| [TQGNP](https://gtt-technologies.de/ca-doc/index.html#tqgnsc) | Get name of a phase. |
-
-## Related functions
-
-  - [CA_LIST_COMPONENTS](../ca_list_components)
-  - [CA_LIST_SOLUTIONS](../ca_list_solutions)
-  - [CA_LIST_COMPOUNDS](../ca_list_compounds)
-  - [CA_LIST_SPECIES](../ca_list_species)
-  - [CA_LIST_CONSTITUENTS](../ca_list_constituents)
+See [Common definitions](../common-definitions.md).

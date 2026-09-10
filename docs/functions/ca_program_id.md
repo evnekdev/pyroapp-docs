@@ -1,37 +1,15 @@
-# CA_PROGRAM_ID
+# XLL_CA_PROGRAM_ID
 
-## Description
+**Availability:** stable.
 
-Returns the ID of the program.
+Returns the program identifier reported by the selected ChemApp runtime.
 
 ## Syntax
 
 ```excel
-=CA_PROGRAM_ID()
+=XLL_CA_PROGRAM_ID([update_token])
 ```
-
-## Arguments
-
-This function requires no arguments.
 
 ## Returns
 
-A short string value.
-
-Example:
-
-```text
-XXXX
-```
-
-## Underlying ChemApp routine
-
-This function wraps the following ChemApp routine: [TQGTPI](https://gtt-technologies.de/ca-doc/index.html#tqgtpi).
-
-## Related functions
-
-  - [CA_VERSION](../ca_version)
-  - [CA_LICENSE_HOLDER_NAME](../ca_license_holder_name)
-  - [CA_EXPIRATION_DATE](../ca_expiration_date)
-  - [CA_DONGLE_INFO](../ca_dongle_info)
-  - [CA_COPYRIGHT](../ca_copyright)
+A text value suitable for runtime diagnostics.

@@ -1,31 +1,23 @@
-# CA_EXPIRATION_DATE
+# XLL_CA_EXPIRATION_DATE
 
-## Description
+**Availability:** stable.
 
-Returns the expiration date of the ChemApp license. To renew an old license, please contact GTT-Technologies.
+Returns the licence expiration information reported by the selected ChemApp runtime.
 
 ## Syntax
 
 ```excel
-=CA_EXPIRATION_DATE()
+=XLL_CA_EXPIRATION_DATE([update_token])
 ```
-
-## Arguments
-
-This function requires no arguments.
 
 ## Returns
 
-[TODO] single value or a pair?
+A horizontal two-cell array: **month** and **year**.
 
-## Underlying ChemApp routine
+## Example
 
-This function wraps the following ChemApp routine: [TQGTED](https://gtt-technologies.de/ca-doc/index.html#tqgted).
+```excel
+=XLL_CA_EXPIRATION_DATE()
+```
 
-## Related functions
-
-  - [CA_VERSION](../ca_version)
-  - [CA_LICENSE_HOLDER_NAME](../ca_license_holder_name)
-  - [CA_PROGRAM_ID](../ca_program_id)
-  - [CA_DONGLE_INFO](../ca_dongle_info)
-  - [CA_COPYRIGHT](../ca_copyright)
+The meaning of a particular returned date is controlled by the ChemApp licence/provider, not by PyroApp.

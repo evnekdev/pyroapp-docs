@@ -1,31 +1,23 @@
-# CA_DONGLE_INFO
+# XLL_CA_DONGLE_INFO
 
-## Description
+**Availability:** stable.
 
-Retrieves the HASP dongle type and ID.
+Returns information reported for the ChemApp licence dongle/runtime entitlement.
 
 ## Syntax
 
 ```excel
-=CA_DONGLE_INFO()
+=XLL_CA_DONGLE_INFO([update_token])
 ```
-
-## Arguments
-
-This function requires no arguments.
 
 ## Returns
 
-Two values, a string value containing the HASP dongle type and an integer HASP dongle id.
+A horizontal two-cell array containing the reported dongle name/description and dongle identifier.
 
-## Underlying ChemApp routine
+## Example
 
-This function wraps the following ChemApp routine: [TQGTHI](https://gtt-technologies.de/ca-doc/index.html#tqgthi).
+```excel
+=XLL_CA_DONGLE_INFO()
+```
 
-## Related functions
-
-  - [CA_VERSION](../ca_version)
-  - [CA_LICENSE_HOLDER_NAME](../ca_license_holder_name)
-  - [CA_EXPIRATION_DATE](../ca_expiration_date)
-  - [CA_PROGRAM_ID](../ca_program_id)
-  - [CA_COPYRIGHT](../ca_copyright)
+The exact text depends on the installed/licensed ChemApp runtime.

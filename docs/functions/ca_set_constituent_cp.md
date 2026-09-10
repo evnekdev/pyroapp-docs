@@ -1,41 +1,19 @@
-# CA_SET_CONSTITUENT_CP
+# XLL_CA_SET_CONSTITUENT_CP
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Writes new heat capacity values of stoichiometric phases (compounds) to open-file .DAT datafiles (this function does not work with CST files). See [Phase Constituent Definition](../../common-definitions#phase-constituent) for more details.
+Changes thermochemical coefficients for solution-phase constituents.
 
 ## Syntax
 
 ```excel
-=CA_SET_CONSTITUENT_CP(datafile, phases, constituents, range_indices, value_indices, values, [update_token])
+=XLL_CA_SET_CONSTITUENT_CP(datafile,phases,constituents,range_indices,value_indices,values,[update_token])
 ```
 
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile         | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | phases           | An array of phase names. |
-  | constituents     | An array of phase constituent names. |
-  | range_indices    | TODO |
-  | value_indices    | TODO |
-  | values           | An array of new H298 values. |
-  | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
+Each target has a paired phase, constituent, one-based range index and coefficient index. `value_index = 1..10` edits one public coefficient; `0` requires a complete ten-value row.
 
 ## Returns
 
-A boolean array with `TRUE` values for each successful row write.
+A Boolean status array.
 
-## Underlying ChemApp routines
-
-The following ChemApp routines are involved :
-
-| **Routine** | **Description** |
-|---|---|
-| TQCDAT | CHANGES-DATA-OF-THERMODYNAMIC-DATA-FILE |
-
-## Related functions
-
-  - [CA_GET_CONSTITUENT_CP](../ca_get_constituent_cp)
-  - [CA_SET_CONSTITUENT_H298](../ca_set_constituent_h298)
-  - [CA_SET_CONSTITUENT_S298](../ca_set_constituent_s298)
+The edit is semantic and transactional; PyroApp does not patch DAT text by position.

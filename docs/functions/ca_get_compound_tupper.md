@@ -1,36 +1,19 @@
-# CA_GET_COMPOUND_TUPPER
+# XLL_CA_GET_COMPOUND_TUPPER
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns the upper temperature limits for G/CP ranges of stoichiometric compounds. See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Returns the upper temperature associated with a selected thermochemical range for each compound.
 
 ## Syntax
 
 ```excel
-=CA_GET_COMPOUND_TUPPER(datafile, compounds, range_indices, [update_token])
+=XLL_CA_GET_COMPOUND_TUPPER(datafile,phases,ranges,[update_token])
 ```
 
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile         | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | compounds        | A array with compound names. |
-  | range_indices    | TODO |
-  | \[update_token\] | An optional parameter to forcefully trigger Excel execution. |
+`ranges` contains **one-based** range indices corresponding to the requested phases.
 
 ## Returns
 
-An array of float values for stoichiometric compounds present, NAN if a compound is not present in the datafile.
+One upper-temperature value per phase/range pair.
 
-## Underlying ChemApp routines
-
-| **Routine** | **Description** |
-|---|---|
-| TQGDAT | GET-INPUT-THERMODYNAMIC-DATA-OF-PHASE-CONSTITUENT |
-
-## Related functions
-
-  - [CA_GET_COMPOUND_RANGE_COUNT](../ca_get_compound_range_count)
-  - [CA_GET_COMPOUND_CP](../ca_get_compound_cp)
-  - [CA_GET_CONSTITUENT_TUPPER](../ca_get_constituent_tupper)
+Use `XLL_CA_GET_COMPOUND_RANGE_COUNT` first when the valid range count is not known.

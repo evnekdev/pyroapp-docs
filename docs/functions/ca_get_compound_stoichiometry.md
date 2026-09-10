@@ -1,33 +1,15 @@
-# CA_GET_COMPOUND_STOICHIOMETRY
+# XLL_CA_GET_COMPOUND_STOICHIOMETRY
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns a stoichiometry matrix of stoichiometric phases (compounds). See [Compound Definition](../../common-definitions#stoichiometric-phase) for more details.
+Returns selected compound compositions in the DAT system-component basis.
 
 ## Syntax
 
 ```excel
-=CA_GET_COMPOUND_STOICHIOMETRY(datafile, compounds)
+=XLL_CA_GET_COMPOUND_STOICHIOMETRY(datafile,phases,[update_token])
 ```
-
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile  | Absolute or relative filepath to a ChemSage datafile (both .dat and .cst). |
-  | compounds | An array of compound names. |
 
 ## Returns
 
-A stoichiometry matrix for the compounds in the input, NAN for compounds not present in the datafile.
-
-## Underlying ChemApp routines
-
-| **Routine** | **Description** |
-|---|---|
-| TQSTPC | GET-STOICHIOMETRY-OF-PHASE-CONSTITUENT |
-
-## Related functions
-
-  - [CA_GET_CONSTITUENT_STOICHIOMETRY](../ca_get_constituent_stoichiometry)
-  - [CA_GET_COMPOUND_WEIGHTS](../ca_get_compound_weights)
+A matrix with one row per requested compound and one column per system component, in the same component order returned by `XLL_CA_LIST_COMPONENTS`. A missing compound yields a `NaN` row.

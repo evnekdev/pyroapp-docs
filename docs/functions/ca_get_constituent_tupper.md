@@ -1,37 +1,17 @@
-# CA_GET_CONSTITUENT_TUPPER
+# XLL_CA_GET_CONSTITUENT_TUPPER
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns the upper temperature limits for G/CP ranges of phase constituents. See [Phase Constituent Definition](../../common-definitions#phase-constituent) for more details.
+Returns the upper temperature associated with a selected thermochemical range for each phase constituent.
 
 ## Syntax
 
 ```excel
-=CA_GET_CONSTITUENT_TUPPER(datafile, phases, constituents, range_indices, [update_token])
+=XLL_CA_GET_CONSTITUENT_TUPPER(datafile,phases,constituents,ranges,[update_token])
 ```
 
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile            | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | phases              | An array with phase names. |
-  | constituents        | An array with phase constituent names. |
-  | range_indices       | TODO |
-  | \[update_token\]    | An optional parameter to forcefully trigger Excel execution. |
+`phases`, `constituents`, and `ranges` describe corresponding targets; range indices are **one-based**.
 
 ## Returns
 
-An array of float values for phase constituents present, NAN if a phase constituent is not present in the datafile.
-
-## Underlying ChemApp routines
-
-| **Routine** | **Description** |
-|---|---|
-| TQGDAT | GET-INPUT-THERMODYNAMIC-DATA-OF-PHASE-CONSTITUENT |
-
-## Related functions
-
-  - [CA_GET_CONSTITUENT_RANGE_COUNT](../ca_get_constituent_range_count)
-  - [CA_GET_CONSTITUENT_CP](../ca_get_constituent_cp)
-  - [CA_GET_COMPOUND_TUPPER](../ca_get_compound_tupper)
+One upper-temperature value per target.

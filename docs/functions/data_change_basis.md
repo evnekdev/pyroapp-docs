@@ -1,31 +1,26 @@
-# DATA_CHANGE_BASIS
+# XLL_DATA_CHANGE_BASIS
 
-## Description
+**Availability:** stable utility in the current PyroApp 2 interface.
 
-TODO
+Converts composition rows from one independent chemical-formula basis to another, optionally converting between mole and mass bases and optionally normalizing the result.
 
 ## Syntax
 
 ```excel
-=DATA_CHANGE_BASIS(formulas_initial, formulas_final, compositions_initial, is_initial_weight, is_final_weight, normalize_results)
+=XLL_DATA_CHANGE_BASIS(basis_initial,basis_final,data_initial,[isweight_initial],[isweight_final],[is_fraction])
 ```
 
-## Arguments
+| Argument | Meaning |
+|---|---|
+| `basis_initial` | Formula units describing columns of `data_initial`. |
+| `basis_final` | Desired output formula basis. |
+| `data_initial` | Rows of compositions/amounts. |
+| `isweight_initial` | TRUE if the input values are a mass/weight basis; default FALSE. |
+| `isweight_final` | TRUE for a mass/weight output basis; default FALSE. |
+| `is_fraction` | TRUE to normalize each output row to sum to one; default FALSE. |
 
-  | **Argument** | **Description** |
-  |---|---|
-  | formulas_initial     | TODO |
-  | formulas_final       | TODO |
-  | compositions_initial | TODO |
-  | is_initial_weight    | TODO |
-  | is_final_weight      | TODO |
-  | normalize_results    | TODO |
-  
+## Returns
 
-## Retuns
+A composition matrix in `basis_final` order.
 
-A matrix of compositions in the basis of ```formulas_final```.
-
-Examples :
-
-[TODO]
+Example bases can contain formula units such as `CaO`, `SiO2`, `FeO`, or elements, provided the transformation is chemically well-defined.

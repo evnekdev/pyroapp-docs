@@ -1,38 +1,23 @@
-# CA_LIST_COMPONENTS
+# XLL_CA_LIST_COMPONENTS
 
-## Description
+**Availability:** stable, open-DAT only.
 
-Returns the list of available system components in a datafile. [TODO] make a link to the system component definition.
+Lists the system components declared by a ChemSage/ChemApp DAT file, in datafile order.
 
 ## Syntax
 
 ```excel
-=CA_LIST_COMPONENTS(datafile)
+=XLL_CA_LIST_COMPONENTS(datafile,[update_token])
 ```
-
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile | Absolute or relative filepath to a ChemSage datafile (.dat/.cst) |
 
 ## Returns
 
-An array of string values corresponding to system component names.
+A one-column dynamic array of component names.
 
-## Underlying ChemApp routines
+## Example
 
-The following ChemApp routines are involved :
+```excel
+=XLL_CA_LIST_COMPONENTS($B$1)
+```
 
-| **Routine** | **Description** |
-|---|---|
-| [TQNOSC](https://gtt-technologies.de/ca-doc/index.html#tqnosc) | Get the total number of system components. |
-| [TQGNSC](https://gtt-technologies.de/ca-doc/index.html#tqgnsc) | Get name of a system component. |
-
-## Related functions
-
-  - [CA_LIST_PHASES](../ca_list_phases)
-  - [CA_LIST_SOLUTIONS](../ca_list_solutions)
-  - [CA_LIST_COMPOUNDS](../ca_list_compounds)
-  - [CA_LIST_SPECIES](../ca_list_species)
-  - [CA_LIST_CONSTITUENTS](../ca_list_constituents)
+Use the returned spelling when constructing `IA`, `XP`, or other component-addressed `XLL_CA_CALCULATE` headers. This function parses the DAT locally and never uploads the file.

@@ -1,38 +1,17 @@
-# CA_USER_ID
+# XLL_CA_USER_ID
 
-## Description
+**Availability:** stable.
 
-Returns the ChemApp user ID associated with the active license.
+Returns the user identifier reported by the selected ChemApp runtime/licence environment.
 
 ## Syntax
 
 ```excel
-=CA_USER_ID()
+=XLL_CA_USER_ID([update_token])
 ```
-
-## Arguments
-
-This function requires no arguments.
 
 ## Returns
 
-A short string containing the user ID.
+A text value.
 
-Example:
-
-```text
-XXXX
-```
-
-## Underlying ChemApp routine
-
-This function wraps the ChemApp routine: [TQGTID](https://gtt-technologies.de/ca-doc/index.html#tqgtid)
-
-## Related functions
-
-  - [CA_LICENSE_HOLDER_NAME](../ca_license_holder_name)
-  - [CA_PROGRAM_ID](../ca_program_id)
-  - [CA_EXPIRATION_DATE](../ca_expiration_date)
-  - [CA_DONGLE_INFO](../ca_dongle_info)
-  - [CA_COPYRIGHT](../ca_copyright)
-  
+This value can matter when a protected CST database is licensed to a particular ChemApp/FactSage user environment. PyroApp does not alter or bypass that restriction.

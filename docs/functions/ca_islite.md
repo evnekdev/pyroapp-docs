@@ -1,32 +1,23 @@
-# CA_ISLITE
+# XLL_CA_ISLITE
 
-## Description
+**Availability:** stable.
 
-Full ChemApp version requires to purchase a license; however, for demonstration purposes, GTT Technologies release a *light* version with limited capabilities (up to 3 system components only, no target calculations, etc). CA_ISLITE returns *true* if the current ChemApp is *light*.
-
-To see the full list of *light* version limitations, please visit [TQLITE Routine Manual](https://gtt-technologies.de/ca-doc/index.html#tqlite).
-For all purchase enquiries, please refer to the official distributor of ChemApp software at [GTT-Technologies](https://gtt-technologies.de/software/chemapp/)
+Reports whether the selected ChemApp runtime identifies itself as a Lite/demo-capability library.
 
 ## Syntax
 
 ```excel
-=CA_ISLITE()
+=XLL_CA_ISLITE([update_token])
 ```
-
-## Arguments
-
-This function requires no arguments.
 
 ## Returns
 
-A boolean number (*TRUE* for *light* limited version).
+`TRUE` or `FALSE`.
 
-## Underlying ChemApp routine
+## Example
 
-This function wraps the ChemApp routine: [TQLITE](https://gtt-technologies.de/ca-doc/index.html#tqlite).
+```excel
+=XLL_CA_ISLITE()
+```
 
-## Related functions
-
-  - [CA_VERSION](../ca_version)
-  
-  
+This is a runtime property, not a property of a DAT file.

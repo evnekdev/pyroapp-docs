@@ -1,31 +1,17 @@
-# CA_GET_CONSTITUENT_CP
+# XLL_CA_GET_CONSTITUENT_CP
 
-## Description
+**Availability:** stable, open-DAT only.
+
+Reads thermochemical coefficient data for selected solution-phase constituents.
 
 ## Syntax
 
 ```excel
-=CA_GET_CONSTITUENT_CP(datafile, phases, constituents, range_indices, value_indices, [update_token])
+=XLL_CA_GET_CONSTITUENT_CP(datafile,phases,constituents,range_indices,value_indices,[update_token])
 ```
 
-## Arguments
-
-  | **Argument** | **Description** |
-  |---|---|
-  | datafile            | Absolute or relative filepath to a ChemSage datafile in open format (.dat) |
-  | phases              | An array with phase names.             |
-  | constituents        | An array with phase constituent names. |
-  | range_indices       | TODO |
-  | value_indices       | TODO |
-  | \[update_token\]    | An optional parameter to forcefully trigger Excel execution. |
+`phases` and `constituents` identify paired targets. `range_indices` are one-based. A `value_index` of `1..10` selects one public coefficient; `0` returns the full ten-coefficient display vector for that target/range.
 
 ## Returns
 
-## Underlying ChemApp routines
-
-| **Routine** | **Description** |
-|---|---|
-| TQGDAT | GET-INPUT-THERMODYNAMIC-DATA-OF-PHASE-CONSTITUENT |
-
-## Related functions
-
+A numeric matrix. `NaN` can appear where a requested coefficient is not structurally available from the stored representation.
