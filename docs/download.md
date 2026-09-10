@@ -11,13 +11,15 @@ A release package must be kept intact because the XLL relies on companion native
 
 ## Legacy workbook migrator
 
-The **PyroApp Workbook Migrator 0.1.0** is available separately and is intended for users moving old PyroApp workbooks to PyroApp 2.
+The **PyroApp Workbook Migrator 0.2.0** is available separately and is intended for users moving old PyroApp workbooks to PyroApp 2.
 
-[Download PyroApp Workbook Migrator 0.1.0](https://drive.google.com/file/d/1-14HHP9mFK8V7T9mCoNW9-E_40U9XJ43/view?usp=drivesdk){ .md-button .md-button--primary }
+[Download PyroApp Workbook Migrator 0.2.0](https://drive.google.com/file/d/1-14HHP9mFK8V7T9mCoNW9-E_40U9XJ43/view?usp=drivesdk){ .md-button .md-button--primary }
 
 The migrator runs locally on Windows and uses the installed desktop Microsoft Excel application. It converts legacy `.xlsm` workbooks to macro-free `.xlsx`, rewrites recognized legacy PyroApp formulas to their current `XLL_*` equivalents, preserves workbook content through Excel's own serializer, and never overwrites the original workbook.
 
-VBA/macros are intentionally removed because `.xlsx` does not contain a VBA project. If the migrator encounters a legacy PyroApp function for which there is no approved automatic mapping, it stops and reports the exact formula instead of silently producing a partially migrated workbook.
+During migration it also enforces the PyroApp 2 three-row-header convention: physically empty cells in the **phase** and **constituent/component** rows of referenced `CA_CALCULATE` input/output headers are replaced with `=""`. The cell therefore evaluates to the empty string but remains populated, keeping the header contiguous and easy to select and manipulate.
+
+VBA/macros are intentionally removed because `.xlsx` does not contain a VBA project. If the migrator encounters a legacy PyroApp function or a `CA_CALCULATE` header reference for which there is no approved safe automatic migration, it stops and reports the exact location instead of silently producing a partially migrated workbook.
 
 !!! note
     The migrator download is intended to be publicly accessible. If Google Drive reports that access is restricted, the file owner must set **General access → Anyone with the link → Viewer** in Google Drive. This permission cannot currently be created by the connected Drive automation used to publish the file.
