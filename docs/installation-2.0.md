@@ -57,21 +57,13 @@ The x64/x86 release bundle contains architecture-matched local DAT support. The 
 
 ## Local IPC calculations
 
-IPC is the normal same-computer calculation mode. Select it with:
-
-```excel
-=XLL_PYROAPP_USE_IPC()
-```
+IPC is the normal same-computer calculation mode. In the **PyroApp** Ribbon tab, open **Connection**, select **Local (IPC)**, optionally use **Test Connection**, then click **Apply**.
 
 The XLL starts a bounded pool of separate workers on demand. ChemApp is loaded in a worker, not into Excel, which isolates Excel from native-library failures and security mitigations. A worker monitors the Excel process and exits if Excel exits or crashes.
 
 ## Remote gRPC calculations
 
-If you have access to a PyroApp server:
-
-```excel
-=XLL_PYROAPP_USE_GRPC("http://server-name:50051")
-```
+If you have access to a PyroApp server, in the **PyroApp** Ribbon tab choose **Remote (gRPC)**, enter its `http://` or `https://` address, use **Test Connection**, then click **Apply**. The setting is saved for the current Windows user and applies to every workbook open in that Excel process; it does not modify the workbook.
 
 Only `XLL_CA_CALCULATE` sends/synchronizes a datafile to that server. Local DAT LIST/GET/SET operations stay on your computer.
 

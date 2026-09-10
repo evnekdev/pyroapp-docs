@@ -34,6 +34,10 @@ This has three practical consequences:
 
 SET operations are transactional and replace the specified DAT file atomically after validation.
 
+## Connection configuration
+
+The **PyroApp** Ribbon owns the calculation transport for the entire Excel process. It stores a validated Local (IPC) or Remote (gRPC) selection and remote URL in per-user settings, independently of any workbook. A Ribbon change creates a new asynchronous execution identity: work already captured by a formula keeps its original transport and endpoint, while later formulas use the applied setting. Legacy `XLL_PYROAPP_USE_*` formulas remain non-mutating compatibility markers.
+
 ## Local IPC calculation path
 
 With IPC selected, the XLL communicates with a bounded per-Excel pool of one to six separate workers. A lease gives one formula call one sequential ChemApp context; requests in the same worker never overlap, while independent Excel formulas can use different workers concurrently. The worker executable and selected ChemApp runtime match the Excel/XLL architecture. Excel never loads ChemApp directly.

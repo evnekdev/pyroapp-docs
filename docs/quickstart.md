@@ -12,7 +12,7 @@ Enter:
 =XLL_PYROAPP_TRANSPORT()
 ```
 
-A local installation normally reports `IPC` unless you have switched it to gRPC. If it does not, run the installed **PyroAppRS diagnostic** before calculating.
+A local installation normally reports `IPC` unless you have selected a remote server in the **PyroApp** Ribbon tab. If it does not, run the installed **PyroAppRS diagnostic** before calculating.
 
 If ChemApp is available locally, you can also query:
 

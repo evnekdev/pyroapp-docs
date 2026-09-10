@@ -4,9 +4,7 @@ Remote mode lets Excel send `XLL_CA_CALCULATE` jobs to a machine that owns a poo
 
 ## Select the server
 
-```excel
-=XLL_PYROAPP_USE_GRPC("http://server-name:50051")
-```
+In the **PyroApp** Ribbon tab, select **Remote (gRPC)** in **Connection**, enter `http://server-name:50051`, use **Test Connection**, then click **Apply**.
 
 Confirm:
 
@@ -41,10 +39,6 @@ The server queues work onto isolated ChemApp processes. Calculation rows can be 
 
 ## If the server is unreachable
 
-Switch back to local IPC if you have a local licensed runtime:
-
-```excel
-=XLL_PYROAPP_USE_IPC()
-```
+Switch back to **Local (IPC)** in the **PyroApp** Ribbon if you have a local licensed runtime, then click **Apply**.
 
 Otherwise contact the server operator. PyroApp does not automatically route a failed remote request to a different unconfigured server.

@@ -8,25 +8,19 @@ Transport controls select where **ChemApp runtime work**, especially `XLL_CA_CAL
 =XLL_PYROAPP_TRANSPORT()
 ```
 
-Returns `IPC` or `Grpc` according to the active process configuration.
+Returns `IPC` or `gRPC` according to the active process configuration.
 
-## Use local IPC
+## Configure the connection
 
-```excel
-=XLL_PYROAPP_USE_IPC()
-```
+Use the **PyroApp** Ribbon tab's **Connection** group. Choose **Local (IPC)** or **Remote (gRPC)**; for remote mode enter the `http://` or `https://` server address, use **Test Connection**, then choose **Apply**.
 
-Use this when the ChemApp worker and its licensed native library are on the same computer as Excel.
+Local IPC uses the licensed ChemApp worker on the same computer as Excel. Remote gRPC sends `XLL_CA_CALCULATE` work to the selected server.
 
-## Use gRPC
+The setting applies to the whole Excel/PyroApp process, is saved per user in `%LOCALAPPDATA%\PyroApp\settings.json`, and never changes a workbook. Applying a new destination changes the asynchronous execution identity of subsequent runtime formulas.
 
-```excel
-=XLL_PYROAPP_USE_GRPC("http://server-name:50051")
-```
+## Compatibility formulas
 
-The address argument is optional; if omitted, PyroApp uses its configured gRPC address.
-
-## Read or change the gRPC address
+`XLL_PYROAPP_USE_IPC()` and `XLL_PYROAPP_USE_GRPC(...)` remain registered so legacy workbooks open, but they are deprecated and do not change the connection. `XLL_PYROAPP_GRPC_ADDRESS()` returns the configured address; its optional legacy argument is ignored.
 
 Read it:
 
@@ -34,16 +28,8 @@ Read it:
 =XLL_PYROAPP_GRPC_ADDRESS()
 ```
 
-Set it:
-
-```excel
-=XLL_PYROAPP_GRPC_ADDRESS("http://server-name:50051")
-```
-
-Changing the transport or address changes the asynchronous execution identity of subsequent runtime formulas.
-
 !!! note "Scope"
-    These controls configure the current Excel/PyroApp process. They are not thermodynamic conditions and do not alter the contents of a DAT file.
+    The Ribbon configures the current Excel/PyroApp process. It is not a thermodynamic condition and does not alter the contents of a DAT file.
 
 !!! warning "Network access"
     A non-local gRPC endpoint must be configured and authorized by the server operator. Do not expose a PyroApp server to an untrusted network merely by binding it to all interfaces.

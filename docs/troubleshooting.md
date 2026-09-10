@@ -57,6 +57,8 @@ Check:
 
 Verify the server name/port with the operator. The server must be configured to listen on an address reachable from your machine.
 
+To change the endpoint, use **PyroApp → Connection** in the Ribbon, then **Test Connection** and **Apply**. The worksheet compatibility formulas do not change the process-wide connection.
+
 ## Some calculation rows are NaN
 
 Add an `ERROR` column to the output header. Point-level ChemApp failures can allow the rest of the table to continue. Check target limits, phase selection, units and whether the calculation is thermodynamically well constrained.

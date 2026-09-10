@@ -5,9 +5,9 @@ Current PyroApp 2 Excel names use the `XLL_` prefix. Follow the links below for 
 ## Runtime controls
 
 - [`XLL_PYROAPP_TRANSPORT`](runtime-transports.md#show-the-active-transport)
-- [`XLL_PYROAPP_USE_IPC`](runtime-transports.md#use-local-ipc)
-- [`XLL_PYROAPP_USE_GRPC`](runtime-transports.md#use-grpc)
-- [`XLL_PYROAPP_GRPC_ADDRESS`](runtime-transports.md#read-or-change-the-grpc-address)
+- [`XLL_PYROAPP_USE_IPC`](runtime-transports.md#compatibility-formulas) — deprecated; does not change the connection
+- [`XLL_PYROAPP_USE_GRPC`](runtime-transports.md#compatibility-formulas) — deprecated; does not change the connection
+- [`XLL_PYROAPP_GRPC_ADDRESS`](runtime-transports.md#compatibility-formulas) — reads the configured address
 
 ## ChemApp/runtime information
 
