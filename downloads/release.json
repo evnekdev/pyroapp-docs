@@ -1,0 +1,20 @@
+{
+  "product": "PyroApp",
+  "version": "0.1.0",
+  "status": "pending",
+  "releaseDate": null,
+  "x64": {
+    "label": "PyroApp for 64-bit Excel",
+    "bundledChemApp": true,
+    "installerUrl": null,
+    "sha256": null
+  },
+  "x86": {
+    "label": "PyroApp for 32-bit Excel",
+    "bundledChemApp": true,
+    "installerUrl": null,
+    "sha256": null
+  },
+  "checksumsUrl": null,
+  "manifestUrl": null
+}
