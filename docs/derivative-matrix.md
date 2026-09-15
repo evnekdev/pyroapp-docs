@@ -55,18 +55,20 @@ validates all addresses, range sizes, values, steps, mask entries, trigger,
 output bounds, and unsafe overlaps between configuration, inputs, residuals,
 and output. It then:
 
-1. remembers the original parameters and Excel calculation mode;
-2. temporarily forces PyroApp UDFs to Blocking and Excel to Manual;
+1. remembers the original parameters;
+2. temporarily forces PyroApp UDFs to Blocking without changing Excel's calculation mode;
 3. recalculates the unperturbed baseline;
 4. perturbs each active parameter and writes its completed Jacobian column;
 5. restores the original parameters and recalculates the original state;
-6. restores Excel's previous calculation mode and your saved UDF preference.
+6. restores your saved UDF execution preference.
 
-Every parameter state uses two forced full recalculation passes. The first
-allows all `XLL_CA_SET_*` formulas to finish; the second evaluates calculations
-from that updated DAT state. This is why a derivative run can take roughly two
-full workbook recalculations for the baseline, for each active parameter, and
-for final restoration.
+Parameter cells are inert by workbook design. For the baseline, each perturbed
+parameter, and final restoration, PyroApp writes the complete parameter vector,
+increments the B3 trigger exactly once, waits for calculation to finish, and
+then reads the B2 residuals. In Automatic calculation mode, changing B3 starts
+the dependency calculation. In Manual mode, PyroApp preserves Manual and
+calculates the active worksheet once after changing B3. It does not call
+`Application.CalculateFull()` or recalculate other open workbooks.
 
 A modeless progress window shows the completed parameter count and elapsed
 time. **Cancel** stops between parameter columns. Cancellation and errors still
