@@ -93,6 +93,7 @@ nav:
       - System units: system_units.md
       - Architecture and transports: pyroapp-architecture-2.0.md
       - Runtime transport controls: runtime-transports.md
+      - UDF execution and derivative matrices: derivative-matrix.md
       - Troubleshooting: troubleshooting.md
   - CA_CALCULATE:
       - Guide: functions/ca_calculate.md

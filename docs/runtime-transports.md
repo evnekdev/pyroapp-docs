@@ -2,6 +2,10 @@
 
 Transport controls select where **ChemApp runtime work**, especially `XLL_CA_CALCULATE`, executes. DAT LIST/GET/SET functions remain local regardless of this setting.
 
+UDF execution mode is a separate choice. Use the Ribbon's **Calculation**
+group to select Blocking or Async; see
+[UDF execution and derivative matrices](derivative-matrix.md).
+
 ## Show the active transport
 
 ```excel

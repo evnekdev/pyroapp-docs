@@ -85,6 +85,7 @@ changing `Z1` causes PyroApp to execute again, even though the datafile path is 
 ## Next steps
 
 - [Common definitions](common-definitions.md)
+- [UDF execution and derivative matrices](derivative-matrix.md)
 - [Working with DAT files](tutorials/datafiles.md)
 - [CA_CALCULATE guide](functions/ca_calculate.md)
 - [Input conditions](input_conditions.md)
