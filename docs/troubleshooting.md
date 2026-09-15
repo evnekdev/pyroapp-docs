@@ -37,6 +37,18 @@ In both modes, the worker and ChemApp DLLs must match the Excel bitness. PyroApp
 
 Open **File → Account → About Excel** and use the installer with the same bitness. Windows bitness is not the deciding factor; Excel's bitness is.
 
+## The installer found background Excel processes
+
+After visible Excel windows are closed, Excel can occasionally leave invisible
+`EXCEL.EXE` processes running. They keep the PyroApp XLL or native DAT library
+locked and can prevent an update from replacing every file.
+
+The installer lists the process IDs and asks whether to terminate them. Select
+**Yes** only after confirming that no hidden Excel automation or unsaved
+recovery session is needed. Select **No** to leave every process untouched and
+close them manually in Task Manager. Silent installation always stops rather
+than terminating a process.
+
 ## The external installer cannot find ChemApp
 
 This applies only to an `ExternalChemApp` installer. Browse to the existing licensed runtime directory containing `chemapp_00.dll`. Contact the ChemApp supplier if you do not have a compatible runtime and licence. A bundled installer does not show this page; it still requires a valid ChemApp licence to calculate.

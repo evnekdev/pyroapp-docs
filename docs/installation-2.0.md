@@ -18,18 +18,25 @@ In Excel, open **File → Account → About Excel** to check the installed bitne
 
 ## Interactive installer
 
-Use the `PyroApp-<version>-x64-Setup.exe` or `PyroApp-<version>-x86-Setup.exe` package that matches Excel. The wizard installs per user under `%LOCALAPPDATA%\PyroApp\x64` or `%LOCALAPPDATA%\PyroApp\x86`; administrator rights are not required.
+Use the `PyroApp-<version>-x64-Setup.exe` or `PyroApp-<version>-x86-Setup.exe` package that matches Excel. A current-user installation defaults to `%LOCALAPPDATA%\Programs\PyroApp\x64` or `%LOCALAPPDATA%\Programs\PyroApp\x86`; administrator rights are not required. An all-users installation defaults to `%ProgramFiles%\PyroApp`.
 
 For the normal bundled installer, the wizard:
 
 1. detects the installed Excel executable and verifies bitness;
 2. checks for the matching Microsoft .NET Desktop Runtime 8.x and explains the prerequisite before changing the machine;
-3. installs its matched ChemApp runtime under the PyroApp installation;
-4. records the fixed bundled runtime location in `pyroapp.runtime.json`;
-5. offers to register the XLL for the detected Excel installation (selected by default); and
-6. adds documentation and diagnostic shortcuts.
+3. requires visible Excel windows to be closed normally;
+4. detects remaining background Excel processes in the current Windows session and asks before terminating them;
+5. installs its matched ChemApp runtime under the PyroApp installation;
+6. records the fixed bundled runtime location in `pyroapp.runtime.json`;
+7. offers to register the XLL for the detected Excel installation (selected by default); and
+8. adds documentation and diagnostic shortcuts.
 
-The bundled package does not grant or replace a ChemApp licence, dongle, or protected datafile entitlement. It is distributed only under the applicable ChemApp/GTT licence and organizational authorization. The installer supports upgrade and repair by rerunning the matching package. Uninstall removes only its registration and installed product files; it does not remove another ChemApp installation or unrelated user data, and it never terminates Excel.
+The bundled package does not grant or replace a ChemApp licence, dongle, or protected datafile entitlement. It is distributed only under the applicable ChemApp/GTT licence and organizational authorization. The installer supports upgrade and repair by rerunning the matching package. Uninstall removes only its registration and installed product files; it does not remove another ChemApp installation or unrelated user data.
+
+The background-process prompt lists the affected process IDs. These instances
+may be orphaned, but hidden automation can also run without a visible Excel
+window. Setup terminates them only after an explicit **Yes**. Choosing **No**
+leaves them running and stops installation. Silent setup never terminates Excel.
 
 Run **PyroApp diagnostic** from the Start menu if a runtime problem is reported. The same menu and the PyroApp Ribbon provide **Migrate legacy workbook**, which creates a separate macro-free `.xlsx` file and preserves the original `.xlsm`.
 
