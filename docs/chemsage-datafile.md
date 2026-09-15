@@ -36,6 +36,10 @@ You can normally keep the datafile beside the workbook and pass a relative path.
 
 SET functions update the selected DAT file at the same path. PyroApp constructs and validates the edit, writes a temporary sibling file, and atomically replaces the original only after the replacement is ready. This protects against partial file corruption but does not protect against an unwanted *valid* parameter change. Keep important source databases in version control or backup them before editing.
 
-## Interaction descriptions
+## Interaction strings
 
-PyroApp obtains interaction identities and powers from the parsed DAT semantics. It does not rely on ChemApp `TQLPAR` display text because native display formatting can be ambiguous for interaction powers above 9.
+PyroApp returns interactions in ChemApp style, with parentheses, sublattice
+separators, explicit powers, and the interaction-family name. The strings are
+rendered from parsed DAT semantics so powers above 9 remain exact. The obsolete
+comma-prefixed `G:`, `Q:`, `B:`, `H:`, and `R:` forms are neither returned nor
+accepted.

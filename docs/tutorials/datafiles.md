@@ -44,7 +44,11 @@ Successful writes are planned semantically, validated, written to a temporary fi
 
 ## Interaction identity
 
-Use `XLL_CA_LIST_INTERACTIONS_G/M` to obtain the interaction descriptions expected by the interaction GET/SET functions. Do not type or reconstruct interaction identifiers manually if you can reference the spilled list. PyroApp preserves multi-digit interaction powers from the DAT model and does not depend on `TQLPAR` display formatting.
+Use `XLL_CA_LIST_INTERACTIONS_G/M` to obtain the ChemApp-style strings expected
+by the interaction GET/SET functions. Reference the spilled list directly.
+Parentheses, sublattice separators, explicit powers, and the family label are
+part of the identity. PyroApp does not emit or accept the obsolete
+comma-prefixed interaction summaries.
 
 ## Recalculation after edits
 

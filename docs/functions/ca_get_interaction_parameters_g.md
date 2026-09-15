@@ -26,4 +26,5 @@ Reads the fixed thermodynamic coefficients of ordinary excess-Gibbs interaction 
 
 A matrix of requested interaction coefficient values.
 
-Interaction descriptions come from the DAT parser rather than `TQLPAR`, so multi-digit interaction powers are preserved correctly.
+Interaction strings use the ChemApp-style form returned by
+`XLL_CA_LIST_INTERACTIONS_G`. The DAT parser preserves multi-digit powers.

@@ -27,7 +27,11 @@ Many solution models divide a phase into one or more **sublattices**. A **specie
 
 An **interaction** is a non-ideal model term involving selected species or constituents. Different phase models encode binary, ternary, reciprocal, magnetic and other interactions differently.
 
-PyroApp exposes stable interaction descriptions for selection in GET/SET functions. These descriptions are derived from the DAT model, including multi-digit powers.
+PyroApp exposes ChemApp-style interaction strings for selection in GET/SET
+functions. They preserve parenthesized participants, sublattice boundaries,
+explicit powers (including zero), and the interaction-family name. For example:
+`(Al)^[0]-(Ca)^[0] : (O) (Guts)`. PyroApp never emits the old comma-prefixed
+`G:`, `Q:`, `B:`, `H:`, or `R:` summaries.
 
 ## Condition
 

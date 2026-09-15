@@ -2,7 +2,7 @@
 
 **Availability:** stable, open-DAT only.
 
-Resolves ordinary interaction descriptions to their positional identities in the parsed phase model.
+Resolves ordinary ChemApp-style interaction strings to their positions in the parsed phase model.
 
 ## Syntax
 

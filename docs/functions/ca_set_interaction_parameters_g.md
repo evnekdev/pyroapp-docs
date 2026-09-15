@@ -21,7 +21,7 @@ Changes one fixed thermodynamic term for each selected ordinary excess-Gibbs int
 | `5` | T³ |
 | `6` | 1/T |
 
-Use `XLL_CA_LIST_INTERACTIONS_G` to obtain exact interaction descriptions.
+Use `XLL_CA_LIST_INTERACTIONS_G` to obtain the exact ChemApp-style interaction strings.
 
 !!! important
     Interaction identity comes from `chemsage-parser`, not `TQLPAR` display text, so powers above 9 remain unambiguous.
