@@ -51,8 +51,9 @@ residual m          drm/dp1       drm/dp2            drm/dpn
 ## Run the calculation
 
 Choose **PyroApp > Calculation > Calculate derivative matrix**. PyroApp first
-validates all addresses, range sizes, values, steps, mask entries, trigger, and
-the output bounds. It then:
+validates all addresses, range sizes, values, steps, mask entries, trigger,
+output bounds, and unsafe overlaps between configuration, inputs, residuals,
+and output. It then:
 
 1. remembers the original parameters and Excel calculation mode;
 2. temporarily forces PyroApp UDFs to Blocking and Excel to Manual;
