@@ -84,6 +84,7 @@ nav:
       - Excel requirements: excel-requirements.md
       - Quickstart: quickstart.md
       - Downloads: download.md
+      - Package contents: package-contents.md
   - Learn PyroApp:
       - Excel and the PyroApp API: excel-api.md
       - ChemApp and licensing: chemapp.md
