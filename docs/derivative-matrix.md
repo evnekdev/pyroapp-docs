@@ -67,10 +67,10 @@ Parameter cells are inert by workbook design. For the baseline, each perturbed
 parameter, and final restoration, PyroApp writes the complete parameter vector,
 increments the B3 trigger exactly once, waits for calculation to finish, and
 then reads the B2 residuals. In Automatic calculation mode, changing B3 starts
-the dependency calculation; the command calculates the residual range once so
-that work cannot remain deferred while the Ribbon command is running. In Manual
-mode, PyroApp preserves Manual and calculates the active worksheet once after
-changing B3. It does not call `Application.Calculate()` or
+the dependency calculation; PyroApp returns from the Ribbon callback and queues
+its next step, so it reads B2 only after that dependency calculation completes.
+In Manual mode, PyroApp preserves Manual and calculates the active worksheet
+once after changing B3. It does not call `Application.Calculate()` or
 `Application.CalculateFull()`, and it does not recalculate other open
 workbooks.
 
