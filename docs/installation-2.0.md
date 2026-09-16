@@ -18,7 +18,7 @@ In Excel, open **File → Account → About Excel** to check the installed bitne
 
 ## Interactive installer
 
-Use the `PyroApp-<version>-x64-Setup.exe` or `PyroApp-<version>-x86-Setup.exe` package that matches Excel. A current-user installation defaults to `%LOCALAPPDATA%\Programs\PyroApp\x64` or `%LOCALAPPDATA%\Programs\PyroApp\x86`; administrator rights are not required. An all-users installation defaults to `%ProgramFiles%\PyroApp`.
+Use the `PyroApp-<version>-x64-Setup.exe` or `PyroApp-<version>-x86-Setup.exe` package that matches Excel. **All users is the required default selection** and installs the shared payload under `%ProgramFiles%\PyroApp`; approve the Windows elevation prompt. Current user remains an explicit alternative for exceptional per-user installations and uses `%LOCALAPPDATA%\Programs\PyroApp\x64` or `%LOCALAPPDATA%\Programs\PyroApp\x86`. The installer shows the scope choice on every launch and does not reuse an older choice silently.
 
 For the normal bundled installer, the wizard:
 

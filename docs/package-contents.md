@@ -44,7 +44,7 @@ If one of these groups or controls is missing after an update, close every Excel
 
 ## Installer behavior
 
-The interactive installer supports Install or update, Repair current installation, and Uninstall current installation. It checks Excel bitness and the required .NET Desktop Runtime.
+The interactive installer selects **All users by default**, which installs under `%ProgramFiles%\PyroApp`; Current user remains available as a deliberate alternative. It supports Install or update, Repair current installation, and Uninstall current installation. It checks Excel bitness and the required .NET Desktop Runtime.
 
 Before install, update, repair, or uninstall changes files, setup detects every `EXCEL.EXE` process in the current Windows session:
 
