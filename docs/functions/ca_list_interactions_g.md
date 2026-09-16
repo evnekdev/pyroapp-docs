@@ -16,7 +16,7 @@ A one-column spill range of ChemApp-style interaction strings derived from the
 parsed DAT model, for example:
 
 ```text
-(Al)^[0]-(Ca)^[0] : (O) (Guts)
+(Al)^[0]-(Ca)^[0]: (O) (Guts)
 ```
 
 !!! important "Use the returned interactions"

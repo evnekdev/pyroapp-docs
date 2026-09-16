@@ -30,7 +30,7 @@ An **interaction** is a non-ideal model term involving selected species or const
 PyroApp exposes ChemApp-style interaction strings for selection in GET/SET
 functions. They preserve parenthesized participants, sublattice boundaries,
 explicit powers (including zero), and the interaction-family name. For example:
-`(Al)^[0]-(Ca)^[0] : (O) (Guts)`. PyroApp never emits the old comma-prefixed
+`(Al)^[0]-(Ca)^[0]: (O) (Guts)`. PyroApp never emits the old comma-prefixed
 `G:`, `Q:`, `B:`, `H:`, or `R:` summaries.
 
 ## Condition
