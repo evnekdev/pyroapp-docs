@@ -33,8 +33,9 @@ worksheet. Put range addresses in `B1:B4`; `B5:B6` configure steps and masking.
 | `B6` | Blank to vary every parameter, or a range address containing one mask value per parameter |
 
 Mask values may be `TRUE`/`FALSE` or numeric, where zero is inactive and a
-nonzero value is active. An inactive parameter gets a zero derivative column.
-Steps must be finite and nonzero.
+nonzero value is active. An inactive parameter gets a numeric zero derivative
+column at its original flattened-parameter position; inactive parameters never
+shift later selected columns. Steps must be finite and nonzero.
 
 The parameter and residual ranges may be rectangular. PyroApp flattens each
 range row by row. If there are `m` residual cells and `n` parameter cells, the
@@ -66,14 +67,19 @@ Parameter cells are inert by workbook design. For the baseline, each perturbed
 parameter, and final restoration, PyroApp writes the complete parameter vector,
 increments the B3 trigger exactly once, waits for calculation to finish, and
 then reads the B2 residuals. In Automatic calculation mode, changing B3 starts
-the dependency calculation. In Manual mode, PyroApp preserves Manual and
-calculates the active worksheet once after changing B3. It does not call
-`Application.CalculateFull()` or recalculate other open workbooks.
+the dependency calculation; the command calculates the residual range once so
+that work cannot remain deferred while the Ribbon command is running. In Manual
+mode, PyroApp preserves Manual and calculates the active worksheet once after
+changing B3. It does not call `Application.Calculate()` or
+`Application.CalculateFull()`, and it does not recalculate other open
+workbooks.
 
 A modeless progress window shows the completed parameter count and elapsed
-time. **Cancel** stops between parameter columns. Cancellation and errors still
-run the complete restoration sequence. Only one derivative calculation can run
-in an Excel process at a time.
+time. Each output column is written before its progress count advances; the
+output range therefore displays completed partial results while the transaction
+continues. **Cancel** stops between parameter columns. Cancellation and errors
+still run the complete restoration sequence. Only one derivative calculation
+can run in an Excel process at a time.
 
 ## Errors and workbook state
 
