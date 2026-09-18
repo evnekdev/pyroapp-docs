@@ -1,6 +1,6 @@
 # Downloads
 
-PyroApp release packages are distributed on an **approval-controlled basis** rather than through an anonymous public download. Each published version has separate x64 and x86 installers. Access to the installer files is controlled in Google Drive.
+PyroApp release packages are distributed on an **approval-controlled basis** rather than through an anonymous public download. Each published version has separate x64 and x86 installers. Access to the installer files is inherited from the UQ Microsoft Teams / SharePoint group.
 
 The intended primary PyroSearch package is:
 
@@ -24,14 +24,14 @@ Current published version: **0.1.0**
 
 | Architecture | Installer | Size | SHA-256 | Status |
 |---|---|---:|---|---|
-| x64 | [PyroApp-0.1.0-x64-Setup.exe](https://drive.google.com/file/d/1MhdTXaq0vn4rNXxLjPrmRAQDnYKW8ajj/view?usp=drivesdk) | 77,510,254 bytes | `aaa58bba8bbc452a0a2c27fc37e184f6c69e3e58d32eda1b2c45507af6d4f67c` | Primary bundled installer |
-| x86 | [PyroApp-0.1.0-x86-Setup.exe](https://drive.google.com/file/d/1Oo9Y2WzDnK7KwtUNEyn5ZunjuxTWCRN6/view?usp=drivesdk) | 4,099,372 bytes | `57ea8bf7ada21fafd852c8c1c6f97a94e1ee36707b4d3f76506551f559fd9da0` | Interim current x86 build; package-parity correction pending |
+| x64 | [PyroApp-0.1.0-x64-Setup.exe](https://uq.sharepoint.com/:u:/r/teams/zhbggcmqxf/Shared%20Documents/General/PyroApp%20Distribution/PyroApp-0.1.0-x64-Setup.exe?d=wacfcc83134254a6aa3c41234fc9ac0e2&csf=1&web=1&e=rG3hdD) | 77,510,254 bytes | `aaa58bba8bbc452a0a2c27fc37e184f6c69e3e58d32eda1b2c45507af6d4f67c` | Primary bundled installer |
+| x86 | [PyroApp-0.1.0-x86-Setup.exe](https://uq.sharepoint.com/:u:/r/teams/zhbggcmqxf/Shared%20Documents/General/PyroApp%20Distribution/PyroApp-0.1.0-x86-Setup.exe?d=w7fa8a43d052247f4a527b71b4b22cb43&csf=1&web=1&e=PM0b0d) | 4,099,372 bytes | `57ea8bf7ada21fafd852c8c1c6f97a94e1ee36707b4d3f76506551f559fd9da0` | Interim current x86 build; package-parity correction pending |
 
 !!! warning "Current x86 package"
     The current x86 installer is substantially smaller than the x64 bundled installer. It is published here as the current 32-bit build, but it should **not** yet be assumed to contain the same bundled runtime payload as x64. A packaging-parity correction is in progress. The x64 installer remains the reference package.
 
-!!! note "Controlled Drive access"
-    These Google Drive files are not anonymous public downloads. Approved users must have Viewer access to the individual installer file. If a link opens an access-request page, the installer has not yet been shared with that Google account.
+!!! note "UQ Team access"
+    These installer files are stored in the UQ Team's SharePoint document library. Access is inherited from the Team: members can open the links using their normal UQ Microsoft 365 sign-in, while users outside the Team are denied access. No public sharing is enabled.
 
 ## Legacy workbook migrator
 
@@ -47,9 +47,9 @@ VBA/macros are intentionally removed because `.xlsx` does not contain a VBA proj
 
 Use the installer matching the bitness shown by **Excel → File → Account → About Excel**.
 
-The installers above are stored in the private **PyroApp Distribution** Drive folder. The folder itself is not a public distribution endpoint; the links above identify the exact current installer files.
+The installers above are stored in **General → PyroApp Distribution** in the UQ Microsoft Team's SharePoint document library. The links identify the exact current installer files and rely on the Team's existing access permissions.
 
-When a corrected x86 package is published, this page must be updated to the replacement Drive file and checksum rather than silently changing the meaning of the current link.
+When a corrected x86 package is published, this page must be updated to the replacement SharePoint file and checksum rather than silently changing the meaning of the current link.
 
 ### External ChemApp packages
 
