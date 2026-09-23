@@ -92,7 +92,7 @@ nav:
           - How an equilibrium calculation works: learn/equilibrium-calculation.md
       - Thermodynamic data and databases:
           - What a thermodynamic database contains: learn/thermodynamic-databases.md
-          - FactSage databases: old, new and compounds: learn/factsage-databases.md
+          - FactSage databases - old, new and compounds: learn/factsage-databases.md
           - ChemSage / ChemApp datafiles: chemsage-datafile.md
           - From FactSage to ChemSage: learn/factsage-to-chemsage.md
           - Common definitions: common-definitions.md
