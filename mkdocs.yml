@@ -96,13 +96,27 @@ nav:
       - Runtime transport controls: runtime-transports.md
       - UDF execution and derivative matrices: derivative-matrix.md
       - Troubleshooting: troubleshooting.md
+  - Practical tutorials:
+      - Start here: tutorials/index.md
+      - Explore a datafile: tutorials/explore-datafile.md
+      - Convert composition bases: tutorials/composition-basis.md
+      - First equilibrium table: tutorials/first-equilibrium.md
+      - Temperature and composition sweeps: tutorials/equilibrium-sweep.md
+      - Phase appearance and boundaries: tutorials/phase-boundaries.md
+      - Phase selection: tutorials/phase-selection.md
+      - Target calculations: tutorials/target-calculation.md
+      - Inspect and edit DAT parameters: tutorials/dat-parameters.md
+      - Simple optimization:
+          - Overview: tutorials/optimization/index.md
+          - Targets, residuals and weights: tutorials/optimization/targets-residuals.md
+          - Derivative matrix: tutorials/optimization/derivative-matrix.md
+          - Linear parameter update: tutorials/optimization/linear-update.md
+          - Parameter selection: tutorials/optimization/parameter-selection.md
+          - Ca-Zn-Si-O capstone: tutorials/optimization/ca-zn-si-o.md
   - CA_CALCULATE:
       - Guide: functions/ca_calculate.md
       - Input conditions: input_conditions.md
       - Output properties: output_properties.md
-      - First equilibrium: tutorials/first-equilibrium.md
-      - Phase selection: tutorials/phase-selection.md
-      - Target calculations: tutorials/target-calculation.md
       - Remote gRPC calculations: tutorials/remote-grpc.md
   - DAT workflows:
       - Working with DAT files: tutorials/datafiles.md

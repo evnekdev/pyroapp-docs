@@ -14,6 +14,8 @@ Searches combinations of adjustable parameters and identifies the subset that pe
 
 ## Returns
 
-An integer vector identifying the selected parameter combination.
+An integer 0/1 mask with one entry per derivative column. A value of 1 means that parameter is selected in the best tested combination; 0 means it is not selected.
+
+See [Select a small parameter combination](../tutorials/optimization/parameter-selection.md).
 
 The search can be combinatorial; use it only on a deliberately limited candidate set.

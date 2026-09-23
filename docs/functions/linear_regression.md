@@ -18,4 +18,8 @@ The legacy function calculates parameter corrections from a derivative matrix us
 
 ## Returns
 
-A parameter-correction vector according to the legacy optimization convention.
+A vector with one entry per derivative column. Free entries are the weighted least-squares solution; non-free entries retain the corresponding `fixed_values` input.
+
+In the practical derivative workflow, define `residual = target - current` and `A = d(current)/d(parameter)`. The solved vector is then interpreted as the proposed parameter change `Δp`, and fixed parameters normally use a fixed value of zero.
+
+See [Solve and apply one linear parameter update](../tutorials/optimization/linear-update.md).
