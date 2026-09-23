@@ -7,6 +7,8 @@ The workbook files are regenerated during every documentation deployment from th
 !!! important "Download the matching DAT too"
     A workbook cannot carry a ChemApp datafile inside an ordinary `.xlsx` file. Download the matching DAT file and place it in the **same folder** as the workbook. The Start sheet in every workbook repeats this instruction and contains a direct DAT download link.
 
+<a id="getting-started-ca-zn-o"></a>
+
 ## 1. Getting Started — Ca-Zn-O
 
 [**Download 01_PyroApp_Getting_Started_Ca-Zn-O.xlsx**](../tutorial-assets/workbooks/01_PyroApp_Getting_Started_Ca-Zn-O.xlsx)
@@ -19,18 +21,20 @@ This is the recommended first workbook. It covers a broad cross-section of ordin
 - DAT dimensions;
 - lists of components, phases, solutions, compounds, constituents and species;
 - component/compound property lookups;
-- `XLL_DATA_CHANGE_BASIS`;
+- five `XLL_DATA_CHANGE_BASIS` cases: one row, multi-row spill, reverse conversion, mass-to-mole amounts, and mole-to-mass fractions;
 - `XLL_DATA_GENERATE_MESH`;
-- the three-row `XLL_CA_CALCULATE` header;
+- a smallest-possible one-row `XLL_CA_CALCULATE` sheet with the Formula Bar anchor and literal `""` header markers;
 - a multi-row equilibrium calculation;
 - phase amounts and a phase composition output;
 - normal Excel charts driven by calculation results;
 - a temperature sweep;
-- phase selection;
+- a dedicated phase-selection table with its visible entered-phase range;
 - a `FORMATION` target calculation with search limits;
 - `ERROR` and `NSTABLE` diagnostics.
 
 The example uses literal `""` text in not-applicable header cells, with no leading equals sign.
+
+<a id="dat-inspection-al-ca-o"></a>
 
 ## 2. DAT Inspection and Editing — Al-Ca-O
 

@@ -29,6 +29,8 @@ Use the optional `entered` argument of `XLL_CA_CALCULATE` for the base phase sel
 
 For a simple liquidus target, it may be appropriate to enter the liquid and relevant solid phase. Row-local `ENTERED`, `DORMANT` and `ELIMINATED` controls can modify that base selection.
 
+The workbook’s **Phase selection** sheet keeps the optional entered range at the right of the same calculation table. This is intentional: a reader can see which phase names are being constrained instead of treating the fifth argument as an invisible implementation detail.
+
 ## Request auditable outputs
 
 Do not return only temperature. Also request:

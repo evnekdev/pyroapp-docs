@@ -52,6 +52,20 @@ If `E5` contains a phase returned by `XLL_CA_LIST_SOLUTIONS`:
 =XLL_CA_LIST_SPECIES($B$2,E5)
 ```
 
+If that solution has ordinary Gibbs-energy interaction records, list their exact parser identities too:
+
+```excel
+=XLL_CA_LIST_INTERACTIONS_G($B$2,E5)
+```
+
+Magnetic interactions are a separate, datafile-dependent family:
+
+```excel
+=XLL_CA_LIST_INTERACTIONS_M($B$2,E5)
+```
+
+Do not add an M-interaction formula merely as decoration. Some valid DAT files have no magnetic interaction records; when there are records, use the identity returned by the spill exactly as returned.
+
 ## 5. Inspect compound stoichiometry
 
 If `H5#` is a spilled compound list:
@@ -76,7 +90,7 @@ datafile
     compound phases
 ```
 
-The strings are datafile identities, not friendly labels. Reference the spilled cells directly when possible.
+The strings are datafile identities, not friendly labels. Reference the spilled cells directly when possible. The **Explore** and **Browse** sheets in the downloadable workbooks intentionally show the source LIST formula, its selected anchor, and the rows below it that receive the spill.
 
 ## Common problems
 

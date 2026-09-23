@@ -1,6 +1,6 @@
 # Tutorial: temperature and composition sweeps
 
-One PyroApp formula can evaluate a whole table of independent equilibria.
+One PyroApp formula can evaluate a whole table of independent equilibria. The **Equilibrium** and **Temperature sweep** sheets in the [Getting Started workbook](workbooks.md#getting-started-ca-zn-o) put the selected formula anchor directly beside the input and output headers, then feed a normal Excel chart from the spill.
 
 The legacy example 04 used this pattern extensively. New PyroApp workbooks should not manually split rows into thread-sized blocks.
 
@@ -48,6 +48,8 @@ Use a normal Excel XY/Scatter chart for:
 - solution composition versus bulk composition.
 
 This replaces the legacy `plot_data` helper and keeps all numerical data visible in the workbook.
+
+Keep the chart linked to the spilled output columns rather than manually copying numbers to a second table. That makes a changed temperature grid, phase name, or input basis visible all the way from the selected `XLL_CA_CALCULATE` formula to the plotted line.
 
 ## Sanity checks
 

@@ -46,5 +46,7 @@ Good physical bounds can make a target calculation more robust and avoid an irre
 
 Request the solved variable itself (for example `T`) plus the relevant phase amount/activity and an `ERROR` column. This makes the target result auditable rather than returning only a temperature with no indication of solver status.
 
+The **Phase target** sheet in the [Getting Started workbook](workbooks.md#getting-started-ca-zn-o) gives `FORMATION`, `TLOW`, and `THIGH` one visible input column each, and returns solved temperature, `AC`, `ERROR`, and `NSTABLE` together. Use that layout as a starting point before making a boundary sweep.
+
 !!! warning
     A target condition does not guarantee that a physically meaningful solution exists within the chosen search interval. Treat failed target rows as calculation failures, not as missing spreadsheet values to be silently interpolated.

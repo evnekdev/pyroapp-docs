@@ -60,7 +60,15 @@ For ordinary interactions:
 ```
 
 ```excel
-=XLL_CA_GET_INTERACTION_PARAMETERS_G($B$2,E5,H5#)
+=XLL_CA_GET_INTERACTION_PARAMETERS_G($B$2,E5,H5#,0)
+```
+
+The `0` request returns the six ordinary G coefficients as a row. Use `1` through `6` when you need only one term. The [DAT Inspection workbook](workbooks.md#dat-inspection-al-ca-o) shows both the selected interaction identity and the coefficient spill together.
+
+Magnetic interaction getters are only meaningful for a DAT that actually lists magnetic records. For such a file, use the returned M identities with:
+
+```excel
+=XLL_CA_GET_INTERACTIONS_PARAMETERS_M($B$2,E5,H5#)
 ```
 
 ## Setters

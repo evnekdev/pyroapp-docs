@@ -57,12 +57,35 @@ def getting_started():
     ws=wb.create_sheet('Explore'); sh(ws,{'A':22,'B':26,'C':4,'D':28,'E':4,'F':28,'G':4,'H':28,'I':4,'J':34,'K':4,'L':34}); head(ws,'Explore the datafile','LIST functions return exact DAT identities.')
     for hc,label,fc,form in [('A4','Components','A5','=XLL_CA_LIST_COMPONENTS(Start!$B$10)'),('C4','Phases','C5','=XLL_CA_LIST_PHASES(Start!$B$10)'),('E4','Solutions','E5','=XLL_CA_LIST_SOLUTIONS(Start!$B$10)'),('G4','Compounds','G5','=XLL_CA_LIST_COMPOUNDS(Start!$B$10)'),('I4','Slag-liq constituents','I5','=XLL_CA_LIST_CONSTITUENTS(Start!$B$10,"Slag-liq")'),('K4','Slag-liq species','K5','=XLL_CA_LIST_SPECIES(Start!$B$10,"Slag-liq")')]: ws[hc]=label; th(ws[hc]); ws[fc]=form
     section(ws,26,'Direct property lookups',6); ws['A28']='Zn molar mass'; ws['B28']='=XLL_CA_GET_COMPONENT_WEIGHTS(Start!$B$10,"Zn")'; ws['A29']='Ca molar mass'; ws['B29']='=XLL_CA_GET_COMPONENT_WEIGHTS(Start!$B$10,"Ca")'; ws['A30']='ZnO(s) H298'; ws['B30']='=XLL_CA_GET_COMPOUND_H298(Start!$B$10,"ZnO(s)")'
-    ws=wb.create_sheet('Basis + utilities'); sh(ws); head(ws,'Basis conversion and mesh generation'); ws['A4']='CaO-ZnO → Ca-Zn-O'; ws.merge_cells('A4:G4'); th(ws['A4']);
+    ws=wb.create_sheet('Basis + utilities'); sh(ws); head(ws,'Composition-basis lab and mesh generation','Each block has one clearly labelled conversion. Blue cells are inputs; the selected formula cell spills the converted composition.')
+    section(ws,4,'1. One molar-fraction row: CaO + ZnO → elemental Ca, Zn, O',7)
     for c,v in [('B5','CaO'),('C5','ZnO'),('E5','Ca'),('F5','Zn'),('G5','O')]: ws[c]=v; th(ws[c])
-    for r,x in enumerate([i/10 for i in range(11)],8): ws.cell(r,2,x); ws.cell(r,3,1-x); inp(ws.cell(r,2)); inp(ws.cell(r,3))
-    ws['E8']='=XLL_DATA_CHANGE_BASIS($B$5:$C$5,$E$5:$G$5,$B$8:$C$18,FALSE,FALSE,FALSE)'; ws['I4']='Uniform simplex mesh'; ws.merge_cells('I4:L4'); th(ws['I4']);
+    ws['A7']='Input mole fractions'; ws['B7']=0.40; ws['C7']=0.60; inp(ws['B7']); inp(ws['C7']); ws['D7']='Normalized elemental mole fractions'; ws['E7']='=XLL_DATA_CHANGE_BASIS($B$5:$C$5,$E$5:$G$5,$B$7:$C$7,FALSE,FALSE,TRUE)'
+    section(ws,11,'2. Multiple molar-fraction rows: CaO + ZnO → elemental fractions',7)
+    for r,x in enumerate([i/10 for i in range(11)],14): ws.cell(r,2,x); ws.cell(r,3,1-x); inp(ws.cell(r,2)); inp(ws.cell(r,3))
+    ws['A13']='Input row'; ws['B13']='CaO'; ws['C13']='ZnO'; ws['D13']='Ca'; ws['E13']='Zn'; ws['F13']='O'
+    for c in ['A13','B13','C13','D13','E13','F13']: th(ws[c])
+    ws['D14']='=XLL_DATA_CHANGE_BASIS($B$5:$C$5,$E$5:$G$5,$B$14:$C$24,FALSE,FALSE,TRUE)'
+    section(ws,27,'3. Reverse conversion: elemental mole amounts → CaO and ZnO amounts',7)
+    for c,v in [('B28','CaO'),('C28','ZnO'),('E28','Ca'),('F28','Zn'),('G28','O')]: ws[c]=v; th(ws[c])
+    ws['A30']='Element amounts (mol)'; ws['E30']=2; ws['F30']=1; ws['G30']=3
+    for c in ['E30','F30','G30']: inp(ws[c])
+    ws['B30']='=XLL_DATA_CHANGE_BASIS($E$28:$G$28,$B$28:$C$28,$E$30:$G$30,FALSE,FALSE,FALSE)'
+    section(ws,34,'4. Mass amounts: CaO + ZnO → elemental mole amounts (not normalized)',7)
+    for c,v in [('B35','CaO'),('C35','ZnO'),('E35','Ca'),('F35','Zn'),('G35','O')]: ws[c]=v; th(ws[c])
+    ws['A37']='Mass amounts (g)'; ws['B37']=112.16; ws['C37']=81.38; inp(ws['B37']); inp(ws['C37']); ws['D37']='Element amounts (mol)'; ws['E37']='=XLL_DATA_CHANGE_BASIS($B$35:$C$35,$E$35:$G$35,$B$37:$C$37,TRUE,FALSE,FALSE)'
+    section(ws,41,'5. Molar amounts: CaO + ZnO → normalized mass fractions',7)
+    for c,v in [('B42','CaO'),('C42','ZnO'),('E42','Ca'),('F42','Zn'),('G42','O')]: ws[c]=v; th(ws[c])
+    ws['A44']='Formula-unit amounts (mol)'; ws['B44']=2; ws['C44']=1; inp(ws['B44']); inp(ws['C44']); ws['D44']='Element mass fractions'; ws['E44']='=XLL_DATA_CHANGE_BASIS($B$42:$C$42,$E$42:$G$42,$B$44:$C$44,FALSE,TRUE,TRUE)'
+    ws['I4']='Uniform simplex mesh'; ws.merge_cells('I4:L4'); th(ws['I4']);
     for r,(a,b) in enumerate([('nintervals',5),('nactive',2),('ntotal',3)],5): ws.cell(r,9,a); ws.cell(r,10,b); inp(ws.cell(r,10))
     ws['I9']='=XLL_DATA_GENERATE_MESH($J$5,$J$6,$J$7)'
+    ws.freeze_panes='A4'
+    ws=wb.create_sheet('First equilibrium'); sh(ws); head(ws,'First equilibrium calculation','One 50:50 CaO-ZnO composition at 1200 °C and 1 bar. The grey header rows use literal text "" where a phase or component is not needed.')
+    hdr(ws,4,2,[('T, [C]',None,None),('P, [bar]',None,None),('IA',None,'Ca'),('IA',None,'Zn'),('IA',None,'O')])
+    for j,v in enumerate([1200,1,0.5,0.5,1.0],2): ws.cell(7,j,v); inp(ws.cell(7,j))
+    hdr(ws,4,8,[('A','Slag-liq',None),('A','Monoxide',None),('A','Zincite',None),('ERROR',None,None),('NSTABLE',None,None)])
+    ws['H7']='=XLL_CA_CALCULATE(Start!$B$10,$B$4:$F$6,$B$7:$F$7,$H$4:$L$6)'; note(ws,10,'Select H7 to read the complete formula in Excel’s Formula Bar. A zero ERROR result means the row solved successfully.',12,TEAL)
     ws=wb.create_sheet('Equilibrium'); sh(ws); head(ws,'Equilibrium table','Eleven independent CaO-ZnO compositions at 1200 °C and 1 bar.')
     hdr(ws,4,2,[('T, [C]',None,None),('P, [bar]',None,None),('IA',None,'Ca'),('IA',None,'Zn'),('IA',None,'O')])
     for r,x in enumerate([i/10 for i in range(11)],7):
@@ -73,6 +96,11 @@ def getting_started():
     for r,T in enumerate(temps,7):
         for j,v in enumerate([T,1,0.5,0.5,1.0],2): ws.cell(r,j,v); inp(ws.cell(r,j))
     hdr(ws,4,8,[('T, [C]',None,None),('A','Slag-liq',None),('A','Monoxide',None),('A','Zincite',None),('ERROR',None,None),('NSTABLE',None,None)]); ws['H7']=f'=XLL_CA_CALCULATE(Start!$B$10,$B$4:$F$6,$B$7:$F${6+len(temps)},$H$4:$M$6)'; chart3(ws,'O4',8,[(9,'Slag-liq'),(10,'Monoxide'),(11,'Zincite')],7,6+len(temps),'Phase amounts vs temperature','Temperature [°C]')
+    ws=wb.create_sheet('Phase selection'); sh(ws); head(ws,'Phase selection','The optional entered-phase range makes the selection explicit before the calculation is solved.')
+    hdr(ws,4,2,[('T, [C]',None,None),('P, [bar]',None,None),('IA',None,'Ca'),('IA',None,'Zn'),('IA',None,'O')])
+    for j,v in enumerate([1200,1,0.5,0.5,1.0],2): ws.cell(7,j,v); inp(ws.cell(7,j))
+    hdr(ws,4,8,[('A','Slag-liq',None),('A','Monoxide',None),('A','Zincite',None),('ERROR',None,None),('NSTABLE',None,None)])
+    ws['N4']='Entered phases'; th(ws['N4']); ws['N5']='Slag-liq'; ws['N6']='Monoxide'; inp(ws['N5']); inp(ws['N6']); ws['H7']='=XLL_CA_CALCULATE(Start!$B$10,$B$4:$F$6,$B$7:$F$7,$H$4:$L$6,$N$5:$N$6)'; note(ws,10,'The entered range is intentionally visible. Change its phase names only when the physical model justifies restricting the phase set.',14,ORANGE)
     ws=wb.create_sheet('Phase target'); sh(ws); head(ws,'Formation-temperature target','Solve T for Monoxide formation rather than scanning temperature.')
     hdr(ws,4,2,[('P, [bar]',None,None),('IA',None,'Ca'),('IA',None,'Zn'),('IA',None,'O'),('FORMATION',None,None),('TLOW',None,None),('THIGH',None,None)])
     for r,x in enumerate([0.1,0.3,0.5,0.7,0.9],7):
@@ -140,6 +168,21 @@ def save(wb,name):
     p=OUT/name; wb.save(p); return p
 
 files=[getting_started(),dat_parameters(),optimization()]
+SUPPORTED_XLL_FUNCTIONS={
+    'XLL_BEST_COMBINATION','XLL_CA_CALCULATE','XLL_CA_CHEMAPPDLLS','XLL_CA_DIMENSIONS',
+    'XLL_CA_DIMENSIONS_MAX','XLL_CA_GET_COMPONENT_WEIGHTS','XLL_CA_GET_COMPOUND_CP',
+    'XLL_CA_GET_COMPOUND_H298','XLL_CA_GET_COMPOUND_RANGE_COUNT','XLL_CA_GET_COMPOUND_S298',
+    'XLL_CA_GET_COMPOUND_STOICHIOMETRY','XLL_CA_GET_COMPOUND_TUPPER','XLL_CA_GET_COMPOUND_WEIGHTS',
+    'XLL_CA_GET_CONSTITUENT_CP','XLL_CA_GET_CONSTITUENT_H298','XLL_CA_GET_CONSTITUENT_RANGE_COUNT',
+    'XLL_CA_GET_CONSTITUENT_S298','XLL_CA_GET_CONSTITUENT_STOICHIOMETRY',
+    'XLL_CA_GET_CONSTITUENT_TUPPER','XLL_CA_GET_CONSTITUENT_WEIGHTS',
+    'XLL_CA_GET_INTERACTION_INDICES','XLL_CA_GET_INTERACTION_PARAMETERS_G','XLL_CA_ISLITE',
+    'XLL_CA_LICENSE_HOLDER_NAME','XLL_CA_LIST_COMPONENTS','XLL_CA_LIST_COMPOUNDS',
+    'XLL_CA_LIST_CONSTITUENTS','XLL_CA_LIST_INTERACTIONS_G','XLL_CA_LIST_PHASES',
+    'XLL_CA_LIST_SOLUTIONS','XLL_CA_LIST_SPECIES','XLL_CA_PROGRAM_ID','XLL_CA_SET_INTERACTION_PARAMETERS_G',
+    'XLL_CA_USER_ID','XLL_CA_VERSION','XLL_DATA_CHANGE_BASIS','XLL_DATA_GENERATE_MESH',
+    'XLL_LINEAR_REGRESSION','XLL_PD_ERROR_TABLE'
+}
 for p in files:
     wb=load_workbook(p,data_only=False); bad=[]; names=set()
     for ws in wb.worksheets:
@@ -148,4 +191,6 @@ for p in files:
                 if c.value=='=""': bad.append(f'{ws.title}!{c.coordinate}')
                 if isinstance(c.value,str) and c.value.startswith('='): names.update(re.findall(r'\b(XLL_[A-Z0-9_]+)\s*\(',c.value))
     if bad: raise RuntimeError(f'{p.name}: legacy ="" markers at {bad}')
+    unknown=names-SUPPORTED_XLL_FUNCTIONS
+    if unknown: raise RuntimeError(f'{p.name}: unsupported XLL functions {sorted(unknown)}')
     print(p.name, len(wb.sheetnames),'sheets',len(names),'XLL functions',p.stat().st_size,'bytes')

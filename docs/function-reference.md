@@ -53,7 +53,7 @@ Current PyroApp Excel names use the `XLL_` prefix. Follow the links below for sy
 - [`XLL_CA_GET_CONSTITUENT_WEIGHTS`](functions/ca_get_constituent_weights.md)
 - [`XLL_CA_GET_CONSTITUENT_STOICHIOMETRY`](functions/ca_get_constituent_stoichiometry.md)
 - [`XLL_CA_GET_INTERACTION_INDICES`](functions/ca_get_interaction_indices.md)
-- [`XLL_CA_GET_INTERACTIONS_PARAMETERS_G`](functions/ca_get_interaction_parameters_g.md)
+- [`XLL_CA_GET_INTERACTION_PARAMETERS_G`](functions/ca_get_interaction_parameters_g.md)
 - [`XLL_CA_GET_INTERACTIONS_PARAMETERS_M`](functions/ca_get_interaction_parameters_m.md)
 
 All GET functions above are local and open-DAT only.

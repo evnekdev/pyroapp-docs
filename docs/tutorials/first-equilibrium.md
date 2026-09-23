@@ -1,6 +1,6 @@
 # Tutorial: first equilibrium table
 
-This example shows the **shape** of a PyroApp calculation. Use component and phase names from your own datafile.
+This example shows the **shape** of a PyroApp calculation. Use component and phase names from your own datafile. The **First equilibrium** sheet in the [Getting Started workbook](workbooks.md#getting-started-ca-zn-o) is the concrete Ca-Zn-O version: one input row, a visible three-row header, and one selected calculation formula.
 
 Assume `B1` contains the datafile path.
 
@@ -52,3 +52,7 @@ The result spills to 20 rows and 3 columns.
 
 !!! tip
     Prefer one table call with many rows over hundreds of independent one-row formulas. It reduces setup overhead and gives the runtime more opportunity to schedule work efficiently.
+
+## Read a solved row before trusting it
+
+Request `ERROR` and `NSTABLE` beside the phase outputs even for a first calculation. `ERROR = 0` says that row completed without a native ChemApp error; `NSTABLE` gives the number of phases with activity above the stability threshold. A value in a phase-amount column alone is not enough evidence that the intended physical phase set was solved.

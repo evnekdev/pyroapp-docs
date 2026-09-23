@@ -1,4 +1,4 @@
-# XLL_CA_GET_INTERACTIONS_PARAMETERS_G
+# XLL_CA_GET_INTERACTION_PARAMETERS_G
 
 **Availability:** stable, open-DAT only.
 
@@ -7,7 +7,7 @@ Reads the fixed thermodynamic coefficients of ordinary excess-Gibbs interaction 
 ## Syntax
 
 ```excel
-=XLL_CA_GET_INTERACTIONS_PARAMETERS_G(datafile,phases,interactions,value_indices,[update_token])
+=XLL_CA_GET_INTERACTION_PARAMETERS_G(datafile,phases,interactions,value_indices,[update_token])
 ```
 
 `phases` and `interactions` are paired. `value_indices` selects coefficients:
