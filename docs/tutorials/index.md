@@ -63,7 +63,7 @@ flowchart LR
 ## Conventions used here
 
 - Use exact names returned by LIST functions rather than typing phase identities from memory.
-- In unused row-2/row-3 cells of a `CA_CALCULATE` header, enter `=""`; do not leave the cells physically blank.
+- In unused row-2/row-3 cells of a `CA_CALCULATE` header, enter `""`; do not leave the cells physically blank.
 - Pass all similar independent rows to one `XLL_CA_CALCULATE` call. Old examples sometimes split tables manually for legacy threading; new workbooks should not.
 - SET functions modify an open DAT in place. Work on a copy and keep a clean reference file.
 

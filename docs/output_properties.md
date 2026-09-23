@@ -1,6 +1,6 @@
 # Output properties for XLL_CA_CALCULATE
 
-Output columns use the same three-row header format as inputs: property code, phase, and constituent/component. When the phase or constituent/component field does not apply, write `=""`; do not leave the corresponding header cell genuinely blank. The formula evaluates to the required runtime empty string `""`.
+Output columns use the same three-row header format as inputs: property code, phase, and constituent/component. When the phase or constituent/component field does not apply, write the literal text `""`; do not leave the corresponding header cell genuinely blank. PyroApp treats this literal marker as the empty field.
 
 This keeps the complete output header contiguous and easy to select, copy, resize, filter, and manipulate as a table.
 

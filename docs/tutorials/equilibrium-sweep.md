@@ -18,8 +18,8 @@ Assume:
 | | B | C | D | E | F |
 | --- | --- | --- | --- | --- | --- |
 | row 1 | `T, [C]` | `P` | `IA` | `IA` | `IA` |
-| row 2 | `=""` | `=""` | `=""` | `=""` | `=""` |
-| row 3 | `=""` | `=""` | component 1 | component 2 | component 3 |
+| row 2 | `""` | `""` | `""` | `""` | `""` |
+| row 3 | `""` | `""` | component 1 | component 2 | component 3 |
 
 Use component names from `XLL_CA_LIST_COMPONENTS`.
 

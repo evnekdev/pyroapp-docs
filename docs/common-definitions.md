@@ -43,7 +43,7 @@ An **output property** is a value read after equilibrium: temperature, phase amo
 
 ## Three-row header convention
 
-`XLL_CA_CALCULATE` input and output headers always contain three rows: code, phase, and constituent/component. When the phase or constituent/component field does not apply, the worksheet cell must contain the formula `=""`, never be genuinely empty. Excel evaluates it to the runtime empty string `""`.
+`XLL_CA_CALCULATE` input and output headers always contain three rows: code, phase, and constituent/component. When the phase or constituent/component field does not apply, the worksheet cell must contain the literal text `""`, never be genuinely empty. PyroApp normalizes this marker to the runtime empty string.
 
 This convention is deliberate: a header with no physically empty cells behaves as one contiguous Excel table and is easier to select, copy, resize, filter, and manipulate reliably.
 

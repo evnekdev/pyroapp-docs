@@ -19,7 +19,7 @@ A temperature-target input commonly contains:
 - a `FORMATION` column whose row value is the target phase name;
 - optional `TLOW` and `THIGH` search limits.
 
-For the FORMATION column, header rows 2 and 3 are `=""`. The target phase name is in the **input row**.
+For the FORMATION column, header rows 2 and 3 are `""`. The target phase name is in the **input row**.
 
 Temperature is the default target variable. Add `VARIABLE` only when you intentionally solve another supported variable.
 
