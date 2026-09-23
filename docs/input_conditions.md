@@ -1,6 +1,6 @@
 # Input conditions for XLL_CA_CALCULATE
 
-Each input column is defined by three header cells: **code**, **phase**, and **constituent/component**. For phase and constituent/component header rows, write the literal text `""` whenever that field does not apply. Do not leave those header cells genuinely blank; the formula evaluates to the required runtime empty string `""`.
+Each input column is defined by three header cells: **code**, **phase**, and **constituent/component**. For phase and constituent/component header rows, write the literal text `""` whenever that field does not apply. Do not leave those header cells genuinely blank; PyroApp treats the literal `""` marker as an empty field.
 
 Keeping every cell in the three-row header populated makes the whole table easy to select, copy, filter, resize, and manipulate as one contiguous Excel range.
 

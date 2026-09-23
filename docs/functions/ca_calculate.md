@@ -29,7 +29,7 @@ Both input and output headers use the same shape:
 | 2 | phase name when phase-specific; otherwise the default value `""` (enter `""` in a worksheet cell) |
 | 3 | phase constituent or system component when needed; otherwise the default value `""` (enter `""` in a worksheet cell) |
 
-The phase and constituent/component header rows should **never use genuinely empty cells as defaults**. When a field does not apply, the worksheet cell must contain `""`, which evaluates to the runtime value `""`.
+The phase and constituent/component header rows should **never use genuinely empty cells as defaults**. When a field does not apply, the worksheet cell must contain the literal `""` marker, which PyroApp treats as an empty field.
 
 This convention keeps the three-row header fully populated as a contiguous table, which makes it much easier to select, copy, resize, filter, and manipulate in Excel.
 
