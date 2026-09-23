@@ -78,14 +78,8 @@ theme:
     - content.code.copy
 
 nav:
-  - Home:
+  - PyroApp Home:
       - Overview: index.md
-      - Install PyroApp 2: installation-2.0.md
-      - Excel requirements: excel-requirements.md
-      - Quickstart: quickstart.md
-      - Downloads: download.md
-      - Package contents: package-contents.md
-  - Learn PyroApp:
       - Orientation:
           - What is PyroApp?: learn/what-is-pyroapp.md
           - PyroApp, FactSage, ChemApp and ChemSage: learn/factsage-chemapp-pyroapp.md
@@ -106,6 +100,10 @@ nav:
           - Runtime transport controls: runtime-transports.md
           - UDF execution and derivative matrices: derivative-matrix.md
           - Troubleshooting: troubleshooting.md
+  - Installation:
+      - Excel requirements: excel-requirements.md
+      - Downloads: download.md
+      - Package contents: package-contents.md
   - Practical tutorials:
       - Start here: tutorials/index.md
       - Ready-to-use Excel workbooks: tutorials/workbooks.md
