@@ -22,10 +22,14 @@ graph LR
 
 ## Start here
 
-1. Read [Install PyroApp](installation-2.0.md).
-2. Work through the [Quickstart](quickstart.md).
-3. Learn the three-row header used by [CA_CALCULATE](functions/ca_calculate.md).
-4. Use the [Function reference](function-reference.md) when building a workbook.
+If you know some thermodynamics or FactSage but are new to PyroApp, begin with the conceptual pages before copying formulas:
+
+1. Read [What is PyroApp?](learn/what-is-pyroapp.md).
+2. Read [PyroApp, FactSage, ChemApp and ChemSage](learn/factsage-chemapp-pyroapp.md).
+3. Read [How an equilibrium calculation works](learn/equilibrium-calculation.md).
+4. Install PyroApp using [Install PyroApp](installation-2.0.md).
+5. Work through the [Quickstart](quickstart.md) and [Practical tutorials](tutorials/index.md).
+6. Use the [Function reference](function-reference.md) while building your own workbook.
 
 !!! note "Current PyroApp function names"
     Current Excel formulas use the `XLL_` prefix, for example `XLL_CA_LIST_PHASES` and `XLL_CA_CALCULATE`. Older PyroApp 1.x workbooks used unprefixed names such as `CA_LIST_PHASES`. This documentation shows the current PyroApp Excel names.

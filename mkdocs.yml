@@ -86,16 +86,26 @@ nav:
       - Downloads: download.md
       - Package contents: package-contents.md
   - Learn PyroApp:
-      - Excel and the PyroApp API: excel-api.md
-      - ChemApp and licensing: chemapp.md
-      - Datafiles: chemsage-datafile.md
-      - Common definitions: common-definitions.md
-      - Phase models: phase-models-overview.md
-      - System units: system_units.md
-      - Architecture and transports: pyroapp-architecture-2.0.md
-      - Runtime transport controls: runtime-transports.md
-      - UDF execution and derivative matrices: derivative-matrix.md
-      - Troubleshooting: troubleshooting.md
+      - Orientation:
+          - What is PyroApp?: learn/what-is-pyroapp.md
+          - PyroApp, FactSage, ChemApp and ChemSage: learn/factsage-chemapp-pyroapp.md
+          - How an equilibrium calculation works: learn/equilibrium-calculation.md
+      - Thermodynamic data and databases:
+          - What a thermodynamic database contains: learn/thermodynamic-databases.md
+          - FactSage databases: old, new and compounds: learn/factsage-databases.md
+          - ChemSage / ChemApp datafiles: chemsage-datafile.md
+          - From FactSage to ChemSage: learn/factsage-to-chemsage.md
+          - Common definitions: common-definitions.md
+          - Phase models: phase-models-overview.md
+      - Working in Excel:
+          - Excel and the PyroApp API: excel-api.md
+          - ChemApp and licensing: chemapp.md
+          - System units: system_units.md
+      - Advanced:
+          - Architecture and transports: pyroapp-architecture-2.0.md
+          - Runtime transport controls: runtime-transports.md
+          - UDF execution and derivative matrices: derivative-matrix.md
+          - Troubleshooting: troubleshooting.md
   - Practical tutorials:
       - Start here: tutorials/index.md
       - Tutorial data and Figure files: tutorials/tutorial-assets.md

@@ -1,6 +1,8 @@
 # ChemApp and licensing
 
-ChemApp is a thermochemical programming library from GTT-Technologies. PyroApp uses ChemApp as the equilibrium engine behind `XLL_CA_CALCULATE` and selected runtime/licence information functions.
+This page covers the practical ChemApp runtime and licence boundary. If you are still trying to understand what ChemApp is relative to FactSage and PyroApp, read [PyroApp, FactSage, ChemApp and ChemSage](learn/factsage-chemapp-pyroapp.md) first.
+
+ChemApp is a thermochemical equilibrium library from GTT Technologies. In normal PyroApp use you do not operate ChemApp directly: PyroApp prepares the calculation from worksheet values, ChemApp solves the thermodynamic problem, and PyroApp returns the requested results to Excel.
 
 ## Why PyroApp uses a worker process
 
