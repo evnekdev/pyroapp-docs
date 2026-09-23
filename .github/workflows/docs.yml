@@ -31,6 +31,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements-docs.txt
 
+      - name: Generate Excel example workbooks
+        run: python scripts/generate_example_workbooks.py
+
       - name: Validate documentation
         run: python -m mkdocs build --strict
 

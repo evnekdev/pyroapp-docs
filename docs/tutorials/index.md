@@ -11,6 +11,10 @@ They are rebuilt from the original PyroApp examples and the Ca-Zn-Si-O continuou
 
 The public [tutorial datafiles and Figure files](tutorial-assets.md) include the legacy teaching DAT systems that contain at most four chemical elements, together with the reference/target FIG files. CST files are deliberately excluded.
 
+## Ready-to-use Excel workbooks
+
+Students can start from the [downloadable example workbooks](workbooks.md). They are generated from the current XLL API during the documentation build and are designed to be opened directly in desktop Excel with PyroApp installed.
+
 ## Before you start
 
 You need:

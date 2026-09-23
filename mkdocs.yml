@@ -108,6 +108,7 @@ nav:
           - Troubleshooting: troubleshooting.md
   - Practical tutorials:
       - Start here: tutorials/index.md
+      - Ready-to-use Excel workbooks: tutorials/workbooks.md
       - Tutorial data and Figure files: tutorials/tutorial-assets.md
       - Explore a datafile: tutorials/explore-datafile.md
       - Convert composition bases: tutorials/composition-basis.md
