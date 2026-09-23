@@ -4,6 +4,8 @@ The original continuous-optimization tutorial used Ca-Zn-Si-O because its three 
 
 This page keeps that teaching strategy while replacing the Python/xlwings workflow with PyroApp 2.
 
+The matching initial DAT datafiles and reference/target Figure files are available on the [Tutorial datafiles and Figure files](../tutorial-assets.md) page.
+
 ## Fit subsystems first
 
 Treat the assessment hierarchically:

@@ -7,6 +7,10 @@ They are rebuilt from the original PyroApp examples and the Ca-Zn-Si-O continuou
 !!! important "PyroApp 2 workbooks do not need xlwings"
     Current formulas begin with `XLL_`. You do not need an `xlwings.conf` sheet, a Python interpreter, VBA macros, or the old xlwings add-in.
 
+## Downloadable tutorial assets
+
+The public [tutorial datafiles and Figure files](tutorial-assets.md) include the legacy teaching DAT systems that contain at most four chemical elements, together with the reference/target FIG files. CST files are deliberately excluded.
+
 ## Before you start
 
 You need:

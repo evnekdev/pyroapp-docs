@@ -98,6 +98,7 @@ nav:
       - Troubleshooting: troubleshooting.md
   - Practical tutorials:
       - Start here: tutorials/index.md
+      - Tutorial data and Figure files: tutorials/tutorial-assets.md
       - Explore a datafile: tutorials/explore-datafile.md
       - Convert composition bases: tutorials/composition-basis.md
       - First equilibrium table: tutorials/first-equilibrium.md
