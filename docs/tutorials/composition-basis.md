@@ -40,11 +40,13 @@ The downloadable workbook deliberately keeps these cases separate:
 |---|---|---|---|---|
 | One row | CaO/ZnO molar fractions | Ca/Zn/O molar fractions | Yes | Smallest useful conversion. |
 | Multiple rows | CaO/ZnO molar fractions | Ca/Zn/O molar fractions | Yes | One dynamic-array call converts a whole composition series. |
-| Reverse | Ca/Zn/O molar amounts | CaO/ZnO molar amounts | No | Confirms that supported conversions work in both directions. |
+| Molar amounts | CaO/ZnO molar amounts | Ca/Zn/O molar amounts | No | Keeps the physical amount instead of turning it into a fraction. |
 | Mass to mole | CaO/ZnO grams | Ca/Zn/O moles | No | Separates amount conversion from normalization. |
 | Mole to mass | CaO/ZnO moles | Ca/Zn/O mass fractions | Yes | Matches a common reporting basis. |
 
 Rows without normalization are *amounts*, not fractions. That distinction matters when the converted values become `IA` inputs to an equilibrium calculation.
+
+`XLL_DATA_CHANGE_BASIS` needs a uniquely solvable transformation. In this CaO/ZnO example, converting from two oxide formula units to three elemental quantities is supported; the reverse request is not generally unique. Do not use an elemental-to-oxide formula unless the selected bases make that inverse transform unambiguous.
 
 ## Boolean arguments
 

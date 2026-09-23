@@ -23,6 +23,18 @@ namespace PyroApp {
 
         [DllImport("user32.dll")]
         public static extern bool GetWindowRect(IntPtr hWnd, out RECT rect);
+
+        [DllImport("user32.dll")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        public static extern bool BringWindowToTop(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        public static extern bool ShowWindow(IntPtr hWnd, int command);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, uint flags);
     }
 }
 '@
@@ -40,8 +52,17 @@ if ($WindowIndex -lt 0 -or $WindowIndex -ge $windows.Count) {
 }
 
 $window = $windows[$WindowIndex]
+$handle = $window.MainWindowHandle
+if ($handle -eq 0) {
+    throw "The selected Excel process has no visible main window."
+}
+[PyroApp.ExcelWindowCapture]::ShowWindow($handle, 9) | Out-Null # SW_RESTORE
+[PyroApp.ExcelWindowCapture]::BringWindowToTop($handle) | Out-Null
+[PyroApp.ExcelWindowCapture]::SetForegroundWindow($handle) | Out-Null
+Start-Sleep -Milliseconds 500
+
 $rect = New-Object PyroApp.ExcelWindowCapture+RECT
-if (-not [PyroApp.ExcelWindowCapture]::GetWindowRect($window.MainWindowHandle, [ref]$rect)) {
+if (-not [PyroApp.ExcelWindowCapture]::GetWindowRect($handle, [ref]$rect)) {
     throw "Could not read the Excel window bounds."
 }
 
@@ -59,7 +80,15 @@ Add-Type -AssemblyName System.Drawing
 $image = New-Object System.Drawing.Bitmap($width, $height)
 $graphics = [System.Drawing.Graphics]::FromImage($image)
 try {
-    $graphics.CopyFromScreen($rect.Left, $rect.Top, 0, 0, $image.Size)
+    $hdc = $graphics.GetHdc()
+    try {
+        if (-not [PyroApp.ExcelWindowCapture]::PrintWindow($handle, $hdc, 2)) {
+            throw "Windows could not render the selected Excel window for capture."
+        }
+    }
+    finally {
+        $graphics.ReleaseHdc($hdc)
+    }
     $image.Save($destination, [System.Drawing.Imaging.ImageFormat]::Png)
 }
 finally {

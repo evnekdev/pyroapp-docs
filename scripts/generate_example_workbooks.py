@@ -1,6 +1,6 @@
 from pathlib import Path
 from openpyxl import Workbook, load_workbook
-from openpyxl.styles import Font, PatternFill, Alignment
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.chart import LineChart, Reference, Series
 from openpyxl.workbook.properties import CalcProperties
 import json, re
@@ -11,14 +11,19 @@ OUT.mkdir(parents=True, exist_ok=True)
 DOC='https://evnekdev.github.io/pyroapp-docs/'
 DATA=DOC+'tutorial-assets/datafiles/'
 NAVY='1F4E78'; WHITE='FFFFFF'; BLUE='D9EAF7'; GRAY='E7E6E6'; ORANGE='FCE4D6'; RED='F4CCCC'; PURPLE='E4DFEC'; TEAL='DDEBF7'
+CELL_EDGE = Side(style='thin', color='B7C9D6')
+CELL_BORDER = Border(left=CELL_EDGE, right=CELL_EDGE, top=CELL_EDGE, bottom=CELL_EDGE)
 
 def sh(ws, widths=None):
-    ws.sheet_view.showGridLines=False
+    # Filled cells do not display Excel gridlines.  Keep gridlines enabled and
+    # add explicit borders to populated cells so the teaching layout never
+    # hides a cell boundary.
+    ws.sheet_view.showGridLines=True
     for c,w in (widths or {'A':24,'B':20,'C':18,'D':18,'E':18,'F':18,'G':18,'H':18,'I':18,'J':18,'K':18,'L':18,'M':18,'N':18,'O':18,'P':18}).items(): ws.column_dimensions[c].width=w
 
 def head(ws,text,sub=''):
     ws['A1']=text; ws['A1'].font=Font(size=18,bold=True,color=WHITE); ws['A1'].fill=PatternFill('solid',fgColor=NAVY); ws.merge_cells('A1:J1')
-    if sub: ws['A2']=sub; ws['A2'].alignment=Alignment(wrap_text=True,vertical='top'); ws.merge_cells('A2:J2'); ws.row_dimensions[2].height=36
+    if sub: ws['A2']=sub; ws['A2'].alignment=Alignment(wrap_text=True,vertical='top'); ws.merge_cells('A2:J2'); ws.row_dimensions[2].height=42
 
 def section(ws,row,text,end=8):
     ws.cell(row,1,text); ws.cell(row,1).font=Font(bold=True,color=WHITE); ws.cell(row,1).fill=PatternFill('solid',fgColor=NAVY); ws.merge_cells(start_row=row,start_column=1,end_row=row,end_column=end)
@@ -26,7 +31,9 @@ def section(ws,row,text,end=8):
 def inp(c): c.font=Font(color='0000FF'); c.fill=PatternFill('solid',fgColor=BLUE)
 def ctl(c): c.font=Font(color='7030A0'); c.fill=PatternFill('solid',fgColor=PURPLE)
 def th(c): c.font=Font(bold=True,color=WHITE); c.fill=PatternFill('solid',fgColor=NAVY); c.alignment=Alignment(horizontal='center',wrap_text=True)
-def note(ws,row,text,end=8,color=TEAL): ws.cell(row,1,text); ws.cell(row,1).fill=PatternFill('solid',fgColor=color); ws.cell(row,1).alignment=Alignment(wrap_text=True); ws.merge_cells(start_row=row,start_column=1,end_row=row,end_column=end)
+def note(ws,row,text,end=8,color=TEAL):
+    ws.cell(row,1,text); ws.cell(row,1).fill=PatternFill('solid',fgColor=color); ws.cell(row,1).alignment=Alignment(wrap_text=True,vertical='top'); ws.merge_cells(start_row=row,start_column=1,end_row=row,end_column=end)
+    ws.row_dimensions[row].height=max(30, 15*(1+len(text)//90))
 def hlink(c,label,url): c.value=label; c.hyperlink=url; c.font=Font(color='008000',underline='single')
 
 def calc(wb): wb.calculation=CalcProperties(calcMode='auto',fullCalcOnLoad=True,forceFullCalc=True,calcId=191029)
@@ -66,11 +73,9 @@ def getting_started():
     ws['A13']='Input row'; ws['B13']='CaO'; ws['C13']='ZnO'; ws['D13']='Ca'; ws['E13']='Zn'; ws['F13']='O'
     for c in ['A13','B13','C13','D13','E13','F13']: th(ws[c])
     ws['D14']='=XLL_DATA_CHANGE_BASIS($B$5:$C$5,$E$5:$G$5,$B$14:$C$24,FALSE,FALSE,TRUE)'
-    section(ws,27,'3. Reverse conversion: elemental mole amounts → CaO and ZnO amounts',7)
+    section(ws,27,'3. Molar amounts: CaO + ZnO → elemental Ca, Zn, O amounts',7)
     for c,v in [('B28','CaO'),('C28','ZnO'),('E28','Ca'),('F28','Zn'),('G28','O')]: ws[c]=v; th(ws[c])
-    ws['A30']='Element amounts (mol)'; ws['E30']=2; ws['F30']=1; ws['G30']=3
-    for c in ['E30','F30','G30']: inp(ws[c])
-    ws['B30']='=XLL_DATA_CHANGE_BASIS($E$28:$G$28,$B$28:$C$28,$E$30:$G$30,FALSE,FALSE,FALSE)'
+    ws['A30']='Formula-unit amounts (mol)'; ws['B30']=2; ws['C30']=1; inp(ws['B30']); inp(ws['C30']); ws['D30']='Element amounts (mol)'; ws['E30']='=XLL_DATA_CHANGE_BASIS($B$28:$C$28,$E$28:$G$28,$B$30:$C$30,FALSE,FALSE,FALSE)'
     section(ws,34,'4. Mass amounts: CaO + ZnO → elemental mole amounts (not normalized)',7)
     for c,v in [('B35','CaO'),('C35','ZnO'),('E35','Ca'),('F35','Zn'),('G35','O')]: ws[c]=v; th(ws[c])
     ws['A37']='Mass amounts (g)'; ws['B37']=112.16; ws['C37']=81.38; inp(ws['B37']); inp(ws['C37']); ws['D37']='Element amounts (mol)'; ws['E37']='=XLL_DATA_CHANGE_BASIS($B$35:$C$35,$E$35:$G$35,$B$37:$C$37,TRUE,FALSE,FALSE)'
@@ -109,7 +114,7 @@ def getting_started():
     return save(wb,'01_PyroApp_Getting_Started_Ca-Zn-O.xlsx')
 
 def dat_parameters():
-    wb=Workbook(); wb.remove(wb.active); calc(wb); start(wb,'PyroApp Example 02 — DAT Inspection and Editing (Al-Ca-O)','Al-Ca-O_var.dat',DATA+'examples/Al-Ca-O_var.dat','Browse an open DAT, read compound/constituent parameters, inspect interactions and use a gated SET operation.')
+    wb=Workbook(); wb.remove(wb.active); calc(wb); start(wb,'PyroApp Example 02 — DAT Inspection and Editing (Ca-Zn-O)','Ca-Zn-O.dat',DATA+'examples/Ca-Zn-O.dat','Browse an open DAT, read compound/constituent parameters, inspect interactions and use a gated SET operation.')
     ws=wb.create_sheet('Browse'); sh(ws); head(ws,'Browse an open DAT');
     for hc,label,fc,form in [('A4','Components','A5','=XLL_CA_LIST_COMPONENTS(Start!$B$10)'),('C4','Solutions','C5','=XLL_CA_LIST_SOLUTIONS(Start!$B$10)'),('E4','Compounds','E5','=XLL_CA_LIST_COMPOUNDS(Start!$B$10)'),('G4','Phases','G5','=XLL_CA_LIST_PHASES(Start!$B$10)')]: ws[hc]=label; th(ws[hc]); ws[fc]=form
     section(ws,30,'Inspect Slag-liq',8); ws['A32']='Constituents'; th(ws['A32']); ws['B32']='=XLL_CA_LIST_CONSTITUENTS(Start!$B$10,"Slag-liq")'; ws['D32']='Species'; th(ws['D32']); ws['E32']='=XLL_CA_LIST_SPECIES(Start!$B$10,"Slag-liq")'; ws['G32']='G interactions'; th(ws['G32']); ws['H32']='=XLL_CA_LIST_INTERACTIONS_G(Start!$B$10,"Slag-liq")'
@@ -124,10 +129,10 @@ def dat_parameters():
     vals=[('Phase','Slag-liq'),('Interaction','=Interactions!B24'),('Value index',1),('Current value','=XLL_CA_GET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$8,$B$9,$B$10,$B$13)'),('Proposed value','=B11'),('Update token',0),('Enable SET',False)]
     for r,(a,b) in enumerate(vals,8): ws.cell(r,1,a); ws.cell(r,2,b)
     inp(ws['B8']); inp(ws['B10']); inp(ws['B12']); ctl(ws['B13']); ctl(ws['B14']); ws['A16']='SET result'; ws['B16']='=IF($B$14,XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$8,$B$9,$B$10,$B$12,$B$13),"Disabled")'; note(ws,19,'Typical use: read Current value, replace Proposed value with a number, enable SET, increment Update token, then disable SET and recalculate dependent calculations.',6)
-    return save(wb,'02_PyroApp_DAT_Inspection_and_Editing_Al-Ca-O.xlsx')
+    return save(wb,'02_PyroApp_DAT_Inspection_and_Editing_Ca-Zn-O.xlsx')
 
 def optimization():
-    wb=Workbook(); wb.remove(wb.active); calc(wb); start(wb,'PyroApp Example 03 — Optimization Workflows','Al-Ca-O_var.dat',DATA+'examples/Al-Ca-O_var.dat','Synthetic regression helpers plus the live derivative-matrix dependency pattern for an open DAT.')
+    wb=Workbook(); wb.remove(wb.active); calc(wb); start(wb,'PyroApp Example 03 — Optimization Workflows (Ca-Zn-O)','Ca-Zn-O.dat',DATA+'examples/Ca-Zn-O.dat','Synthetic regression helpers plus the live derivative-matrix dependency pattern for an open DAT.')
     ws=wb.create_sheet('Synthetic regression'); sh(ws); head(ws,'Synthetic linear-regression example','Illustrative numbers isolate the optimization mathematics; they are not experimental thermodynamic data.');
     for j,h in enumerate(['Category','Residual','Weight','Use?','dT/dx'],1): ws.cell(5,j,h); th(ws.cell(5,j))
     cats=['liquidus','liquidus','invariant','invariant','mixing','mixing']; res=[25,-15,8,-6,120,-80]; w=[1,1,2,2,.05,.05]
@@ -150,12 +155,12 @@ def optimization():
     for r in range(8,13): ws.cell(r,3,f'Target {r-7}')
     note(ws,15,'PyroApp perturbs numeric parameter cells, changes the trigger, waits for dependent SET/calculation formulas, writes derivative columns, then restores the original parameter vector.',10)
     ws=wb.create_sheet('Parameters'); sh(ws); head(ws,'Optimization parameter block','The starting numbers are the first Slag-liq ordinary G interaction terms in the supplied working DAT.'); ws['A4']='Phase'; ws['B4']='Slag-liq'; inp(ws['B4']); ws['A5']='Interaction identity'; ws['B5']='=XLL_CA_LIST_INTERACTIONS_G(Start!$B$10,$B$4)'; ws['A8']='Parameter 1 constant'; ws['B8']=-119160.32; inp(ws['B8']); ws['A9']='Parameter 2 T'; ws['B9']=21.673120; inp(ws['B9']); ws['A10']='Step p1'; ws['B10']=100; inp(ws['B10']); ws['A11']='Step p2'; ws['B11']=.1; inp(ws['B11']); ws['A12']='Trigger'; ws['B12']=0; ctl(ws['B12']); ws['A13']='Use p1?'; ws['B13']=True; ctl(ws['B13']); ws['A14']='Use p2?'; ws['B14']=True; ctl(ws['B14']); ws['A18']='Write p1'; ws['B18']='=XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$5,1,$B$8,$B$12)'; ws['A19']='Write p2'; ws['B19']='=XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$5,2,$B$9,$B$12)'; ws['A21']='Calculation token'; ws['B21']='=IF(AND(B18<>"",B19<>""),B12,B12)'; note(ws,23,'These SET formulas modify the working DAT. Keep an untouched baseline copy.',6,RED)
-    ws=wb.create_sheet('Live targets'); sh(ws); head(ws,'Live thermodynamic target template','Slag-liq is forced as the entered phase. Blue target G values are illustrative and must be replaced by real targets for research use.'); hdr(ws,4,2,[('T, [C]',None,None),('P, [bar]',None,None),('IA',None,'Ca'),('IA',None,'Al'),('IA',None,'O')]); states=[(1400,1,.8,.4,2),(1450,1,.6,.8,2.4),(1500,1,.4,1.2,2.8),(1550,1,.2,1.6,3.2),(1600,1,1,.2,1.3)]
+    ws=wb.create_sheet('Live targets'); sh(ws); head(ws,'Live thermodynamic target template','Slag-liq is forced as the entered phase. Blue target G values are illustrative and must be replaced by real targets for research use.'); hdr(ws,4,2,[('T, [C]',None,None),('P, [bar]',None,None),('IA',None,'Ca'),('IA',None,'Zn'),('IA',None,'O')]); states=[(1400,1,.8,.2,1),(1450,1,.6,.4,1),(1500,1,.4,.6,1),(1550,1,.2,.8,1),(1600,1,1,0,1)]
     for r,state in enumerate(states,8):
         for j,v in enumerate(state,2): ws.cell(r,j,v); inp(ws.cell(r,j))
     hdr(ws,4,8,[('G','Slag-liq',None),('ERROR',None,None)]); ws['M4']='Entered phases'; th(ws['M4']); ws['M5']='Slag-liq'; inp(ws['M5']); ws['H8']='=XLL_CA_CALCULATE(Start!$B$10,$B$4:$F$6,$B$8:$F$12,$H$4:$I$6,$M$5:$M$5,Parameters!$B$21)'; ws['J4']='Residual'; th(ws['J4']); ws['K4']='Target G (illustrative)'; th(ws['K4'])
     for r,t in zip(range(8,13),[-800000,-850000,-900000,-950000,-700000]): ws.cell(r,11,t); inp(ws.cell(r,11)); ws.cell(r,10,f'=IF(I{r}=0,K{r}-H{r},0)')
-    note(ws,15,'The target numbers are illustrative; the sheet teaches the live derivative dependency, not a Ca-Al-O assessment.',12,ORANGE)
+    note(ws,15,'The target numbers are illustrative; the sheet teaches the live derivative dependency, not a Ca-Zn-O assessment.',12,ORANGE)
     ws=wb.create_sheet('Live regression'); sh(ws); head(ws,'Use the live derivative matrix');
     for j,h in enumerate(['Weight','Residual','d/dp1','d/dp2'],1): ws.cell(4,j,h); th(ws.cell(4,j))
     for r in range(5,10): ws.cell(r,1,1); inp(ws.cell(r,1)); ws.cell(r,2,f"='Live targets'!J{r+3}"); ws.cell(r,3,f"='Derivative matrix setup'!D{r+3}"); ws.cell(r,4,f"='Derivative matrix setup'!E{r+3}")
@@ -165,6 +170,13 @@ def optimization():
     return save(wb,'03_PyroApp_Optimization_Workflows.xlsx')
 
 def save(wb,name):
+    # Native gridlines cover ordinary cells; thin borders keep filled headers,
+    # input cells, and formulas visibly bounded as well.
+    for ws in wb.worksheets:
+        for row in ws.iter_rows():
+            for cell in row:
+                if cell.__class__.__name__ != 'MergedCell' and cell.value is not None:
+                    cell.border=CELL_BORDER
     p=OUT/name; wb.save(p); return p
 
 files=[getting_started(),dat_parameters(),optimization()]

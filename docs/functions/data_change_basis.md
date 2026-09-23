@@ -47,11 +47,13 @@ The [Getting Started workbook](../tutorials/workbooks.md#getting-started-ca-zn-o
 
 1. one CaO/ZnO molar-fraction row to normalized Ca/Zn/O fractions;
 2. eleven composition rows in a single spill calculation;
-3. the reverse elemental-to-oxide conversion, retaining amounts;
+3. CaO/ZnO molar amounts to elemental amounts, retaining scale;
 4. CaO/ZnO mass amounts to elemental molar amounts, retaining amounts; and
 5. CaO/ZnO molar amounts to normalized elemental mass fractions.
 
 Select the formula anchor in each block to see the complete call in Excel’s Formula Bar. The blue cells are deliberately separated from the spilled result so that the source basis, target basis, and scientific meaning stay visible.
+
+The CaO/ZnO-to-Ca/Zn/O examples are deliberately one-way. A direct elemental-to-oxide request has more elemental columns than oxide formula units and is not a uniquely determined basis transform in the current function. Keep the original oxide basis for that direction, or choose a basis pair whose transformation is unambiguous.
 
 ## Useful checks
 
