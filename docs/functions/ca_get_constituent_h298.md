@@ -2,7 +2,7 @@
 
 **Availability:** stable, open-DAT only.
 
-Returns stored standard enthalpies at 298 K for solution-phase constituents/endmembers.
+Returns standard enthalpies at 298.15 K for solution-phase constituents/endmembers, independent of whether each DAT record is stored as a Gibbs polynomial or H298/S298 + Cp.
 
 ## Syntax
 
@@ -14,7 +14,7 @@ Returns stored standard enthalpies at 298 K for solution-phase constituents/endm
 
 ## Returns
 
-One value per `(phase,constituent)` pair. A value that is not directly represented in the DAT is returned as `NaN`.
+One value per `(phase,constituent)` pair. Gibbs-form records are evaluated analytically at 298.15 K so the result has the same logical meaning as the legacy ChemApp/PyroApp H getter.
 
 Use [`XLL_CA_LIST_CONSTITUENTS`](ca_list_constituents.md) to obtain valid constituent names.
 ## Live Excel example
