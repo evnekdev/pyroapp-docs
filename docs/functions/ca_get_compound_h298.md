@@ -2,7 +2,7 @@
 
 **Availability:** stable, open-DAT only.
 
-Returns the stored standard enthalpy at 298 K for selected stoichiometric compound phases.
+Returns the standard enthalpy at 298.15 K for selected stoichiometric compound phases, independent of whether the DAT stores the reference state as a Gibbs polynomial or as H298/S298 + Cp.
 
 ## Syntax
 
@@ -12,7 +12,7 @@ Returns the stored standard enthalpy at 298 K for selected stoichiometric compou
 
 ## Returns
 
-One numeric value per requested phase. If the compound exists but its thermochemical representation does not directly contain an H298 value, PyroApp returns `NaN` rather than inventing one from a different representation.
+One numeric value per requested phase. For a Gibbs-polynomial DAT record, PyroApp evaluates the exact stored polynomial and its temperature derivative at 298.15 K to recover the same logical H298 exposed by legacy ChemApp/PyroApp.
 
 ## Example
 
