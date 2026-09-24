@@ -31,7 +31,8 @@ function Crop-Capture([string]$Path, [object[]]$Crop) {
         $bitmap.Save($Path, [System.Drawing.Imaging.ImageFormat]::Png)
         $bitmap.Dispose()
     } finally { $image.Dispose() }
-}if (-not (Test-Path -LiteralPath $InstalledXll)) { throw "Installed XLL not found: $InstalledXll" }
+}
+if (-not (Test-Path -LiteralPath $InstalledXll)) { throw "Installed XLL not found: $InstalledXll" }
 $staged = @()
 $automationBefore = @(Get-CimInstance Win32_Process -Filter "Name = 'EXCEL.EXE'" | Where-Object { $_.CommandLine -match '/automation\s+-Embedding' } | Select-Object -ExpandProperty ProcessId)
 $automationOwned = @()
@@ -43,8 +44,10 @@ try {
         $staged += $destination
     }
     $excel = New-Object -ComObject Excel.Application
-    Start-Sleep -Milliseconds 300
-    $automationOwned = @(Get-CimInstance Win32_Process -Filter "Name = 'EXCEL.EXE'" | Where-Object { $_.CommandLine -match '/automation\s+-Embedding' -and $_.ProcessId -notin $automationBefore } | Select-Object -ExpandProperty ProcessId)
+    for ($attempt = 0; $attempt -lt 30 -and $automationOwned.Count -eq 0; $attempt++) {
+        Start-Sleep -Milliseconds 200
+        $automationOwned = @(Get-CimInstance Win32_Process -Filter "Name = 'EXCEL.EXE'" | Where-Object { $_.CommandLine -match '/automation\s+-Embedding' -and $_.ProcessId -notin $automationBefore } | Select-Object -ExpandProperty ProcessId)
+    }
     $excel.Visible = $true
     $excel.DisplayAlerts = $false
     $excel.WindowState = -4137 # maximized
