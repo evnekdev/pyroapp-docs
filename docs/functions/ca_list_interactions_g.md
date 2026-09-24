@@ -25,3 +25,9 @@ parsed DAT model, for example:
     Multi-digit powers are preserved by the DAT parser.
 
 For magnetic interactions use [`XLL_CA_LIST_INTERACTIONS_M`](ca_list_interactions_m.md).
+
+## Live Excel example
+
+Use the exact string returned by the spill for a later interaction GET or SET call. Do not type a reconstructed interaction name.
+
+![Ordinary G interaction LIST in Excel](../assets/excel/list/interactions-g.png)

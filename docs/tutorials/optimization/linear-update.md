@@ -82,3 +82,11 @@ Reduce the step or reconsider the model rather than repeatedly forcing regressio
 ## Next
 
 [Select a parameter combination](parameter-selection.md).
+
+## Real Excel workflow
+
+The teaching workbook keeps the numerical update separate from the active parameter cells. The regression result is a proposal; review its sign and apply damping before deliberately copying a value into the working parameter block.
+
+![Synthetic linear regression in Excel](../../assets/excel/optimization/synthetic-linear-regression.png)
+
+![Damped proposed parameter update in Excel](../../assets/excel/optimization/damped-proposed-update.png)

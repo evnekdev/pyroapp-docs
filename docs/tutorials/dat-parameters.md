@@ -105,3 +105,21 @@ Open-DAT LIST/GET/SET operations are parser-backed local operations. They do not
 ## Next
 
 Continue to [Simple optimization](optimization/index.md).
+
+## Read first; write only deliberately
+
+The grouped GET tables show the exact phase/constituent or compound inputs in the Formula Bar. The interaction table starts from a LIST identity, then retrieves its indices and the six ordinary Gibbs-energy coefficients.
+
+![Compound GET functions in Excel](../assets/excel/get/compound-properties.png)
+
+![Constituent GET functions in Excel](../assets/excel/get/constituent-properties.png)
+
+![Interaction indices and G parameters in Excel](../assets/excel/get/interaction-indices-and-parameters.png)
+
+The downloadable editing workbook saves its write control as `FALSE`. Its SET formula is inside `IF(Enable SET, XLL_CA_SET_..., "Disabled")`, so ordinary opening and recalculation do not invoke the native write operation.
+
+![Disabled gated SET formula in Excel](../assets/excel/dat-editing/gated-set-disabled.png)
+
+![Listed interaction identity flowing into GET values](../assets/excel/dat-editing/list-to-get-identity.png)
+
+*The exact identity selected from the LIST spill is reused by the interaction-parameter read.*

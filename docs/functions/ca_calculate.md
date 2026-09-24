@@ -76,3 +76,15 @@ Malformed headers or unknown names fail the formula. Some native ChemApp calcula
 - **gRPC:** PyroApp synchronizes the exact datafile version to the server cache, then the server schedules ChemApp work.
 
 This is the only normal PyroApp datafile operation that uploads a file to the remote server.
+
+## Real Excel calculation layouts
+
+The selected formula in the minimal example returns one row. Its three-row header uses literal `""` text for unused phase/component fields; it is text, never the formula `=""`.
+
+![Minimal one-row CA_CALCULATE result in Excel](../assets/excel/calculate/minimal-one-row-equilibrium.png)
+
+![Three-row CA_CALCULATE header in Excel](../assets/excel/calculate/three-row-header-literal-markers.png)
+
+A full table spills one result row per input point. `ERROR=0` means no native ChemApp error for that row; `NSTABLE` is the count of phase activities strictly above `0.9999`, not a generic convergence score.
+
+![Multi-row CA_CALCULATE output with phase amounts and composition](../assets/excel/calculate/multi-row-equilibrium-phase-amounts.png)

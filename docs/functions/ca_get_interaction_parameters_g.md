@@ -28,3 +28,9 @@ A matrix of requested interaction coefficient values.
 
 Interaction strings use the ChemApp-style form returned by
 `XLL_CA_LIST_INTERACTIONS_G`. The DAT parser preserves multi-digit powers.
+
+## Live Excel example
+
+Start from a listed interaction, inspect its indices, then retrieve the six coefficient slots.
+
+![Interaction indices and ordinary G parameters in Excel](../assets/excel/get/interaction-indices-and-parameters.png)

@@ -61,3 +61,11 @@ Keep the chart linked to the spilled output columns rather than manually copying
 ## Next
 
 For a direct phase-appearance solve, continue to [Phase appearance and boundaries](phase-boundaries.md).
+
+## Sweep and chart in Excel
+
+The workbook’s temperature sweep asks for phase amounts, `ERROR`, and `NSTABLE` in the same spill. Its ordinary Excel chart reads those result columns directly.
+
+![Temperature sweep results in Excel](../assets/excel/calculate/temperature-sweep.png)
+
+![Excel chart driven by equilibrium results](../assets/excel/calculate/chart-from-equilibrium-results.png)

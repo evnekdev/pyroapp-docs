@@ -31,11 +31,16 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements-docs.txt
 
-      - name: Generate Excel example workbooks
-        run: python scripts/generate_example_workbooks.py
+      - name: Verify workbook safety and immutable artifacts
+        run: |
+          python scripts/verify_teaching_workbooks.py --source docs/tutorial-assets/workbooks
+          python scripts/verify_published_workbooks.py --source docs/tutorial-assets/workbooks
 
-      - name: Validate documentation
+      - name: Build documentation
         run: python -m mkdocs build --strict
+
+      - name: Verify built downloadable workbooks
+        run: python scripts/verify_published_workbooks.py --source docs/tutorial-assets/workbooks --published site/tutorial-assets/workbooks
 
       - name: Deploy to GitHub Pages branch
         run: python -m mkdocs gh-deploy --force

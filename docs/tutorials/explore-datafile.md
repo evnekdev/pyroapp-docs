@@ -103,3 +103,11 @@ The strings are datafile identities, not friendly labels. Reference the spilled 
 ## Next
 
 Continue to [Convert composition bases](composition-basis.md), then [First equilibrium table](first-equilibrium.md).
+
+## Read identities from a live DAT
+
+The LIST anchor is selected in this real Excel capture. Use these spilled strings as inputs to later GET, SET, and CALCULATE calls; they are identifiers from the DAT, not display labels.
+
+![Component, phase, solution and compound LIST results in Excel](../assets/excel/list/components-phases-solutions-compounds.png)
+
+![Constituent and species LIST results in Excel](../assets/excel/list/constituents-and-species.png)

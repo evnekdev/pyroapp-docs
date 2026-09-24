@@ -7,7 +7,7 @@ Changes one fixed thermodynamic term for each selected ordinary excess-Gibbs int
 ## Syntax
 
 ```excel
-=XLL_CA_SET_INTERACTION_PARAMETERS_G(datafile,phases,interactions,value_indices,values,[update_token])
+=XLL_CA_SET_INTERACTION_PARAMETERS_G(datafile,phases,interactions,values,value_indices,[update_token])
 ```
 
 `phases`, `interactions`, `value_indices`, and `values` correspond by position.

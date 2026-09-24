@@ -68,3 +68,15 @@ A good workbook keeps the reported composition, the human-readable basis, and th
 ## Next
 
 Use the converted values in [First equilibrium table](first-equilibrium.md) or [Temperature and composition sweeps](equilibrium-sweep.md).
+
+## See the five cases in Excel
+
+The [Getting Started workbook](workbooks.md#getting-started-ca-zn-o) shows all five transformations as separate input/result blocks. The last two make the distinction between amount and fraction visible.
+
+![Molar amounts retain scale](../assets/excel/data-change-basis/molar-amounts.png)
+
+*No normalization means the output is an amount, so it must not be interpreted as a fraction.*
+
+![Molar amounts converted to mass fractions](../assets/excel/data-change-basis/molar-to-mass-fractions.png)
+
+*Changing the output basis to mass and enabling normalization produces mass fractions that sum to one.*

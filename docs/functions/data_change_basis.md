@@ -61,3 +61,19 @@ The CaO/ZnO-to-Ca/Zn/O examples are deliberately one-way. A direct elemental-to-
 - An amount result should retain its physically meaningful scale; it should not be expected to sum to one.
 - Tiny negative values caused by numerical round-off can occur near zero, but a meaningful negative component usually signals an unsuitable basis or inconsistent source row.
 - Use the components returned by `XLL_CA_LIST_COMPONENTS` when the result will feed `XLL_CA_CALCULATE`.
+
+## Real Excel examples
+
+The selected anchors in the **Basis + utilities** sheet make the three Boolean arguments auditable in the Formula Bar. Blue cells are the input range; the dynamic array begins at the selected formula cell.
+
+![One-row molar-fraction basis conversion in Excel](../assets/excel/data-change-basis/one-row-molar-fraction.png)
+
+*CaO and ZnO molar fractions become normalized Ca, Zn and O fractions (`FALSE`, `FALSE`, `TRUE`).*
+
+![Multiple-row dynamic basis conversion in Excel](../assets/excel/data-change-basis/multirow-molar-fraction-spill.png)
+
+*One call spills eleven converted rows. The output has three elemental columns although the source has two oxide columns.*
+
+![Mass to molar amounts in Excel](../assets/excel/data-change-basis/mass-to-molar-amounts.png)
+
+*With `isweight_initial=TRUE`, `isweight_final=FALSE`, and `is_fraction=FALSE`, scale is retained as elemental molar amounts.*

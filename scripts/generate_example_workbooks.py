@@ -114,7 +114,7 @@ def getting_started():
     return save(wb,'01_PyroApp_Getting_Started_Ca-Zn-O.xlsx')
 
 def dat_parameters():
-    wb=Workbook(); wb.remove(wb.active); calc(wb); start(wb,'PyroApp Example 02 — DAT Inspection and Editing (Ca-Zn-O)','Ca-Zn-O.dat',DATA+'examples/Ca-Zn-O.dat','Browse an open DAT, read compound/constituent parameters, inspect interactions and use a gated SET operation.')
+    wb=Workbook(); wb.remove(wb.active); calc(wb); start(wb,'PyroApp Example 02 — DAT Inspection and Editing (Ca-Zn-O)','Ca-Zn-O_editing_working.dat',DATA+'examples/Ca-Zn-O_editing_working.dat','Browse a disposable working DAT, read compound/constituent parameters, inspect interactions and use a gated SET operation.')
     ws=wb.create_sheet('Browse'); sh(ws); head(ws,'Browse an open DAT');
     for hc,label,fc,form in [('A4','Components','A5','=XLL_CA_LIST_COMPONENTS(Start!$B$10)'),('C4','Solutions','C5','=XLL_CA_LIST_SOLUTIONS(Start!$B$10)'),('E4','Compounds','E5','=XLL_CA_LIST_COMPOUNDS(Start!$B$10)'),('G4','Phases','G5','=XLL_CA_LIST_PHASES(Start!$B$10)')]: ws[hc]=label; th(ws[hc]); ws[fc]=form
     section(ws,30,'Inspect Slag-liq',8); ws['A32']='Constituents'; th(ws['A32']); ws['B32']='=XLL_CA_LIST_CONSTITUENTS(Start!$B$10,"Slag-liq")'; ws['D32']='Species'; th(ws['D32']); ws['E32']='=XLL_CA_LIST_SPECIES(Start!$B$10,"Slag-liq")'; ws['G32']='G interactions'; th(ws['G32']); ws['H32']='=XLL_CA_LIST_INTERACTIONS_G(Start!$B$10,"Slag-liq")'
@@ -125,15 +125,22 @@ def dat_parameters():
     ws=wb.create_sheet('Interactions'); sh(ws,{'A':24,'B':54,'C':18,'D':18,'E':18,'F':18,'G':18}); head(ws,'Excess Gibbs-energy interactions'); ws['A4']='Phase'; ws['B4']='Slag-liq'; inp(ws['B4']); ws['A6']='Interaction list'; th(ws['A6']); ws['B6']='=XLL_CA_LIST_INTERACTIONS_G(Start!$B$10,$B$4)'; section(ws,22,'Read the first interaction',7); ws['A24']='Interaction'; ws['B24']='=B6'; ws['A25']='Index'; ws['B25']='=XLL_CA_GET_INTERACTION_INDICES(Start!$B$10,$B$4,$B$24)'
     for j,h in enumerate(['constant','T','T ln(T)','T^2','T^3','1/T'],2): ws.cell(28,j,h); th(ws.cell(28,j))
     ws['B29']='=XLL_CA_GET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$24,0)'
-    ws=wb.create_sheet('Safe edit'); sh(ws); head(ws,'Gated SET example'); note(ws,4,'SET modifies the DAT file. Leave Enable SET = FALSE until you intentionally want to write the Proposed value. Keep an untouched reference DAT.',6,RED)
+    ws=wb.create_sheet('Safe edit'); sh(ws); head(ws,'Gated SET example'); note(ws,4,'This workbook opens Ca-Zn-O_editing_working.dat. Ca-Zn-O.dat is the baseline reference. SET modifies only the working DAT, and Enable SET is FALSE by default so opening or recalculating this workbook cannot write either file.',6,RED)
     vals=[('Phase','Slag-liq'),('Interaction','=Interactions!B24'),('Value index',1),('Current value','=XLL_CA_GET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$8,$B$9,$B$10,$B$13)'),('Proposed value','=B11'),('Update token',0),('Enable SET',False)]
     for r,(a,b) in enumerate(vals,8): ws.cell(r,1,a); ws.cell(r,2,b)
-    inp(ws['B8']); inp(ws['B10']); inp(ws['B12']); ctl(ws['B13']); ctl(ws['B14']); ws['A16']='SET result'; ws['B16']='=IF($B$14,XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$8,$B$9,$B$10,$B$12,$B$13),"Disabled")'; note(ws,19,'Typical use: read Current value, replace Proposed value with a number, enable SET, increment Update token, then disable SET and recalculate dependent calculations.',6)
+    inp(ws['B8']); inp(ws['B10']); inp(ws['B12']); ctl(ws['B13']); ctl(ws['B14']); ws['A16']='SET result'; ws['B16']='=IF($B$14,XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$8,$B$9,$B$12,$B$10,$B$13),"Disabled")'; note(ws,19,'Typical use: read Current value, replace Proposed value with a number, enable SET, increment Update token, then disable SET and recalculate dependent calculations.',6)
     return save(wb,'02_PyroApp_DAT_Inspection_and_Editing_Ca-Zn-O.xlsx')
 
 def optimization():
-    wb=Workbook(); wb.remove(wb.active); calc(wb); start(wb,'PyroApp Example 03 — Optimization Workflows (Ca-Zn-O)','Ca-Zn-O.dat',DATA+'examples/Ca-Zn-O.dat','Synthetic regression helpers plus the live derivative-matrix dependency pattern for an open DAT.')
-    ws=wb.create_sheet('Synthetic regression'); sh(ws); head(ws,'Synthetic linear-regression example','Illustrative numbers isolate the optimization mathematics; they are not experimental thermodynamic data.');
+    # This is a live Ca-Zn-O example, not a transplanted Al-Ca-O parameter set.
+    # The phase, exact parser identity, and first two G coefficients were read
+    # through the installed XLL from Ca-Zn-O_optimization_working.dat.
+    working_dat = 'Ca-Zn-O_optimization_working.dat'
+    wb=Workbook(); wb.remove(wb.active); calc(wb)
+    start(wb,'PyroApp Example 03 — Optimization Workflows (Ca-Zn-O)',working_dat,DATA+'examples/'+working_dat,'Synthetic regression helpers plus a deliberately gated live Ca-Zn-O derivative-matrix workflow.')
+    ws=wb['Start']; ws['A16']='Baseline DAT'; ws['B16']='Ca-Zn-O.dat'; ws['A17']='Write safety'; ws['B17']='The live sheets use only the separately named working DAT. Enable DAT writes remains FALSE in the saved workbook.'
+
+    ws=wb.create_sheet('Synthetic regression'); sh(ws); head(ws,'Synthetic linear-regression example','Illustrative numbers isolate the optimization mathematics; they are not experimental thermodynamic data.')
     for j,h in enumerate(['Category','Residual','Weight','Use?','dT/dx'],1): ws.cell(5,j,h); th(ws.cell(5,j))
     cats=['liquidus','liquidus','invariant','invariant','mixing','mixing']; res=[25,-15,8,-6,120,-80]; w=[1,1,2,2,.05,.05]
     for i in range(6):
@@ -147,28 +154,46 @@ def optimization():
     for c in ['C23','D23','E23','C24','D24','E24']: inp(ws[c])
     ws['B26']='Proposed Δp'; ws['C26']='=XLL_LINEAR_REGRESSION($B$16:$D$21,$B$6:$B$11,$C$6:$C$11,$C$23:$E$23,$C$24:$E$24)'; ws['B28']='Best 2-parameter mask'; ws['C28']='=XLL_BEST_COMBINATION($B$16:$D$21,$B$6:$B$11,$C$6:$C$11,$C$23:$E$23,$C$24:$E$24,2)'
     for r in range(33,39): ws.cell(r,1,f'=B{r-27}-SUMPRODUCT(B{r-17}:D{r-17},$C$26:$E$26)')
-    ws['C33']='=XLL_PD_ERROR_TABLE($A$6:$A$11,$B$6:$B$11,$A$33:$A$38,$D$6:$D$11,$E$6:$E$11)'; note(ws,41,'Convention: residual = target - current; A = d(current)/d(parameter); solve A Δp ≈ residual. Recalculate the real nonlinear model after applying a step.',10)
-    ws=wb.create_sheet('Derivative matrix setup'); sh(ws); ws['D1']='Live derivative-matrix setup'; ws.merge_cells('D1:J1'); th(ws['D1']); ws['D2']='Run PyroApp → Calculation → Calculate derivative matrix while this sheet is active. B1:B6 are reserved for the command.'; ws.merge_cells('D2:J3'); ws['D2'].alignment=Alignment(wrap_text=True)
+    ws['C33']='=XLL_PD_ERROR_TABLE($A$6:$A$11,$B$6:$B$11,$A$33:$A$38,$D$6:$D$11,$E$6:$E$11)'; note(ws,41,'Convention: residual = target - current; A = d(current)/d(parameter); solve A Δp ≈ residual. Recalculate the nonlinear model after a user-reviewed, damped step.',10)
+
+    ws=wb.create_sheet('Derivative matrix setup'); sh(ws); ws['D1']='Live derivative-matrix setup'; ws.merge_cells('D1:J1'); th(ws['D1']); ws['D2']='Run PyroApp → Calculation → Calculate derivative matrix while this sheet is active. B1:B6 are reserved for the command. Set Enable DAT writes to TRUE only after confirming the disposable working DAT.'; ws.merge_cells('D2:J3'); ws['D2'].alignment=Alignment(wrap_text=True)
     cfg=[('Parameter range','Parameters!$B$8:$B$9'),('Residual/output range','Live targets!$J$8:$J$12'),('Trigger cell','Parameters!$B$12'),('Derivative output top-left','$D$8'),('Step(s)','Parameters!$B$10:$B$11'),('Parameter mask','Parameters!$B$13:$B$14')]
     for r,(a,b) in enumerate(cfg,1): ws.cell(r,1,a); ws.cell(r,2,b); ctl(ws.cell(r,2))
-    ws['C7']='Target'; th(ws['C7']); ws['D7']='Parameter 1'; th(ws['D7']); ws['E7']='Parameter 2'; th(ws['E7']);
+    ws['C7']='Target'; th(ws['C7']); ws['D7']='Parameter 1'; th(ws['D7']); ws['E7']='Parameter 2'; th(ws['E7'])
     for r in range(8,13): ws.cell(r,3,f'Target {r-7}')
-    note(ws,15,'PyroApp perturbs numeric parameter cells, changes the trigger, waits for dependent SET/calculation formulas, writes derivative columns, then restores the original parameter vector.',10)
-    ws=wb.create_sheet('Parameters'); sh(ws); head(ws,'Optimization parameter block','The starting numbers are the first Slag-liq ordinary G interaction terms in the supplied working DAT.'); ws['A4']='Phase'; ws['B4']='Slag-liq'; inp(ws['B4']); ws['A5']='Interaction identity'; ws['B5']='=XLL_CA_LIST_INTERACTIONS_G(Start!$B$10,$B$4)'; ws['A8']='Parameter 1 constant'; ws['B8']=-119160.32; inp(ws['B8']); ws['A9']='Parameter 2 T'; ws['B9']=21.673120; inp(ws['B9']); ws['A10']='Step p1'; ws['B10']=100; inp(ws['B10']); ws['A11']='Step p2'; ws['B11']=.1; inp(ws['B11']); ws['A12']='Trigger'; ws['B12']=0; ctl(ws['B12']); ws['A13']='Use p1?'; ws['B13']=True; ctl(ws['B13']); ws['A14']='Use p2?'; ws['B14']=True; ctl(ws['B14']); ws['A18']='Write p1'; ws['B18']='=XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$5,1,$B$8,$B$12)'; ws['A19']='Write p2'; ws['B19']='=XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$5,2,$B$9,$B$12)'; ws['A21']='Calculation token'; ws['B21']='=IF(AND(B18<>"",B19<>""),B12,B12)'; note(ws,23,'These SET formulas modify the working DAT. Keep an untouched baseline copy.',6,RED)
-    ws=wb.create_sheet('Live targets'); sh(ws); head(ws,'Live thermodynamic target template','Slag-liq is forced as the entered phase. Blue target G values are illustrative and must be replaced by real targets for research use.'); hdr(ws,4,2,[('T, [C]',None,None),('P, [bar]',None,None),('IA',None,'Ca'),('IA',None,'Zn'),('IA',None,'O')]); states=[(1400,1,.8,.2,1),(1450,1,.6,.4,1),(1500,1,.4,.6,1),(1550,1,.2,.8,1),(1600,1,1,0,1)]
+    note(ws,15,'The command perturbs numeric parameter cells, changes the trigger once per state, waits for gated SET/calculation dependencies, writes derivative columns, then restores the original parameter vector. With Enable DAT writes = FALSE, it cannot alter the DAT.',10)
+
+    ws=wb.create_sheet('Parameters'); sh(ws); head(ws,'Ca-Zn-O working-DAT parameter block','The interaction identity and initial values below come from the current Ca-Zn-O working DAT through the installed XLL.')
+    ws['A4']='Phase'; ws['B4']='Slag-liq'; inp(ws['B4'])
+    ws['A5']='Interaction identity (first listed)'; ws['B5']='=XLL_CA_LIST_INTERACTIONS_G(Start!$B$10,$B$4)'
+    ws['D4']='Coefficient order'; ws['D5']='constant, T, T ln(T), T², T³, 1/T'
+    ws['A8']='Parameter 1 constant'; ws['B8']=-26652.080; inp(ws['B8'])
+    ws['A9']='Parameter 2 T'; ws['B9']=0.0; inp(ws['B9'])
+    ws['A10']='Step p1'; ws['B10']=100; inp(ws['B10']); ws['A11']='Step p2'; ws['B11']=.1; inp(ws['B11'])
+    ws['A12']='Trigger'; ws['B12']=0; ctl(ws['B12']); ws['A13']='Use p1?'; ws['B13']=True; ctl(ws['B13']); ws['A14']='Use p2?'; ws['B14']=True; ctl(ws['B14']); ws['A15']='Enable DAT writes'; ws['B15']=False; ctl(ws['B15'])
+    ws['A17']='Current p1 (DAT read)'; ws['B17']='=XLL_CA_GET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$5,1)'
+    ws['A18']='Current p2 (DAT read)'; ws['B18']='=XLL_CA_GET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$5,2)'
+    ws['A20']='Write p1'; ws['B20']='=IF($B$15,XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$5,$B$8,1,$B$12),"Disabled")'
+    ws['A21']='Write p2'; ws['B21']='=IF($B$15,XLL_CA_SET_INTERACTION_PARAMETERS_G(Start!$B$10,$B$4,$B$5,$B$9,2,$B$12),"Disabled")'
+    ws['A23']='Calculation token'; ws['B23']='=B12'
+    note(ws,25,'Opening or recalculating the workbook does not call SET because Enable DAT writes is FALSE. For a deliberate derivative run, first use a fresh copy of Ca-Zn-O_optimization_working.dat, enable writes, run the Ribbon command, then set the gate back to FALSE.',8,RED)
+
+    ws=wb.create_sheet('Live targets'); sh(ws); head(ws,'Live thermodynamic target template','Slag-liq is the entered phase. Blue target G values are illustrative and must be replaced by real measurements for research use.')
+    hdr(ws,4,2,[('T, [C]',None,None),('P, [bar]',None,None),('IA',None,'Ca'),('IA',None,'Zn'),('IA',None,'O')]); states=[(1400,1,.8,.2,1),(1450,1,.6,.4,1),(1500,1,.4,.6,1),(1550,1,.2,.8,1),(1600,1,1,0,1)]
     for r,state in enumerate(states,8):
         for j,v in enumerate(state,2): ws.cell(r,j,v); inp(ws.cell(r,j))
-    hdr(ws,4,8,[('G','Slag-liq',None),('ERROR',None,None)]); ws['M4']='Entered phases'; th(ws['M4']); ws['M5']='Slag-liq'; inp(ws['M5']); ws['H8']='=XLL_CA_CALCULATE(Start!$B$10,$B$4:$F$6,$B$8:$F$12,$H$4:$I$6,$M$5:$M$5,Parameters!$B$21)'; ws['J4']='Residual'; th(ws['J4']); ws['K4']='Target G (illustrative)'; th(ws['K4'])
-    for r,t in zip(range(8,13),[-800000,-850000,-900000,-950000,-700000]): ws.cell(r,11,t); inp(ws.cell(r,11)); ws.cell(r,10,f'=IF(I{r}=0,K{r}-H{r},0)')
-    note(ws,15,'The target numbers are illustrative; the sheet teaches the live derivative dependency, not a Ca-Zn-O assessment.',12,ORANGE)
-    ws=wb.create_sheet('Live regression'); sh(ws); head(ws,'Use the live derivative matrix');
+    hdr(ws,4,8,[('G','Slag-liq',None),('ERROR',None,None)]); ws['M4']='Entered phases'; th(ws['M4']); ws['M5']='Slag-liq'; inp(ws['M5']); ws['H8']='=XLL_CA_CALCULATE(Start!$B$10,$B$4:$F$6,$B$8:$F$12,$H$4:$I$6,$M$5:$M$5,Parameters!$B$23)'; ws['J4']='Residual = target - current'; th(ws['J4']); ws['K4']='Target G (illustrative)'; th(ws['K4'])
+    for r,t in zip(range(8,13),[-800000,-850000,-900000,-950000,-700000]): ws.cell(r,11,t); inp(ws.cell(r,11)); ws.cell(r,10,f'=IF(I{r}=0,K{r}-H{r},NA())')
+    note(ws,15,'The residual sign is explicit: target minus current. ERROR = 0 permits a residual; any other status returns NA so a failed solve is not silently treated as zero.',12,ORANGE)
+
+    ws=wb.create_sheet('Live regression'); sh(ws); head(ws,'Review the live derivative matrix')
     for j,h in enumerate(['Weight','Residual','d/dp1','d/dp2'],1): ws.cell(4,j,h); th(ws.cell(4,j))
     for r in range(5,10): ws.cell(r,1,1); inp(ws.cell(r,1)); ws.cell(r,2,f"='Live targets'!J{r+3}"); ws.cell(r,3,f"='Derivative matrix setup'!D{r+3}"); ws.cell(r,4,f"='Derivative matrix setup'!E{r+3}")
     ws['A12']='Free mask'; ws['B12']=True; ws['C12']=True; ws['A13']='Fixed values'; ws['B13']=0; ws['C13']=0
     for c in ['B12','C12','B13','C13']: inp(ws[c])
-    ws['A15']='Proposed Δp'; ws['B15']='=XLL_LINEAR_REGRESSION($C$5:$D$9,$B$5:$B$9,$A$5:$A$9,$B$12:$C$12,$B$13:$C$13)'; ws['A17']='Best 1 parameter'; ws['B17']='=XLL_BEST_COMBINATION($C$5:$D$9,$B$5:$B$9,$A$5:$A$9,$B$12:$C$12,$B$13:$C$13,1)'; ws['A20']='Suggested p1'; ws['B20']='=Parameters!B8+B15'; ws['A21']='Suggested p2'; ws['B21']='=Parameters!B9+C15'; note(ws,24,'Inspect and damp the proposed step before deliberately copying accepted values into Parameters. Do not create an automatic circular optimizer.',8)
+    ws['A15']='Proposed Δp'; ws['B15']='=XLL_LINEAR_REGRESSION($C$5:$D$9,$B$5:$B$9,$A$5:$A$9,$B$12:$C$12,$B$13:$C$13)'; ws['A17']='Best 1 parameter'; ws['B17']='=XLL_BEST_COMBINATION($C$5:$D$9,$B$5:$B$9,$A$5:$A$9,$B$12:$C$12,$B$13:$C$13,1)'
+    ws['A20']='Damping α'; ws['B20']=0.25; inp(ws['B20']); ws['A21']='Suggested p1 = current + αΔp'; ws['B21']='=Parameters!B8+$B$20*B15'; ws['A22']='Suggested p2 = current + αΔp'; ws['B22']='=Parameters!B9+$B$20*C15'; note(ws,25,'Review and damp the proposed step before deliberately copying accepted values into Parameters. This workbook has no automatic circular optimizer and never changes parameter cells from its regression result.',8)
     return save(wb,'03_PyroApp_Optimization_Workflows.xlsx')
-
 def save(wb,name):
     # Native gridlines cover ordinary cells; thin borders keep filled headers,
     # input cells, and formulas visibly bounded as well.
@@ -180,6 +205,8 @@ def save(wb,name):
     p=OUT/name; wb.save(p); return p
 
 files=[getting_started(),dat_parameters(),optimization()]
+from verify_teaching_workbooks import verify
+
 SUPPORTED_XLL_FUNCTIONS={
     'XLL_BEST_COMBINATION','XLL_CA_CALCULATE','XLL_CA_CHEMAPPDLLS','XLL_CA_DIMENSIONS',
     'XLL_CA_DIMENSIONS_MAX','XLL_CA_GET_COMPONENT_WEIGHTS','XLL_CA_GET_COMPOUND_CP',
@@ -206,3 +233,5 @@ for p in files:
     unknown=names-SUPPORTED_XLL_FUNCTIONS
     if unknown: raise RuntimeError(f'{p.name}: unsupported XLL functions {sorted(unknown)}')
     print(p.name, len(wb.sheetnames),'sheets',len(names),'XLL functions',p.stat().st_size,'bytes')
+if verify(OUT) != 0:
+    raise RuntimeError('Generated workbook safety validation failed')

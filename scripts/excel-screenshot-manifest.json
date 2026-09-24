@@ -1,0 +1,418 @@
+[
+  {
+    "caption": "One row: CaO and ZnO mole fractions become normalized elemental fractions.",
+    "sheet": "Basis + utilities",
+    "anchor": "E7",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 115,
+    "output": "docs/assets/excel/data-change-basis/one-row-molar-fraction.png",
+    "scrollRow": 4,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "Eleven composition rows are converted by one dynamic-array formula.",
+    "sheet": "Basis + utilities",
+    "anchor": "D14",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 100,
+    "output": "docs/assets/excel/data-change-basis/multirow-molar-fraction-spill.png",
+    "scrollRow": 10,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "Molar amounts remain amounts when fraction normalization is disabled.",
+    "sheet": "Basis + utilities",
+    "anchor": "E30",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 110,
+    "output": "docs/assets/excel/data-change-basis/molar-amounts.png",
+    "scrollRow": 25,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "Mass inputs become elemental molar amounts.",
+    "sheet": "Basis + utilities",
+    "anchor": "E37",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 110,
+    "output": "docs/assets/excel/data-change-basis/mass-to-molar-amounts.png",
+    "scrollRow": 32,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "Molar amounts become normalized elemental mass fractions.",
+    "sheet": "Basis + utilities",
+    "anchor": "E44",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 110,
+    "output": "docs/assets/excel/data-change-basis/molar-to-mass-fractions.png",
+    "scrollRow": 39,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "LIST returns exact component, phase, solution, and compound identities.",
+    "sheet": "Explore",
+    "anchor": "A5",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 100,
+    "output": "docs/assets/excel/list/components-phases-solutions-compounds.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "LIST returns exact constituent and species identities for a solution phase.",
+    "sheet": "Explore",
+    "anchor": "I5",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 100,
+    "output": "docs/assets/excel/list/constituents-and-species.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "The interaction LIST result supplies exact strings for later GET and SET formulas.",
+    "sheet": "Browse",
+    "anchor": "H32",
+    "workbook": "02",
+    "scrollColumn": 1,
+    "zoom": 100,
+    "output": "docs/assets/excel/list/interactions-g.png",
+    "scrollRow": 27,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "Grouped compound GET functions return standard properties and range information.",
+    "sheet": "Compound data",
+    "anchor": "B6",
+    "workbook": "02",
+    "scrollColumn": 1,
+    "zoom": 110,
+    "output": "docs/assets/excel/get/compound-properties.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "Grouped constituent GET functions use the exact phase and constituent names.",
+    "sheet": "Constituent data",
+    "anchor": "B7",
+    "workbook": "02",
+    "scrollColumn": 1,
+    "zoom": 110,
+    "output": "docs/assets/excel/get/constituent-properties.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "The GET cells return interaction indices and all six G coefficients.",
+    "sheet": "Interactions",
+    "anchor": "B29",
+    "workbook": "02",
+    "scrollColumn": 1,
+    "zoom": 95,
+    "output": "docs/assets/excel/get/interaction-indices-and-parameters.png",
+    "scrollRow": 20,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "A minimal one-row XLL_CA_CALCULATE result.",
+    "sheet": "First equilibrium",
+    "anchor": "H7",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 105,
+    "output": "docs/assets/excel/calculate/minimal-one-row-equilibrium.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "The three-row output header uses literal empty-string markers.",
+    "sheet": "First equilibrium",
+    "anchor": "H4",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 130,
+    "output": "docs/assets/excel/calculate/three-row-header-literal-markers.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "A multi-row equilibrium table includes phase amounts and solution composition.",
+    "sheet": "Equilibrium",
+    "anchor": "H7",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 95,
+    "output": "docs/assets/excel/calculate/multi-row-equilibrium-phase-amounts.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "A temperature sweep returns phase amounts, ERROR, and NSTABLE for each row.",
+    "sheet": "Temperature sweep",
+    "anchor": "H7",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 95,
+    "output": "docs/assets/excel/calculate/temperature-sweep.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "An ordinary Excel chart is driven by the equilibrium sweep results.",
+    "sheet": "Temperature sweep",
+    "anchor": "O4",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 95,
+    "output": "docs/assets/excel/calculate/chart-from-equilibrium-results.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "The entered-phase range is visible beside the calculation output.",
+    "sheet": "Phase selection",
+    "anchor": "N5",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 100,
+    "output": "docs/assets/excel/calculate/entered-phase-selection.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "A FORMATION target visibly includes TLOW and THIGH and returns diagnostics.",
+    "sheet": "Phase target",
+    "anchor": "K7",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 90,
+    "output": "docs/assets/excel/calculate/formation-target-tlow-thigh.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "SET is disabled by a visible FALSE write gate in the saved workbook.",
+    "sheet": "Safe edit",
+    "anchor": "B16",
+    "workbook": "02",
+    "scrollColumn": 1,
+    "zoom": 110,
+    "output": "docs/assets/excel/dat-editing/gated-set-disabled.png",
+    "scrollRow": 3,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "A listed interaction identity flows into the parameter GET cells.",
+    "sheet": "Interactions",
+    "anchor": "B6",
+    "workbook": "02",
+    "scrollColumn": 1,
+    "zoom": 105,
+    "output": "docs/assets/excel/dat-editing/list-to-get-identity.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "The live example exposes the Ca-Zn-O interaction identity and current coefficients.",
+    "sheet": "Parameters",
+    "anchor": "B5",
+    "workbook": "03",
+    "scrollColumn": 1,
+    "zoom": 105,
+    "output": "docs/assets/excel/optimization/ca-zno-interaction-and-values.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "The Ribbon derivative-matrix command reads its visible B1:B6 contract.",
+    "sheet": "Derivative matrix setup",
+    "anchor": "D8",
+    "workbook": "03",
+    "scrollColumn": 1,
+    "zoom": 110,
+    "output": "docs/assets/excel/optimization/derivative-matrix-contract.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "Live calculation results feed explicit target-minus-current residuals.",
+    "sheet": "Live targets",
+    "anchor": "H8",
+    "workbook": "03",
+    "scrollColumn": 1,
+    "zoom": 90,
+    "output": "docs/assets/excel/optimization/live-targets-and-residuals.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "Regression produces a proposed damped update without changing parameter cells.",
+    "sheet": "Live regression",
+    "anchor": "B15",
+    "workbook": "03",
+    "scrollColumn": 1,
+    "zoom": 105,
+    "output": "docs/assets/excel/optimization/damped-proposed-update.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "A separate synthetic example explains the regression helper mathematics.",
+    "sheet": "Synthetic regression",
+    "anchor": "C26",
+    "workbook": "03",
+    "scrollColumn": 1,
+    "zoom": 100,
+    "output": "docs/assets/excel/optimization/synthetic-linear-regression.png",
+    "scrollRow": 12,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  },
+  {
+    "caption": "ERROR and NSTABLE are requested alongside a target calculation result.",
+    "sheet": "Phase target",
+    "anchor": "M7",
+    "workbook": "01",
+    "scrollColumn": 1,
+    "zoom": 90,
+    "output": "docs/assets/excel/calculate/error-and-nstable-diagnostics.png",
+    "scrollRow": 1,
+    "crop": [
+      0,
+      0,
+      1450,
+      830
+    ]
+  }
+]

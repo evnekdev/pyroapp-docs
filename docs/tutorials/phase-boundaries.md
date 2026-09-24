@@ -64,3 +64,9 @@ This is the PyroApp 2 replacement for the old `calculate_binary` plus `plot_data
 ## Next
 
 Read [Target calculations](target-calculation.md) for the full target vocabulary, then [Inspect and edit model parameters](dat-parameters.md).
+
+## Make phase selection explicit
+
+The entered-phase range is separate and visible beside the calculation output. Do not use this illustration as a reason to restrict phases in a real system unless that restriction is physically justified.
+
+![Explicit entered-phase range in Excel](../assets/excel/calculate/entered-phase-selection.png)

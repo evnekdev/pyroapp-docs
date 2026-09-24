@@ -50,3 +50,11 @@ The **Phase target** sheet in the [Getting Started workbook](workbooks.md#gettin
 
 !!! warning
     A target condition does not guarantee that a physically meaningful solution exists within the chosen search interval. Treat failed target rows as calculation failures, not as missing spreadsheet values to be silently interpolated.
+
+## A bounded FORMATION target in Excel
+
+The target sheet exposes the `FORMATION` phase and `TLOW`/`THIGH` inputs beside the returned `T`, activity, `ERROR`, and `NSTABLE` values. The selected spill makes the input/output relationship explicit.
+
+![FORMATION target with TLOW and THIGH in Excel](../assets/excel/calculate/formation-target-tlow-thigh.png)
+
+![ERROR and NSTABLE alongside target results](../assets/excel/calculate/error-and-nstable-diagnostics.png)

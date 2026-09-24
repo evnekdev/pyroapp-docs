@@ -56,3 +56,11 @@ The result spills to 20 rows and 3 columns.
 ## Read a solved row before trusting it
 
 Request `ERROR` and `NSTABLE` beside the phase outputs even for a first calculation. `ERROR = 0` says that row completed without a native ChemApp error; `NSTABLE` gives the number of phases with activity above the stability threshold. A value in a phase-amount column alone is not enough evidence that the intended physical phase set was solved.
+
+## See the first row in Excel
+
+The selected `XLL_CA_CALCULATE` formula uses the visible input and output header ranges. The Formula Bar is part of the screenshot so the call can be reproduced rather than inferred from the result values.
+
+![First equilibrium row in Excel](../assets/excel/calculate/minimal-one-row-equilibrium.png)
+
+![Literal markers in the three-row output header](../assets/excel/calculate/three-row-header-literal-markers.png)

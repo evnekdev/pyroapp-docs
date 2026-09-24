@@ -21,3 +21,8 @@ One numeric value per requested phase. If the compound exists but its thermochem
 ```
 
 This function reads the DAT locally through `chemsage-parser`; it does not call ChemApp `TQGDAT` and does not support CST.
+## Live Excel example
+
+The compound-property sheet groups H298 with related standard-state, range, and coefficient reads while retaining the selected formula in the Formula Bar.
+
+![Compound property GET functions in Excel](../assets/excel/get/compound-properties.png)

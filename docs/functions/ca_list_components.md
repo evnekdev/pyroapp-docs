@@ -21,3 +21,8 @@ A one-column dynamic array of component names.
 ```
 
 Use the returned spelling when constructing `IA`, `XP`, or other component-addressed `XLL_CA_CALCULATE` headers. This function parses the DAT locally and never uploads the file.
+## Live Excel example
+
+`XLL_CA_LIST_COMPONENTS` spills exact component identities. The same workbook sheet groups the related phase, solution, and compound lists so their hierarchy remains visible.
+
+![LIST results for a live DAT in Excel](../assets/excel/list/components-phases-solutions-compounds.png)

@@ -17,3 +17,8 @@ Returns stored standard enthalpies at 298 K for solution-phase constituents/endm
 One value per `(phase,constituent)` pair. A value that is not directly represented in the DAT is returned as `NaN`.
 
 Use [`XLL_CA_LIST_CONSTITUENTS`](ca_list_constituents.md) to obtain valid constituent names.
+## Live Excel example
+
+Constituent GET calls include both the exact solution-phase and constituent identity.
+
+![Constituent property GET functions in Excel](../assets/excel/get/constituent-properties.png)
