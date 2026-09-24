@@ -35,6 +35,8 @@ Current published version: **0.1.0**
 
 ## Legacy workbook migrator
 
+For the complete user workflow, see **[Legacy PyroApp 1.x migration](migration-1.0.md)**.
+
 The **PyroApp Workbook Migrator** is included with every current PyroApp installer. The production migrator is the compiled architecture-specific Rust executable installed with PyroApp and launched by the PyroApp Ribbon.
 
 The migrator runs locally on Windows and uses the installed desktop Microsoft Excel application. It converts legacy `.xlsm` workbooks to macro-free `.xlsx`, rewrites recognized legacy PyroApp formulas to their current `XLL_*` equivalents, preserves workbook content through Excel's own serializer, and never overwrites the original workbook.

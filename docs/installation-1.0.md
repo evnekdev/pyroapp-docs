@@ -10,6 +10,12 @@ For a new workbook, use PyroApp. It has native Excel-DNA registration, dynamic-a
 
 Install 1.x only when you need to reproduce or maintain an existing workbook whose formulas/macros depend on the Python version.
 
+## Migrating an existing workbook
+
+For an existing macro-enabled PyroApp 1.x workbook, use the current **Migrate legacy workbook** tool rather than editing every formula manually. It creates a separate macro-free `.xlsx`, translates supported legacy functions to current `XLL_*` functions, normalizes `CA_CALCULATE` headers, and verifies the saved result in desktop Excel.
+
+See **[Migration](migration-1.0.md)** for the complete workflow and important notes about VBA removal.
+
 ## Formula migration
 
 Legacy formulas commonly used names such as:

@@ -193,6 +193,7 @@ nav:
           - PD_ERROR_TABLE: functions/pd_error_table.md
   - Legacy PyroApp 1.x:
       - Installation: installation-1.0.md
+      - Migration: migration-1.0.md
       - Architecture: pyroapp-architecture-1.0.md
   - Related projects: related-projects.md
   - About: about.md
