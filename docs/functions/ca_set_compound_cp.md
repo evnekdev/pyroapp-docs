@@ -2,7 +2,7 @@
 
 **Availability:** stable, open-DAT only.
 
-Changes thermochemical coefficients for selected compound ranges.
+Changes logical heat-capacity coefficients for selected compound ranges using legacy ChemApp/PyroApp term semantics. The edit works for both Gibbs-polynomial and H298/S298 + Cp storage.
 
 ## Syntax
 
@@ -20,4 +20,4 @@ For every target phase supply one one-based `range_index` and one `value_index`.
 One Boolean status per phase/edit row.
 
 !!! warning
-    The historical `CP` name covers the DAT thermochemical coefficient vector. The physical interpretation depends on the record representation. Inspect the original values and range structure before editing.
+    SET is semantic rather than a raw text patch. If the DAT is Gibbs-form, PyroApp performs the exact thermodynamic conversion needed to apply the requested Cp edit while preserving H298/S298 and returns the record to its original storage form. An edit that cannot be represented exactly fails rather than being fitted approximately.
