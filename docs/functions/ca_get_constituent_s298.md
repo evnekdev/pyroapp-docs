@@ -2,7 +2,7 @@
 
 **Availability:** stable, open-DAT only.
 
-Returns stored standard entropies at 298 K for solution-phase constituents/endmembers.
+Returns standard entropies at 298.15 K for solution-phase constituents/endmembers, independent of DAT thermochemical storage representation.
 
 ## Syntax
 
@@ -14,4 +14,4 @@ Returns stored standard entropies at 298 K for solution-phase constituents/endme
 
 ## Returns
 
-One value per requested pair. `NaN` means that the value is not directly available in the stored thermochemical representation.
+One value per requested pair. Gibbs-form records are differentiated analytically, so S298 is available with the same logical meaning as in legacy ChemApp/PyroApp.
