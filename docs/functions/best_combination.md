@@ -16,6 +16,8 @@ Searches combinations of adjustable parameters and identifies the subset that pe
 
 An integer 0/1 mask with one entry per derivative column. A value of 1 means that parameter is selected in the best tested combination; 0 means it is not selected.
 
+Rows containing a blank, empty-string formula, or `#N/A` in any derivative, residual, or weight are omitted consistently from both fitting and combination scoring. Row positions must still match across all inputs. Numeric zeros remain valid. Other Excel errors and non-numeric text produce an error, as does a selected-parameter fit with no usable rows.
+
 See [Select a small parameter combination](../tutorials/optimization/parameter-selection.md).
 
 The search can be combinatorial; use it only on a deliberately limited candidate set.
