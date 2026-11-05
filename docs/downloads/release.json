@@ -40,7 +40,8 @@
       },
       "checksumsUrl": null,
       "manifestUrl": null,
-      "changelogUrl": "https://uq-my.sharepoint.com/:t:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/CHANGELOG-0.1.1.md?d=w675f38fd7ede474e9dffe5e166357c62&csf=1&web=1&e=np7z7t"
+      "changelogUrl": "https://uq-my.sharepoint.com/:t:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/CHANGELOG-0.1.1.md?d=w675f38fd7ede474e9dffe5e166357c62&csf=1&web=1&e=np7z7t",
+      "stagedDate": "2026-11-05"
     },
     {
       "version": "0.1.0",
@@ -63,7 +64,9 @@
         "sha256": null
       },
       "checksumsUrl": null,
-      "manifestUrl": null
+      "manifestUrl": null,
+      "firstDocumentedDate": "2026-09-17",
+      "sourceCommitDate": "2026-09-25"
     }
   ]
 }
