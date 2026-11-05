@@ -6,7 +6,7 @@
   "x64": {
     "label": "PyroApp for 64-bit Excel",
     "bundledChemApp": true,
-    "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.1-x64-Setup.exe?d=wa0cc65ce61984c5d9b5903cbb7a59195&csf=1&web=1&e=NYPMCD",
+    "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.1-x64-Setup.exe?d=wd4dc344b00024f288f27354a5cd9ee72&csf=1&web=1&e=A7DAFG",
     "sha256": null
   },
   "x86": {
@@ -29,7 +29,7 @@
       "x64": {
         "label": "PyroApp for 64-bit Excel",
         "bundledChemApp": true,
-        "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.1-x64-Setup.exe?d=wa0cc65ce61984c5d9b5903cbb7a59195&csf=1&web=1&e=NYPMCD",
+        "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.1-x64-Setup.exe?d=wd4dc344b00024f288f27354a5cd9ee72&csf=1&web=1&e=A7DAFG",
         "sha256": null
       },
       "x86": {
