@@ -16,5 +16,53 @@
     "sha256": null
   },
   "checksumsUrl": null,
-  "manifestUrl": null
+  "manifestUrl": null,
+  "latestAvailableVersion": "0.1.0",
+  "plannedVersion": "0.1.1",
+  "releases": [
+    {
+      "version": "0.1.1",
+      "status": "planned",
+      "releaseDate": null,
+      "sourceTag": null,
+      "sourceCommit": null,
+      "x64": {
+        "label": "PyroApp for 64-bit Excel",
+        "bundledChemApp": true,
+        "installerUrl": null,
+        "sha256": null
+      },
+      "x86": {
+        "label": "PyroApp for 32-bit Excel",
+        "bundledChemApp": true,
+        "installerUrl": null,
+        "sha256": null
+      },
+      "checksumsUrl": null,
+      "manifestUrl": null
+    },
+    {
+      "version": "0.1.0",
+      "status": "current",
+      "releaseDate": null,
+      "sourceTag": "v0.1.0",
+      "sourceCommit": "13fb5a1add84fb3c7bccfc807d11fe74575fbfb4",
+      "x64": {
+        "label": "PyroApp for 64-bit Excel",
+        "bundledChemApp": true,
+        "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.0-x64-Setup.exe?d=w61c832d74c784bdf93c986717d6ea66b&csf=1&web=1&e=2oZXGy",
+        "sha256": null,
+        "referenceInstallerSha256": "759610272fd7439043b0ae4ea25901a907715f5b0cd684080600dcf92a7839f4",
+        "referenceHashIsVerifiedForPublishedUrl": false
+      },
+      "x86": {
+        "label": "PyroApp for 32-bit Excel",
+        "bundledChemApp": true,
+        "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.0-x86-Setup.exe?d=w2dc1b2eda1ee47c2aa7d74b89e5f0957&csf=1&web=1&e=mJ3kaf",
+        "sha256": null
+      },
+      "checksumsUrl": null,
+      "manifestUrl": null
+    }
+  ]
 }
