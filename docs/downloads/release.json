@@ -12,7 +12,7 @@
   "x86": {
     "label": "PyroApp for 32-bit Excel",
     "bundledChemApp": true,
-    "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.1-x86-Setup.exe?d=w036c3e16d1a8419ebb72d6de4fa15f3a&csf=1&web=1&e=8hCALy",
+    "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.1-x86-Setup.exe?d=wac7d856fbb73408595a25ab8b9bba28b&csf=1&web=1&e=BwoOMx",
     "sha256": null
   },
   "checksumsUrl": null,
@@ -35,7 +35,7 @@
       "x86": {
         "label": "PyroApp for 32-bit Excel",
         "bundledChemApp": true,
-        "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.1-x86-Setup.exe?d=w036c3e16d1a8419ebb72d6de4fa15f3a&csf=1&web=1&e=8hCALy",
+        "installerUrl": "https://uq-my.sharepoint.com/:u:/r/personal/uqenekho_uq_edu_au/Documents/PYROAPP%20INSTALLER/PyroApp-0.1.1-x86-Setup.exe?d=wac7d856fbb73408595a25ab8b9bba28b&csf=1&web=1&e=BwoOMx",
         "sha256": null
       },
       "checksumsUrl": null,
